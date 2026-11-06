@@ -2550,8 +2550,9 @@ Not written by a pipeline run, and the odd one out in `info/`:
     an aperture-corrected σ_e2 for only 25, so pick one deliberately before using it. `RE_kpc` is
     derived on flat H0=70/Ωm=0.3, which is both SL2S's and Dinos II's cosmology; on the SL2S III
     values it reproduced Paper IV Table 3's kpc to ≤0.03. Joined on the full designation
-    (`mast_target`), not the short name. **Every row has a θ_E**; J1419+5117 has
-    no `zlens` (so no `RE_kpc`; J1423+5722 also had none until its removal), and 8 rows have no `zsrc`. The script drops any SL2S row whose
+    (`mast_target`), not the short name. **Every row has a θ_E**; 8 rows have no `zsrc`.
+    J1419+5117 had no `zlens` until the 2026-11-07 literature search filled it (below).
+    The script drops any SL2S row whose
     lens has left the roster (J0233-0438, J0213-0743, J0848-0351, J1423+5722).
 
   **Redshift audit (2026-11-06, Sam's rule: spec-z is the only true product; a lens with
@@ -2568,9 +2569,20 @@ Not written by a pipeline run, and the odd one out in `info/`:
   also gaining a spec zlens 0.884, J0220-0949); a null means *not measured*, not
   photometric. **No photometric values exist in the catalogue, so the audit moved no
   categories** — the 9 incomplete rows (8 without zsrc: J0223-0651, J0226-0406, J0858-0143,
-  J1358+5459, J1401+5544, J1401+5557, J1402+5505; J1419+5117 without either) were all
+  J1358+5459, J1401+5544, J1401+5557, J1402+5505; J1419+5117 without a source) were all
   already `limited`. If a photo-z is ever added as a reference, mark the row
   `photo` and move the lens to `limited`.
+
+  **Literature search for the 9 incomplete rows (2026-11-07):** NED cones (6″, NED ingests
+  DESI DR1), Gavazzi+14's BPZ catalog, SL2S IV/V, Dinos II, SDSS — two usable finds, both
+  already `limited` so no categories moved. **J1419+5117's `zlens` is filled:
+  z = 0.4872 spec from DESI DR1** (NED refcode 2024AJ....168...58D; SDSS DR14 concurs at
+  0.48757), `RE_kpc` 18.7 derived; its source redshift remains unknown. **J0223-0651's
+  source has a photometric redshift z = 1.430** (Gavazzi+2014 Table 1, quality flag 3),
+  recorded in the row as `zsrc_photoz_ref` — a reference only, `zsrc` stays `null`. The
+  other six have *no* literature redshift for the source at all (Gavazzi+14's zs column is
+  blank for them; J0226-0406's NED/Spitzer photo-z 2.09 sits 4.6″ north and is not the arc;
+  J0858-0143 is not even in Gavazzi+14, consistent with its CFHTLS-exempt coordinates).
   - **21 BELLS** (24 until J1337+3620 and J1349+3612 were removed, 2026-10-14, and
     J1542+1629 on 2026-10-22), added 2026-10-14 (parsed from the
     paper). θ_E is **Brownstein+2012 (BELLS I) Table 5** (SIE). `zlens`/`zsrc`/

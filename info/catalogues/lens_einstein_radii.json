@@ -223,7 +223,13 @@
   "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ022357-065142; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
   "zlens_kind": "spec",
   "zsrc_kind": "none",
-  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
+  "redshift_audit": "2026-11-07 literature search: zsrc has NO spectroscopic measurement (SL2S IV Table 2 entry is blank) but a photometric redshift z=1.430 exists (Gavazzi+2014, quality 3), recorded under zsrc_photoz_ref as a reference. zlens=0.473 spec (SL2S IV). Lens stays limited.",
+  "zsrc_photoz_ref": {
+   "value": 1.43,
+   "kind": "photo",
+   "source": "Gavazzi+2014 (ApJ 785, 144) Table 1 BPZ photometric redshift, quality flag 3",
+   "note": "reference only \u2014 no spectroscopic source redshift exists; lens stays limited"
+  }
  },
  "J0225-0454": {
   "theta_e_arcsec": 1.76,
@@ -245,7 +251,7 @@
   "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ022648-040610; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
   "zlens_kind": "spec",
   "zsrc_kind": "none",
-  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
+  "redshift_audit": "2026-11-07 literature search: zsrc nothing in NED/6arcsec, Gavazzi+14 (zs blank), SL2S papers, Dinos II; the NED Spitzer photo-z 2.09 (Ruff+2008) sits 4.6 arcsec north and is NOT the arc (marked images within ~1.5 arcsec). Lens stays limited."
  },
  "J0226-0420": {
   "theta_e_arcsec": 1.152,
@@ -514,7 +520,7 @@
   "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ085826-014300; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
   "zlens_kind": "spec",
   "zsrc_kind": "none",
-  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
+  "redshift_audit": "2026-11-07 literature search: zsrc nothing \u2014 not even in Gavazzi+14 (outside its CFHTLS tables); zlens=0.58 spec (SL2S IV). Lens stays limited."
  },
  "J0901-0259": {
   "theta_e_arcsec": 1.03,
@@ -1131,7 +1137,7 @@
   "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ135847+545913; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
   "zlens_kind": "spec",
   "zsrc_kind": "none",
-  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
+  "redshift_audit": "2026-11-07 literature search: zsrc nothing in NED/6arcsec or Gavazzi+14 (zs blank); zlens=0.510 spec (SL2S IV). Lens stays limited."
  },
  "J1359+5535": {
   "theta_e_arcsec": 1.092,
@@ -1157,7 +1163,7 @@
   "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140156+554446; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
   "zlens_kind": "spec",
   "zsrc_kind": "none",
-  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
+  "redshift_audit": "2026-11-07 literature search: zsrc nothing in NED/6arcsec or Gavazzi+14 (zs blank); zlens=0.464 spec (SL2S IV). Lens stays limited."
  },
  "J1401+5557": {
   "theta_e_arcsec": 1.74,
@@ -1168,7 +1174,7 @@
   "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140123+555705; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
   "zlens_kind": "spec",
   "zsrc_kind": "none",
-  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
+  "redshift_audit": "2026-11-07 literature search: zsrc nothing in NED/6arcsec or Gavazzi+14 (zs blank); zlens=0.527 spec (SL2S IV). Lens stays limited."
  },
  "J1402+5505": {
   "theta_e_arcsec": 1.23,
@@ -1179,7 +1185,7 @@
   "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140221+550534; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
   "zlens_kind": "spec",
   "zsrc_kind": "none",
-  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
+  "redshift_audit": "2026-11-07 literature search: zsrc nothing in NED/6arcsec or Gavazzi+14 (zs blank); zlens=0.412 spec (SL2S IV / SDSS). Lens stays limited."
  },
  "J1402+6321": {
   "theta_e_arcsec": 1.3466,
@@ -1272,14 +1278,14 @@
  },
  "J1419+5117": {
   "theta_e_arcsec": 3.11,
-  "RE_kpc": null,
-  "zlens": null,
+  "RE_kpc": 18.72,
+  "zlens": 0.4872,
   "zsrc": null,
   "sigma_kms": null,
   "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ141917+511729; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
-  "zlens_kind": "none",
+  "zlens_kind": "spec",
   "zsrc_kind": "none",
-  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
+  "redshift_audit": "2026-11-07 literature search: zlens=0.4872 SPEC from DESI DR1 (NED refcode 2024AJ....168...58D; SDSS DR14 concurs 0.48757) \u2014 fills the null SL2S III left. zsrc: nothing in NED (6 arcsec), Gavazzi+14, SL2S IV/V, or Dinos II (the Spitzer/NED z=2.09 object 4.6 arcsec north is not the arc). Lens stays limited (no source redshift)."
  },
  "J1420+5630": {
   "theta_e_arcsec": 1.4,

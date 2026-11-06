@@ -1050,7 +1050,7 @@
             "J1419+5117": {
                 "band_mode": "multi_band",
                 "category": "limited",
-                "category_reason": "positions deliberately empty; no lens redshift; no source redshift",
+                "category_reason": "positions deliberately empty; no source redshift (zlens 0.487 spec from DESI DR1, filled 2026-11-07)",
                 "mast_target": "SL2SJ141917+511729",
                 "note": "Sonnenfeld+2013 Table 6 grade A, HST=Y. GO-11289 WFPC2 F606W (WF3) + GO-11588 WFC3/UVIS F475X+F600LP snapshot."
             },
