@@ -5,7 +5,10 @@
   "zlens": 0.44,
   "zsrc": 1.192,
   "sigma_kms": 193,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0029+2544": {
   "theta_e_arcsec": 1.34,
@@ -13,7 +16,10 @@
   "zlens": 0.5869,
   "zsrc": 2.4504,
   "sigma_kms": 241,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0029-0055": {
   "theta_e_arcsec": 0.9566,
@@ -21,7 +27,10 @@
   "zlens": 0.227,
   "zsrc": 0.931,
   "sigma_kms": 229,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0037-0942": {
   "theta_e_arcsec": 1.5303,
@@ -29,7 +38,10 @@
   "zlens": 0.195,
   "zsrc": 0.632,
   "sigma_kms": 279,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0044+0113": {
   "theta_e_arcsec": 0.7951,
@@ -37,7 +49,10 @@
   "zlens": 0.12,
   "zsrc": 0.197,
   "sigma_kms": 266,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0109+1500": {
   "theta_e_arcsec": 0.6944,
@@ -45,7 +60,10 @@
   "zlens": 0.294,
   "zsrc": 0.525,
   "sigma_kms": 251,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0151+0049": {
   "theta_e_arcsec": 0.676,
@@ -53,7 +71,10 @@
   "zlens": 0.5171,
   "zsrc": 1.3636,
   "sigma_kms": 219,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0157-0056": {
   "theta_e_arcsec": 0.7903,
@@ -61,7 +82,10 @@
   "zlens": 0.513,
   "zsrc": 0.924,
   "sigma_kms": 295,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0201+3228": {
   "theta_e_arcsec": 1.7,
@@ -69,7 +93,10 @@
   "zlens": 0.3957,
   "zsrc": 2.8209,
   "sigma_kms": 256,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0205-0930": {
   "theta_e_arcsec": 1.246,
@@ -81,7 +108,10 @@
   "theta_e_err_arcsec": [
    0.009,
    0.008
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0212-0555": {
   "theta_e_arcsec": 1.238,
@@ -93,7 +123,10 @@
   "theta_e_err_arcsec": [
    0.004,
    0.004
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0214-0405": {
   "theta_e_arcsec": 1.34,
@@ -105,7 +138,10 @@
   "theta_e_err_arcsec": [
    0.008,
    0.008
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0216-0813": {
   "theta_e_arcsec": 1.159,
@@ -113,7 +149,10 @@
   "zlens": 0.332,
   "zsrc": 0.523,
   "sigma_kms": 333,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0217-0513": {
   "theta_e_arcsec": 1.272,
@@ -125,7 +164,10 @@
   "theta_e_err_arcsec": [
    0.014,
    0.014
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0218-0802": {
   "theta_e_arcsec": 0.85,
@@ -137,7 +179,10 @@
   "theta_e_err_arcsec": [
    0.016,
    0.017
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0219-0829": {
   "theta_e_arcsec": 1.296,
@@ -149,7 +194,10 @@
   "theta_e_err_arcsec": [
    0.038,
    0.038
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0220-0949": {
   "theta_e_arcsec": 0.914,
@@ -161,7 +209,10 @@
   "theta_e_err_arcsec": [
    0.023,
    0.02
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0223-0651": {
   "theta_e_arcsec": 1.36,
@@ -169,7 +220,10 @@
   "zlens": 0.473,
   "zsrc": null,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ022357-065142; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ022357-065142; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "none",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0225-0454": {
   "theta_e_arcsec": 1.76,
@@ -177,7 +231,10 @@
   "zlens": 0.238,
   "zsrc": 1.2,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ022511-045433; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ022511-045433; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0226-0406": {
   "theta_e_arcsec": 1.29,
@@ -185,7 +242,10 @@
   "zlens": 0.766,
   "zsrc": null,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ022648-040610; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ022648-040610; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "none",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0226-0420": {
   "theta_e_arcsec": 1.152,
@@ -197,7 +257,10 @@
   "theta_e_err_arcsec": [
    0.009,
    0.009
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0232-0408": {
   "theta_e_arcsec": 1.019,
@@ -209,7 +272,10 @@
   "theta_e_err_arcsec": [
    0.019,
    0.019
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0237-0641": {
   "theta_e_arcsec": 0.65,
@@ -217,7 +283,10 @@
   "zlens": 0.4859,
   "zsrc": 2.2491,
   "sigma_kms": 290,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0252+0039": {
   "theta_e_arcsec": 1.0367,
@@ -225,7 +294,10 @@
   "zlens": 0.28,
   "zsrc": 0.982,
   "sigma_kms": 164,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0330-0020": {
   "theta_e_arcsec": 1.1012,
@@ -233,7 +305,10 @@
   "zlens": 0.351,
   "zsrc": 1.071,
   "sigma_kms": 212,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0405-0455": {
   "theta_e_arcsec": 0.8007,
@@ -241,7 +316,10 @@
   "zlens": 0.075,
   "zsrc": 0.81,
   "sigma_kms": 160,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0728+3835": {
   "theta_e_arcsec": 1.2468,
@@ -249,7 +327,10 @@
   "zlens": 0.206,
   "zsrc": 0.688,
   "sigma_kms": 214,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0737+3216": {
   "theta_e_arcsec": 0.9968,
@@ -257,7 +338,10 @@
   "zlens": 0.322,
   "zsrc": 0.581,
   "sigma_kms": 338,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0742+3341": {
   "theta_e_arcsec": 1.22,
@@ -265,7 +349,10 @@
   "zlens": 0.4936,
   "zsrc": 2.3633,
   "sigma_kms": 218,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0747+4448": {
   "theta_e_arcsec": 0.61,
@@ -273,7 +360,10 @@
   "zlens": 0.4366,
   "zsrc": 0.8966,
   "sigma_kms": 281,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0747+5055": {
   "theta_e_arcsec": 0.754,
@@ -281,7 +371,10 @@
   "zlens": 0.4384,
   "zsrc": 0.8983,
   "sigma_kms": 328,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0755+3445": {
   "theta_e_arcsec": 2.05,
@@ -289,7 +382,10 @@
   "zlens": 0.7224,
   "zsrc": 2.6347,
   "sigma_kms": 272,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0801+4727": {
   "theta_e_arcsec": 0.491,
@@ -297,7 +393,10 @@
   "zlens": 0.4831,
   "zsrc": 1.5181,
   "sigma_kms": 98,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0808+4706": {
   "theta_e_arcsec": null,
@@ -305,7 +404,10 @@
   "zlens": 0.219,
   "zsrc": 1.025,
   "sigma_kms": 236,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0819+4534": {
   "theta_e_arcsec": 0.8474,
@@ -313,7 +415,10 @@
   "zlens": 0.194,
   "zsrc": 0.446,
   "sigma_kms": 225,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0822+2652": {
   "theta_e_arcsec": 1.1694,
@@ -321,7 +426,10 @@
   "zlens": 0.241,
   "zsrc": 0.594,
   "sigma_kms": 259,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0830+5116": {
   "theta_e_arcsec": 1.142,
@@ -329,7 +437,10 @@
   "zlens": 0.5301,
   "zsrc": 1.3317,
   "sigma_kms": 268,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0841+3824": {
   "theta_e_arcsec": 1.4091,
@@ -337,7 +448,10 @@
   "zlens": 0.116,
   "zsrc": 0.657,
   "sigma_kms": 225,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0849-0251": {
   "theta_e_arcsec": 1.16,
@@ -345,7 +459,10 @@
   "zlens": 0.274,
   "zsrc": 2.09,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ084959-025142; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ084959-025142; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0849-0412": {
   "theta_e_arcsec": 1.134,
@@ -357,7 +474,10 @@
   "theta_e_err_arcsec": [
    0.014,
    0.011
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0855-0147": {
   "theta_e_arcsec": 0.956,
@@ -369,7 +489,10 @@
   "theta_e_err_arcsec": [
    0.034,
    0.034
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0856+2010": {
   "theta_e_arcsec": 0.98,
@@ -377,7 +500,10 @@
   "zlens": 0.5074,
   "zsrc": 2.2335,
   "sigma_kms": 334,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0858-0143": {
   "theta_e_arcsec": 0.9,
@@ -385,7 +511,10 @@
   "zlens": 0.58,
   "zsrc": null,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ085826-014300; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ085826-014300; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "none",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0901-0259": {
   "theta_e_arcsec": 1.03,
@@ -393,7 +522,10 @@
   "zlens": 0.67,
   "zsrc": 1.19,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ090106-025906; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ090106-025906; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0903+4116": {
   "theta_e_arcsec": 1.2887,
@@ -401,7 +533,10 @@
   "zlens": 0.43,
   "zsrc": 1.065,
   "sigma_kms": 223,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0904-0059": {
   "theta_e_arcsec": 1.411,
@@ -413,7 +548,10 @@
   "theta_e_err_arcsec": [
    0.005,
    0.005
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0912+0029": {
   "theta_e_arcsec": 1.6274,
@@ -421,7 +559,10 @@
   "zlens": 0.164,
   "zsrc": 0.324,
   "sigma_kms": 326,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0918+5104": {
   "theta_e_arcsec": 1.6,
@@ -429,7 +570,10 @@
   "zlens": 0.5811,
   "zsrc": 2.403,
   "sigma_kms": 298,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0935-0003": {
   "theta_e_arcsec": 0.8672,
@@ -437,7 +581,10 @@
   "zlens": 0.347,
   "zsrc": 0.467,
   "sigma_kms": 396,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0936+0913": {
   "theta_e_arcsec": 1.0887,
@@ -445,7 +592,10 @@
   "zlens": 0.19,
   "zsrc": 0.588,
   "sigma_kms": 243,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0944-0147": {
   "theta_e_arcsec": 0.725,
@@ -453,7 +603,10 @@
   "zlens": 0.539,
   "zsrc": 1.1785,
   "sigma_kms": 204,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0946+1006": {
   "theta_e_arcsec": 1.3839,
@@ -461,7 +614,10 @@
   "zlens": 0.222,
   "zsrc": 0.609,
   "sigma_kms": 263,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0955+0101": {
   "theta_e_arcsec": 0.9052,
@@ -469,7 +625,10 @@
   "zlens": 0.111,
   "zsrc": 0.316,
   "sigma_kms": 192,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0956+5100": {
   "theta_e_arcsec": 1.3271,
@@ -477,7 +636,10 @@
   "zlens": 0.241,
   "zsrc": 0.47,
   "sigma_kms": 334,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0959+0206": {
   "theta_e_arcsec": 0.711,
@@ -489,7 +651,10 @@
   "theta_e_err_arcsec": [
    0.01,
    0.01
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0959+0410": {
   "theta_e_arcsec": 0.9929,
@@ -497,7 +662,10 @@
   "zlens": 0.126,
   "zsrc": 0.535,
   "sigma_kms": 197,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J0959+4416": {
   "theta_e_arcsec": 0.9606,
@@ -505,7 +673,10 @@
   "zlens": 0.237,
   "zsrc": 0.531,
   "sigma_kms": 244,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1016+3859": {
   "theta_e_arcsec": 1.0905,
@@ -513,7 +684,10 @@
   "zlens": 0.168,
   "zsrc": 0.439,
   "sigma_kms": 247,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1020+1122": {
   "theta_e_arcsec": 1.2003,
@@ -521,7 +695,10 @@
   "zlens": 0.282,
   "zsrc": 0.553,
   "sigma_kms": 282,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1023+4230": {
   "theta_e_arcsec": 1.4142,
@@ -529,7 +706,10 @@
   "zlens": 0.191,
   "zsrc": 0.696,
   "sigma_kms": 242,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1029+0420": {
   "theta_e_arcsec": 1.0056,
@@ -537,7 +717,10 @@
   "zlens": 0.104,
   "zsrc": 0.615,
   "sigma_kms": 210,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1029+6115": {
   "theta_e_arcsec": null,
@@ -545,7 +728,10 @@
   "zlens": 0.157,
   "zsrc": 0.251,
   "sigma_kms": 228,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1032+5322": {
   "theta_e_arcsec": 1.0327,
@@ -553,7 +739,10 @@
   "zlens": 0.133,
   "zsrc": 0.329,
   "sigma_kms": 296,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1100+5329": {
   "theta_e_arcsec": 1.5176,
@@ -561,7 +750,10 @@
   "zlens": 0.317,
   "zsrc": 0.858,
   "sigma_kms": 187,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1103+5322": {
   "theta_e_arcsec": 1.0185,
@@ -569,7 +761,10 @@
   "zlens": 0.158,
   "zsrc": 0.735,
   "sigma_kms": 196,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1106+5228": {
   "theta_e_arcsec": 1.2314,
@@ -577,7 +772,10 @@
   "zlens": 0.095,
   "zsrc": 0.407,
   "sigma_kms": 262,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1110+2808": {
   "theta_e_arcsec": 0.98,
@@ -585,7 +783,10 @@
   "zlens": 0.6073,
   "zsrc": 2.3999,
   "sigma_kms": 191,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1110+3649": {
   "theta_e_arcsec": 1.16,
@@ -593,7 +794,10 @@
   "zlens": 0.733,
   "zsrc": 2.5024,
   "sigma_kms": 531,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1112+0826": {
   "theta_e_arcsec": 1.4851,
@@ -601,7 +805,10 @@
   "zlens": 0.273,
   "zsrc": 0.629,
   "sigma_kms": 320,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1116+0915": {
   "theta_e_arcsec": 1.03,
@@ -609,7 +816,10 @@
   "zlens": 0.5501,
   "zsrc": 2.4536,
   "sigma_kms": 274,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1134+6027": {
   "theta_e_arcsec": 1.1024,
@@ -617,7 +827,10 @@
   "zlens": 0.153,
   "zsrc": 0.474,
   "sigma_kms": 239,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1141+2216": {
   "theta_e_arcsec": 1.27,
@@ -625,7 +838,10 @@
   "zlens": 0.5858,
   "zsrc": 2.7624,
   "sigma_kms": 285,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1142+1001": {
   "theta_e_arcsec": 0.9841,
@@ -633,7 +849,10 @@
   "zlens": 0.222,
   "zsrc": 0.504,
   "sigma_kms": 221,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1143-0144": {
   "theta_e_arcsec": 1.6842,
@@ -641,7 +860,10 @@
   "zlens": 0.106,
   "zsrc": 0.402,
   "sigma_kms": 269,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1153+4612": {
   "theta_e_arcsec": 1.0478,
@@ -649,7 +871,10 @@
   "zlens": 0.18,
   "zsrc": 0.875,
   "sigma_kms": 226,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1159-0007": {
   "theta_e_arcsec": 0.683,
@@ -657,7 +882,10 @@
   "zlens": 0.5793,
   "zsrc": 1.3457,
   "sigma_kms": 165,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture); zL dagger: differs from the BOSS DR9 redshift"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture); zL dagger: differs from the BOSS DR9 redshift",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1201+4743": {
   "theta_e_arcsec": 1.18,
@@ -665,7 +893,10 @@
   "zlens": 0.5628,
   "zsrc": 2.1258,
   "sigma_kms": 239,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1204+0358": {
   "theta_e_arcsec": 1.3076,
@@ -673,7 +904,10 @@
   "zlens": 0.164,
   "zsrc": 0.631,
   "sigma_kms": 267,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1205+4910": {
   "theta_e_arcsec": 1.2234,
@@ -681,7 +915,10 @@
   "zlens": 0.215,
   "zsrc": 0.481,
   "sigma_kms": 281,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1213+6708": {
   "theta_e_arcsec": 1.4164,
@@ -689,7 +926,10 @@
   "zlens": 0.123,
   "zsrc": 0.64,
   "sigma_kms": 292,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1215+0047": {
   "theta_e_arcsec": 1.368,
@@ -697,7 +937,10 @@
   "zlens": 0.6423,
   "zsrc": 1.297,
   "sigma_kms": 262,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1218+0830": {
   "theta_e_arcsec": 1.4502,
@@ -705,7 +948,10 @@
   "zlens": 0.135,
   "zsrc": 0.717,
   "sigma_kms": 219,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1221+3806": {
   "theta_e_arcsec": 0.699,
@@ -713,7 +959,10 @@
   "zlens": 0.5348,
   "zsrc": 1.2844,
   "sigma_kms": 187,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1226+5457": {
   "theta_e_arcsec": 1.37,
@@ -721,7 +970,10 @@
   "zlens": 0.498,
   "zsrc": 2.7322,
   "sigma_kms": 248,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1234-0241": {
   "theta_e_arcsec": 0.533,
@@ -729,7 +981,10 @@
   "zlens": 0.49,
   "zsrc": 1.0159,
   "sigma_kms": 122,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1250+0523": {
   "theta_e_arcsec": 1.1302,
@@ -737,7 +992,10 @@
   "zlens": 0.232,
   "zsrc": 0.795,
   "sigma_kms": 252,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1250-0135": {
   "theta_e_arcsec": null,
@@ -745,7 +1003,10 @@
   "zlens": 0.087,
   "zsrc": 0.353,
   "sigma_kms": 246,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1251-0208": {
   "theta_e_arcsec": 0.8413,
@@ -753,7 +1014,10 @@
   "zlens": 0.224,
   "zsrc": 0.784,
   "sigma_kms": 233,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1259+6134": {
   "theta_e_arcsec": null,
@@ -761,7 +1025,10 @@
   "zlens": 0.233,
   "zsrc": 0.449,
   "sigma_kms": 253,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1306+0600": {
   "theta_e_arcsec": 1.3165,
@@ -769,7 +1036,10 @@
   "zlens": 0.173,
   "zsrc": 0.472,
   "sigma_kms": 237,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1313+0506": {
   "theta_e_arcsec": 0.53,
@@ -781,7 +1051,10 @@
   "theta_e_err_arcsec": [
    0.23,
    0.23
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1313+4615": {
   "theta_e_arcsec": 1.3699,
@@ -789,7 +1062,10 @@
   "zlens": 0.185,
   "zsrc": 0.514,
   "sigma_kms": 263,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1318-0104": {
   "theta_e_arcsec": 0.679,
@@ -797,7 +1073,10 @@
   "zlens": 0.6591,
   "zsrc": 1.3959,
   "sigma_kms": 177,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1318-0313": {
   "theta_e_arcsec": 1.5843,
@@ -805,7 +1084,10 @@
   "zlens": 0.24,
   "zsrc": 1.3,
   "sigma_kms": 213,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1319+1504": {
   "theta_e_arcsec": null,
@@ -813,7 +1095,10 @@
   "zlens": 0.154,
   "zsrc": 0.606,
   "sigma_kms": 235,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1330-0148": {
   "theta_e_arcsec": 0.8644,
@@ -821,7 +1106,10 @@
   "zlens": 0.081,
   "zsrc": 0.711,
   "sigma_kms": 185,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1352+3216": {
   "theta_e_arcsec": 1.823,
@@ -829,7 +1117,10 @@
   "zlens": 0.4634,
   "zsrc": 1.0341,
   "sigma_kms": 161,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1358+5459": {
   "theta_e_arcsec": 1.21,
@@ -837,7 +1128,10 @@
   "zlens": 0.51,
   "zsrc": null,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ135847+545913; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ135847+545913; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "none",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1359+5535": {
   "theta_e_arcsec": 1.092,
@@ -849,7 +1143,10 @@
   "theta_e_err_arcsec": [
    0.006,
    0.006
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1401+5544": {
   "theta_e_arcsec": 2.03,
@@ -857,7 +1154,10 @@
   "zlens": 0.464,
   "zsrc": null,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140156+554446; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140156+554446; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "none",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1401+5557": {
   "theta_e_arcsec": 1.74,
@@ -865,7 +1165,10 @@
   "zlens": 0.527,
   "zsrc": null,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140123+555705; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140123+555705; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "none",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1402+5505": {
   "theta_e_arcsec": 1.23,
@@ -873,7 +1176,10 @@
   "zlens": 0.412,
   "zsrc": null,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140221+550534; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ140221+550534; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "none",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1402+6321": {
   "theta_e_arcsec": 1.3466,
@@ -881,7 +1187,10 @@
   "zlens": 0.205,
   "zsrc": 0.481,
   "sigma_kms": 267,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1403+0006": {
   "theta_e_arcsec": 0.8303,
@@ -889,7 +1198,10 @@
   "zlens": 0.189,
   "zsrc": 0.473,
   "sigma_kms": 213,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1404+5200": {
   "theta_e_arcsec": 2.394,
@@ -901,7 +1213,10 @@
   "theta_e_err_arcsec": [
    0.011,
    0.011
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1405+5243": {
   "theta_e_arcsec": 1.457,
@@ -913,7 +1228,10 @@
   "theta_e_err_arcsec": [
    0.007,
    0.007
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1406+5226": {
   "theta_e_arcsec": 1.029,
@@ -925,7 +1243,10 @@
   "theta_e_err_arcsec": [
    0.006,
    0.006
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1411+5651": {
   "theta_e_arcsec": 0.93,
@@ -933,7 +1254,10 @@
   "zlens": 0.322,
   "zsrc": 1.42,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ141137+565119; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ141137+565119; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1416+5136": {
   "theta_e_arcsec": 1.3681,
@@ -941,7 +1265,10 @@
   "zlens": 0.299,
   "zsrc": 0.811,
   "sigma_kms": 240,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1419+5117": {
   "theta_e_arcsec": 3.11,
@@ -949,7 +1276,10 @@
   "zlens": null,
   "zsrc": null,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ141917+511729; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ141917+511729; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "none",
+  "zsrc_kind": "none",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1420+5630": {
   "theta_e_arcsec": 1.4,
@@ -957,7 +1287,10 @@
   "zlens": 0.483,
   "zsrc": 3.12,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ142059+563007; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ142059+563007; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1420+6019": {
   "theta_e_arcsec": 1.0388,
@@ -965,7 +1298,10 @@
   "zlens": 0.063,
   "zsrc": 0.535,
   "sigma_kms": 205,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1427+5516": {
   "theta_e_arcsec": 0.81,
@@ -973,7 +1309,10 @@
   "zlens": 0.511,
   "zsrc": 2.58,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ142731+551645; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ142731+551645; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1430+4105": {
   "theta_e_arcsec": 1.5195,
@@ -981,7 +1320,10 @@
   "zlens": 0.285,
   "zsrc": 0.575,
   "sigma_kms": 322,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1432+6317": {
   "theta_e_arcsec": 1.258,
@@ -989,7 +1331,10 @@
   "zlens": 0.123,
   "zsrc": 0.664,
   "sigma_kms": 199,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1436+3640": {
   "theta_e_arcsec": null,
@@ -997,7 +1342,10 @@
   "zlens": 0.185,
   "zsrc": 0.758,
   "sigma_kms": 281,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1436-0000": {
   "theta_e_arcsec": 1.1169,
@@ -1005,7 +1353,10 @@
   "zlens": 0.285,
   "zsrc": 0.805,
   "sigma_kms": 224,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1443+0304": {
   "theta_e_arcsec": 0.8117,
@@ -1013,7 +1364,10 @@
   "zlens": 0.134,
   "zsrc": 0.419,
   "sigma_kms": 209,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1451-0239": {
   "theta_e_arcsec": 1.0399,
@@ -1021,7 +1375,10 @@
   "zlens": 0.125,
   "zsrc": 0.52,
   "sigma_kms": 223,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1525+3327": {
   "theta_e_arcsec": 1.3068,
@@ -1029,7 +1386,10 @@
   "zlens": 0.358,
   "zsrc": 0.717,
   "sigma_kms": 264,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1531-0105": {
   "theta_e_arcsec": 1.7078,
@@ -1037,7 +1397,10 @@
   "zlens": 0.16,
   "zsrc": 0.744,
   "sigma_kms": 279,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1538+5817": {
   "theta_e_arcsec": 0.9952,
@@ -1045,7 +1408,10 @@
   "zlens": 0.143,
   "zsrc": 0.531,
   "sigma_kms": 189,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1541+1812": {
   "theta_e_arcsec": 0.64,
@@ -1053,7 +1419,10 @@
   "zlens": 0.5603,
   "zsrc": 1.1133,
   "sigma_kms": 174,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1545+2748": {
   "theta_e_arcsec": 1.21,
@@ -1061,7 +1430,10 @@
   "zlens": 0.5218,
   "zsrc": 1.2886,
   "sigma_kms": 250,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1601+2138": {
   "theta_e_arcsec": 0.858,
@@ -1069,7 +1441,10 @@
   "zlens": 0.5435,
   "zsrc": 1.4461,
   "sigma_kms": 207,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1611+1705": {
   "theta_e_arcsec": 0.58,
@@ -1077,7 +1452,10 @@
   "zlens": 0.4766,
   "zsrc": 1.2109,
   "sigma_kms": 109,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1614+4522": {
   "theta_e_arcsec": 0.8444,
@@ -1085,7 +1463,10 @@
   "zlens": 0.178,
   "zsrc": 0.811,
   "sigma_kms": 182,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1618+4353": {
   "theta_e_arcsec": null,
@@ -1093,7 +1474,10 @@
   "zlens": 0.199,
   "zsrc": 0.666,
   "sigma_kms": 292,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1621+3931": {
   "theta_e_arcsec": 1.2902,
@@ -1101,7 +1485,10 @@
   "zlens": 0.245,
   "zsrc": 0.602,
   "sigma_kms": 236,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1627-0053": {
   "theta_e_arcsec": 1.2286,
@@ -1109,7 +1496,10 @@
   "zlens": 0.208,
   "zsrc": 0.524,
   "sigma_kms": 290,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1630+4520": {
   "theta_e_arcsec": 1.7777,
@@ -1117,7 +1507,10 @@
   "zlens": 0.248,
   "zsrc": 0.793,
   "sigma_kms": 276,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1631+1854": {
   "theta_e_arcsec": 1.634,
@@ -1125,7 +1518,10 @@
   "zlens": 0.4081,
   "zsrc": 1.0863,
   "sigma_kms": 272,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1636+4707": {
   "theta_e_arcsec": 1.0849,
@@ -1133,7 +1529,10 @@
   "zlens": 0.228,
   "zsrc": 0.675,
   "sigma_kms": 231,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1637+1439": {
   "theta_e_arcsec": 0.65,
@@ -1141,7 +1540,10 @@
   "zlens": 0.391,
   "zsrc": 0.8744,
   "sigma_kms": 208,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1644+2625": {
   "theta_e_arcsec": 1.2671,
@@ -1149,7 +1551,10 @@
   "zlens": 0.137,
   "zsrc": 0.61,
   "sigma_kms": 229,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1709+2324": {
   "theta_e_arcsec": 1.0057,
@@ -1157,7 +1562,10 @@
   "zlens": 0.347,
   "zsrc": 0.719,
   "sigma_kms": 286,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1718+6424": {
   "theta_e_arcsec": null,
@@ -1165,7 +1573,10 @@
   "zlens": 0.09,
   "zsrc": 0.737,
   "sigma_kms": 273,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J1719+2939": {
   "theta_e_arcsec": 1.276,
@@ -1173,7 +1584,10 @@
   "zlens": 0.181,
   "zsrc": 0.578,
   "sigma_kms": 286,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2122+0409": {
   "theta_e_arcsec": 1.58,
@@ -1181,7 +1595,10 @@
   "zlens": 0.6261,
   "zsrc": 1.4517,
   "sigma_kms": 324,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2125+0411": {
   "theta_e_arcsec": 1.204,
@@ -1189,7 +1606,10 @@
   "zlens": 0.3632,
   "zsrc": 0.9777,
   "sigma_kms": 247,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2141-0001": {
   "theta_e_arcsec": 0.88,
@@ -1201,7 +1621,10 @@
   "theta_e_err_arcsec": [
    0.09,
    0.09
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2203+0205": {
   "theta_e_arcsec": 1.677,
@@ -1213,7 +1636,10 @@
   "theta_e_err_arcsec": [
    0.012,
    0.012
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2205+0147": {
   "theta_e_arcsec": 1.814,
@@ -1225,7 +1651,10 @@
   "theta_e_err_arcsec": [
    0.042,
    0.044
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2213-0009": {
   "theta_e_arcsec": 1.07,
@@ -1233,7 +1662,10 @@
   "zlens": 0.338,
   "zsrc": 3.45,
   "sigma_kms": null,
-  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ221326-000946; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)"
+  "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ221326-000946; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2221+0115": {
   "theta_e_arcsec": 1.274,
@@ -1245,7 +1677,10 @@
   "theta_e_err_arcsec": [
    0.011,
    0.011
-  ]
+  ],
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2228+1205": {
   "theta_e_arcsec": 1.28,
@@ -1253,7 +1688,10 @@
   "zlens": 0.5305,
   "zsrc": 2.8324,
   "sigma_kms": 255,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2238-0754": {
   "theta_e_arcsec": 1.2713,
@@ -1261,7 +1699,10 @@
   "zlens": 0.137,
   "zsrc": 0.713,
   "sigma_kms": 198,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2300+0022": {
   "theta_e_arcsec": 1.2356,
@@ -1269,7 +1710,10 @@
   "zlens": 0.228,
   "zsrc": 0.463,
   "sigma_kms": 279,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2302-0840": {
   "theta_e_arcsec": null,
@@ -1277,7 +1721,10 @@
   "zlens": 0.09,
   "zsrc": 0.222,
   "sigma_kms": 237,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2303+0037": {
   "theta_e_arcsec": 1.016,
@@ -1285,7 +1732,10 @@
   "zlens": 0.4582,
   "zsrc": 0.9363,
   "sigma_kms": 274,
-  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)"
+  "source": "Brownstein+2012 (BELLS I, ApJ 744, 41) Table 5 SIE theta_E; zL/zS/sigma_BOSS from its Table 2 (sigma uncorrected for aperture)",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2303+1422": {
   "theta_e_arcsec": 1.6192,
@@ -1293,7 +1743,10 @@
   "zlens": 0.155,
   "zsrc": 0.517,
   "sigma_kms": 255,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2321-0939": {
   "theta_e_arcsec": 1.5997,
@@ -1301,7 +1754,10 @@
   "zlens": 0.082,
   "zsrc": 0.532,
   "sigma_kms": 249,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2341+0000": {
   "theta_e_arcsec": 1.4443,
@@ -1309,7 +1765,10 @@
   "zlens": 0.186,
   "zsrc": 0.807,
   "sigma_kms": 207,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2342-0120": {
   "theta_e_arcsec": 1.11,
@@ -1317,7 +1776,10 @@
   "zlens": 0.527,
   "zsrc": 2.2649,
   "sigma_kms": 274,
-  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1"
+  "source": "Shu+2016 (BELLS GALLERY IV, ApJ 833, 264), Table 2 bSIE (Sersic foreground subtraction); z/sigma from Table 1",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2343-0030": {
   "theta_e_arcsec": 1.5155,
@@ -1325,7 +1787,10 @@
   "zlens": 0.181,
   "zsrc": 0.463,
   "sigma_kms": 269,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  },
  "J2347-0005": {
   "theta_e_arcsec": 1.1072,
@@ -1333,6 +1798,9 @@
   "zlens": 0.417,
   "zsrc": 0.714,
   "sigma_kms": 404,
-  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses"
+  "source": "Auger+2009 (SLACS IX), VizieR J/ApJ/705/1099/lenses",
+  "zlens_kind": "spec",
+  "zsrc_kind": "spec",
+  "redshift_audit": "2026-11-06: every non-null redshift verified spectroscopic \u2014 SLACS/Brewer rows Auger+2009 (\"spectroscopic redshifts for lens and source available for every system\"); BELLS Brownstein+2012 Table 2 (BOSS emission-line); GALLERY Shu+2016 Table 1 (\"inferred from the BOSS spectrum\"); SL2S SL2S IV Table 2 + SL2S V Table 1 (null = not measured, not photometric). No photometric values in the catalogue; photo-z rows would route to limited."
  }
 }
