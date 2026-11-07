@@ -15,7 +15,7 @@ stay out. Regenerate info/manifest.csv first (make_manifest.py); this script ref
 manifest lists that has no tracked files.
 
 Output: release/<sample>.zip and release/<sample>_<filter>.zip (gitignored). The Zenodo upload
-itself is manual (see the lensprep release plan).
+itself is manual (see the lensfoundry release plan, local/release_plan.md).
 
 Usage:
     uv run python scripts/make_release_zips.py                       # every sample and filter
