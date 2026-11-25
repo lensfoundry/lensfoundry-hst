@@ -1,0 +1,20 @@
+{
+    "lens": "J0218-0802",
+    "sample": "dinos",
+    "primary_band": "f475X",
+    "primary_band_source": "arc_snr",
+    "best_band_visual": null,
+    "best_band_arc_snr": "f475X",
+    "theta_e": 0.85,
+    "scores": {
+        "f475X": {
+            "arc_snr": 92.06,
+            "psf_fwhm_arcsec": 0.0865,
+            "resolution_factor": 1.0,
+            "score": 92.06,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye)",
+    "reviewed": false
+}

@@ -1,0 +1,41 @@
+{
+    "lens": "J0217-0513",
+    "sample": "dinos",
+    "primary_band": "f814W",
+    "primary_band_source": "visual",
+    "reviewed": false,
+    "best_band_visual": "f814W",
+    "best_band_arc_snr": "f160W",
+    "theta_e": 1.272,
+    "scores": {
+        "f160W": {
+            "arc_snr": 196.7,
+            "psf_fwhm_arcsec": 0.231,
+            "resolution_factor": 1.0,
+            "score": 196.7,
+            "contaminant_mask": true
+        },
+        "f475X": {
+            "arc_snr": 69.83,
+            "psf_fwhm_arcsec": 0.0911,
+            "resolution_factor": 1.0,
+            "score": 69.83,
+            "contaminant_mask": true
+        },
+        "f606W": {
+            "arc_snr": 102.5,
+            "psf_fwhm_arcsec": 0.1215,
+            "resolution_factor": 1.0,
+            "score": 102.5,
+            "contaminant_mask": true
+        },
+        "f814W": {
+            "arc_snr": 116.83,
+            "psf_fwhm_arcsec": 0.2047,
+            "resolution_factor": 1.0,
+            "score": 116.83,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye). reviewed: the arc_snr choice has been confirmed by eye (visual choices are reviewed by construction)."
+}

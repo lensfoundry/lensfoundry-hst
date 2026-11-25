@@ -1,0 +1,27 @@
+{
+    "lens": "J0223-0651",
+    "sample": "sl2s",
+    "primary_band": "f475X",
+    "primary_band_source": "visual",
+    "reviewed": false,
+    "best_band_visual": "f475X",
+    "best_band_arc_snr": null,
+    "theta_e": 1.36,
+    "scores": {
+        "f475X": {
+            "arc_snr": -0.27,
+            "psf_fwhm_arcsec": 0.0909,
+            "resolution_factor": 1.0,
+            "score": -0.27,
+            "contaminant_mask": true
+        },
+        "f600LP": {
+            "arc_snr": -2.59,
+            "psf_fwhm_arcsec": 0.0788,
+            "resolution_factor": 1.0,
+            "score": -2.59,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye). reviewed: the arc_snr choice has been confirmed by eye (visual choices are reviewed by construction)."
+}

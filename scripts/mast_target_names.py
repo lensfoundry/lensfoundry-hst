@@ -133,6 +133,21 @@ def sample_of(lens):
     return None
 
 
+def resolve_sample(sample, lens):
+    """Resolve a CLI ``--sample``/``--lens`` pair. An explicit ``--sample`` wins; with
+    ``--lens`` and no ``--sample`` the lens's own sample is used (each lens sits in exactly
+    one sample, so it is never ambiguous); with neither, the default sample. A ``--lens``
+    that is in no sample is an error, not a silent fallthrough to the default."""
+    if sample is not None:
+        return sample
+    if lens is not None:
+        owner = sample_of(lens)
+        if owner is None:
+            raise SystemExit(f'{lens} is not in any sample of {SAMPLES_JSON}')
+        return owner
+    return DEFAULT_SAMPLE
+
+
 def _entry(lens, sample=None):
     """Per-lens quirk dict. Searches ``sample`` if given, else every sample."""
     if sample is not None:
@@ -233,6 +248,76 @@ def stamp_center(lens, sample=None):
     """Per-lens fixed stamp centre as (RA, Dec) sexagesimal strings, or None."""
     c = _entry(lens, sample).get('stamp_center')
     return tuple(c) if c else None
+
+
+RADII_JSON = os.path.join(_INFO_DIR, 'catalogues', 'lens_einstein_radii.json')
+PRIMARY_BAND_JSON = os.path.join(_INFO_DIR, 'provenance', 'lens_primary_band.json')
+
+_radii_cache = None
+
+
+def _radii():
+    """The Einstein-radius catalogue (flat by lens; see AGENTS.md *Tracking JSONs*)."""
+    global _radii_cache
+    if _radii_cache is None:
+        with open(RADII_JSON) as f:
+            _radii_cache = json.load(f)
+    return _radii_cache
+
+
+def theta_e(lens, sample=None):
+    """The lens's measured Einstein radius in arcsec, or None (no row, or a null theta_E --
+    Auger+2009 has no lens model for 13 SLACS lenses, and J1037+3517 has no Brewer+2012 model)."""
+    v = _radii().get(lens, {}).get('theta_e_arcsec')
+    return None if v is None else float(v)
+
+
+def redshifts(lens, sample=None):
+    """(zlens, zsrc, zlens_kind, zsrc_kind) from the catalogue; None where unknown.
+    After the 2026-11-06 audit every non-null value is spectroscopic ('spec')."""
+    row = _radii().get(lens, {})
+    return (row.get('zlens'), row.get('zsrc'), row.get('zlens_kind'), row.get('zsrc_kind'))
+
+
+def primary_band(lens, sample=None):
+    """(band, source): the lens's PRIMARY band -- the one the mask and arc-mask GUIs draw first
+    (the other bands start from its mask), the one positions are clicked on, and the one to
+    model first. Ported from JWST_lenses_data_reduction 2026-11-10. `source` says where it
+    came from:
+      'visual'   ``best_band_visual`` in lens_samples.json, chosen by eye with
+                 choose_best_band.py (always wins);
+      'arc_snr'  ``best_band_arc_snr``, choose_primary_band.py's measurement in
+                 info/provenance/lens_primary_band.json (arc S/N in the ring annulus,
+                 discounted where the PSF under-resolves theta_E);
+      (None, None) when neither exists, and callers fall back to their fixed band order."""
+    e = _entry(lens, sample)
+    if e.get('best_band_visual'):
+        return e['best_band_visual'], 'visual'
+    owner = sample or sample_of(lens)
+    try:
+        with open(PRIMARY_BAND_JSON) as f:
+            rec = json.load(f).get(owner, {}).get(lens, {})
+    except FileNotFoundError:
+        rec = {}
+    if rec.get('best_band_arc_snr'):
+        return rec['best_band_arc_snr'], 'arc_snr'
+    return None, None
+
+
+def set_best_band_visual(lens, band, note, sample=None):
+    """Record the band chosen BY EYE for `lens` as ``best_band_visual`` in lens_samples.json
+    (choose_best_band.py), with a note saying how. Visual inspection only: not necessarily the
+    band with the highest arc S/N (that is ``best_band_arc_snr`` in lens_primary_band.json).
+    Dumps with ensure_ascii=False so the file keeps its literal unicode."""
+    global _cache
+    owner = sample or sample_of(lens)
+    data = _load()
+    e = data[owner]['lenses'][lens]
+    e['best_band_visual'] = band
+    e['best_band_visual_note'] = note
+    with open(SAMPLES_JSON, 'w') as f:
+        f.write(json.dumps(data, indent=4, ensure_ascii=False) + '\n')
+    _cache = None
 
 
 def target_patterns(lens, sample=None):

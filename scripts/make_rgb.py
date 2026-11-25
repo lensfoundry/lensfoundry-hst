@@ -279,7 +279,7 @@ def main():
         if rgb_names is None:
             print(f'{lens}: fewer than two bands with a known wavelength ({list(bands)}) -- skipped')
             continue
-        ref_filt = make_masks.pick_display_filt(list(bands), args.ref_band)
+        ref_filt = make_masks.pick_display_filt(list(bands), args.ref_band, lens=lens, sample=args.sample)
         if ref_filt is None:
             print(f'{lens}: --ref-band {args.ref_band} not among {list(bands)} -- skipped')
             continue

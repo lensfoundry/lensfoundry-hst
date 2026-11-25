@@ -1,0 +1,36 @@
+{
+    "lens": "J0820+4847",
+    "sample": "swells",
+    "primary_band": "f606W",
+    "primary_band_source": "arc_snr",
+    "reviewed": true,
+    "best_band_visual": null,
+    "best_band_arc_snr": "f606W",
+    "theta_e": 0.82,
+    "scores": {
+        "f450W": {
+            "arc_snr": 27.29,
+            "psf_fwhm_arcsec": 0.3359,
+            "resolution_factor": 0.488,
+            "score": 13.33,
+            "contaminant_mask": false
+        },
+        "f606W": {
+            "arc_snr": 67.34,
+            "psf_fwhm_arcsec": 0.2325,
+            "resolution_factor": 0.705,
+            "score": 47.49,
+            "contaminant_mask": false
+        },
+        "f814W": {
+            "arc_snr": 63.27,
+            "psf_fwhm_arcsec": 0.2333,
+            "resolution_factor": 0.703,
+            "score": 44.47,
+            "contaminant_mask": false
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye). reviewed: the arc_snr choice has been confirmed by eye (visual choices are reviewed by construction).",
+    "reviewed_date": "2026-11-14",
+    "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted)."
+}

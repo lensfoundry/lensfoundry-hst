@@ -1,0 +1,34 @@
+{
+    "lens": "J1016+3859",
+    "sample": "slacs",
+    "primary_band": "f606W",
+    "primary_band_source": "visual",
+    "reviewed": false,
+    "best_band_visual": "f606W",
+    "best_band_arc_snr": "f160W",
+    "theta_e": 1.0905,
+    "scores": {
+        "f160W": {
+            "arc_snr": 45.11,
+            "psf_fwhm_arcsec": 0.232,
+            "resolution_factor": 0.94,
+            "score": 42.42,
+            "contaminant_mask": true
+        },
+        "f606W": {
+            "arc_snr": 4.97,
+            "psf_fwhm_arcsec": 0.2171,
+            "resolution_factor": 1.0,
+            "score": 4.97,
+            "contaminant_mask": true
+        },
+        "f814W": {
+            "arc_snr": 6.88,
+            "psf_fwhm_arcsec": 0.1056,
+            "resolution_factor": 1.0,
+            "score": 6.88,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye). reviewed: the arc_snr choice has been confirmed by eye (visual choices are reviewed by construction)."
+}

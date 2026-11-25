@@ -1,0 +1,29 @@
+{
+    "lens": "J1134+6027",
+    "sample": "slacs",
+    "primary_band": "f160W",
+    "primary_band_source": "arc_snr",
+    "reviewed": true,
+    "best_band_visual": null,
+    "best_band_arc_snr": "f160W",
+    "theta_e": 1.1024,
+    "scores": {
+        "f160W": {
+            "arc_snr": 26.69,
+            "psf_fwhm_arcsec": 0.2314,
+            "resolution_factor": 0.953,
+            "score": 25.43,
+            "contaminant_mask": true
+        },
+        "f606W": {
+            "arc_snr": -16.18,
+            "psf_fwhm_arcsec": 0.218,
+            "resolution_factor": 1.0,
+            "score": -16.18,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye). reviewed: the arc_snr choice has been confirmed by eye (visual choices are reviewed by construction).",
+    "reviewed_date": "2026-11-12",
+    "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted)."
+}

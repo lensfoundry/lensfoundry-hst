@@ -1,0 +1,29 @@
+{
+    "lens": "J1406+5226",
+    "sample": "dinos",
+    "primary_band": "f475X",
+    "primary_band_source": "arc_snr",
+    "reviewed": true,
+    "best_band_visual": null,
+    "best_band_arc_snr": "f475X",
+    "theta_e": 1.029,
+    "scores": {
+        "f475X": {
+            "arc_snr": 46.52,
+            "psf_fwhm_arcsec": 0.085,
+            "resolution_factor": 1.0,
+            "score": 46.52,
+            "contaminant_mask": true
+        },
+        "f606W": {
+            "arc_snr": 20.29,
+            "psf_fwhm_arcsec": 0.2176,
+            "resolution_factor": 0.946,
+            "score": 19.19,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye). reviewed: the arc_snr choice has been confirmed by eye (visual choices are reviewed by construction).",
+    "reviewed_date": "2026-11-14",
+    "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted)."
+}

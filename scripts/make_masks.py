@@ -9,8 +9,9 @@ areas to REMOVE from the fit (painted = excluded, everything unpainted = kept; t
 opposite polarity to the autolens_workspace GUI, which scribbles the region to keep), then
 writes the result as stamp12_mask.fits alongside that stamp's sci/noise/psf products.
 
-ONE DRAW PER BAND. Each run draws on ONE band -- the highest-priority one available
-(f475X > f814W > f606W > f555W > f160W > ...; _BAND_PRIORITY) unless --filt forces it -- and writes the mask for THAT BAND
+ONE DRAW PER BAND. Each run draws on ONE band -- the lens's PRIMARY band (its
+`best_band_visual` / `best_band_arc_snr`, see choose_primary_band.py; the fixed order below is
+the fallback) unless --filt forces it -- and writes the mask for THAT BAND
 ONLY. Run again with --filt <band> to do the next band; the skip check is per-band, so a
 sample sweep resumes cleanly. Per-band drawing is the rule because what a mask should exclude
 is NOT in practice band-independent: a contaminant can be bright in one filter and absent in
@@ -292,9 +293,176 @@ def load_display_base(display_dir, prefix, display, pixel_scales):
     return al.Array2D.no_mask(values=snr, pixel_scales=pixel_scales).native, 'S/N'
 
 
-# Preference order for "best band to draw the mask on" when --filt is not given. Same list
-# used by make_positions.pick_display_filt (which imports this) so the two GUIs agree on
-# which band is primary. f814W is the highest-S/N SLACS band, the stamp --center-band and
+# ── Lupton RGB colour composite (positions/masks GUIs, 2026-11-17) ──────────────────
+# Colour is the discriminant between lensed images (blue) and the deflector/contaminants
+# (red), so both GUIs show a true-colour panel. The bands are resampled onto the finest
+# band's grid through their WCS (map_coordinates, bilinear), sky-neutralised per channel,
+# and combined with astropy's Lupton asinh. A 2-band lens uses G = sqrt(R*B) (Lupton's
+# own 2-band recipe); >3 bands average the middle ones into G. Display only, everywhere.
+
+def band_pivot_wavelength(filt):
+    """Pivot wavelength (nm) of a band key, split-visit suffixes stripped (f606W_visit2 ->
+    f606W). From psf_models._PIVOT (locally imported: make_masks must not grow a top-level
+    dependency cycle)."""
+    import re as _re
+    from psf_models import _PIVOT
+    return _PIVOT[_re.sub(r'_visit\d+$', '', filt).upper()]
+
+
+def lupton_rgb(bands, stretch_scale=0.15, Q=8.0, balance=False):
+    """(rgb float array (ny,nx,3), base_index) from a list of band dicts
+    {'filt', 'data', 'hdr', 'ps'} (2+ entries; returns (None, None) for fewer).
+
+    `bands` are resampled onto the finest pixel scale's grid through the WCS. `data` should
+    be FLUX (sci), or whatever per-band quantity the caller wants coloured (the positions
+    GUI colours both the raw sci and the isophote-subtracted panels). Per-channel the border
+    median is subtracted so the sky stays neutral; the asinh stretch is
+    `stretch_scale` x the 99.9th percentile of the red channel. NaNs (zero-coverage edges,
+    the odd NaN pixel in a stamp) are zeroed -- one NaN pixel otherwise blacks out the whole
+    Lupton image (found on J0841+3824 f160W, 2026-11-17). `balance=True` first divides each
+    channel by its own 99.9th percentile -- for the residual colour panel, where a band whose
+    isophote fit failed carries its full unsubtracted flux and would otherwise own the red
+    channel; for flux (the default) the true ratios are the point and are kept.
+    """
+    from astropy.visualization import make_lupton_rgb
+    from scipy.ndimage import map_coordinates
+
+    usable = [b for b in bands if b is not None]
+    if len(usable) < 2:
+        return None, None
+    order = sorted(range(len(usable)),
+                   key=lambda i: band_pivot_wavelength(usable[i]['filt']))
+    usable = [usable[i] for i in order]              # blue -> red
+    base = min(range(len(usable)), key=lambda i: usable[i]['ps'])   # finest grid
+    tgt = usable[base]
+    ny, nx = np.asarray(tgt['data']).shape
+    yy, xx = np.mgrid[:ny, :nx]
+    wcs_t = WCS(tgt['hdr'])
+    sky = wcs_t.pixel_to_world(xx, yy)
+
+    channels = []
+    for b in usable:
+        d = np.nan_to_num(np.asarray(b['data'], float))
+        if b is tgt:
+            channels.append(d)
+            continue
+        wcs_b = WCS(b['hdr'])
+        bx, by = wcs_b.world_to_pixel(sky)
+        channels.append(np.nan_to_num(map_coordinates(d, [by, bx], order=1, mode='constant',
+                                                      cval=0.0)))
+    # sky neutralisation: subtract each channel's border median
+    border = 10
+    for i, c in enumerate(channels):
+        rim = np.concatenate([c[:border].ravel(), c[-border:].ravel(),
+                              c[:, :border].ravel(), c[:, -border:].ravel()])
+        channels[i] = c - np.nanmedian(rim)
+    channels = [np.clip(c, 0.0, None) for c in channels]
+    if balance:
+        channels = [c / max(np.percentile(c, 99.9), 1e-30) for c in channels]
+
+    R = channels[-1]
+    B = channels[0]
+    if len(channels) == 2:
+        G = np.sqrt(R * B)
+    else:
+        G = np.mean(channels[1:-1], axis=0) if len(channels) > 3 else channels[1]
+    hi = np.percentile(R, 99.9)
+    rgb = make_lupton_rgb(R, G, B, stretch=max(stretch_scale * hi, 1e-30), Q=Q,
+                          minimum=0.0)
+    return rgb, base
+
+
+def colour_index_map(bands, deflector_radius=0.3, snr_floor=3.0, smooth_px=1.0):
+    """Log colour-ratio map of the BLUEST over the REDDEST band, relative to the deflector.
+
+    Returns (map, extent_base_band_dict): log10[(B/R) / (B/R)_deflector], so the deflector's
+    own colour reads 0 and a pixel reads blue (negative) / red (positive) against it -- the
+    "two images of one source share a colour" test made visual. (B/R)_deflector is the
+    median ratio within `deflector_radius` arcsec of the stamp centre. Pixels with red-band
+    S/N < `snr_floor` are NaN (a ratio of noise is meaningless).
+
+    PSF-MATCHED (2026-11-17, the detect_arcs.py rule): each band is convolved with the OTHER
+    band's kernel, so both carry PSF_B * PSF_R and the ratio is not a sharp-minus-blurry
+    artefact at every steep gradient (an un-matched f450W/f160W map prints a red ring around
+    the deflector core). The kernels are centred first (centre_kernel; an off-centre kernel
+    translates whatever it convolves) and resampled onto the finest grid when the pixel
+    scales differ. The map is lightly smoothed (1 px). Needs >=2 bands with 'psf' arrays
+    (returns (None, None) otherwise)."""
+    from scipy.ndimage import map_coordinates, gaussian_filter
+    from scipy.signal import fftconvolve
+    import detect_arcs
+
+    usable = [b for b in bands if b is not None and b.get('psf') is not None]
+    if len(usable) < 2:
+        return None, None
+    usable = sorted(usable, key=lambda b: band_pivot_wavelength(b['filt']))
+    blue, red = usable[0], usable[-1]
+    base = min(usable, key=lambda b: b['ps'])
+    ps_t = base['ps']
+    ny, nx = np.asarray(base['data']).shape
+    yy, xx = np.mgrid[:ny, :nx]
+    sky = WCS(base['hdr']).pixel_to_world(xx, yy)
+
+    def onto(band, key='data'):
+        d = np.nan_to_num(np.asarray(band[key], float))
+        if band is base:
+            return d
+        bx, by = WCS(band['hdr']).world_to_pixel(sky)
+        return np.nan_to_num(map_coordinates(d, [by, bx], order=1, mode='constant',
+                                             cval=0.0))
+
+    def kernel_onto(band):
+        k = np.nan_to_num(np.asarray(band['psf'], float))
+        zoom = band['ps'] / ps_t            # kernel px per target px
+        if abs(zoom - 1.0) > 1e-3:
+            h = np.array(k.shape)
+            c = (h - 1) / 2.0
+            n_new = (np.maximum(h / zoom, 5) // 2 * 2 + 1).astype(int)
+            c_new = (n_new - 1) / 2.0
+            ky, kx = np.mgrid[:n_new[0], :n_new[1]]
+            k = map_coordinates(k, [c[0] + (ky - c_new[0]) * zoom,
+                                    c[1] + (kx - c_new[1]) * zoom],
+                                order=3, mode='constant', cval=0.0)
+        k = detect_arcs.centre_kernel(k)
+        return k / k.sum()
+
+    kb, kr = kernel_onto(blue), kernel_onto(red)
+    B = fftconvolve(onto(blue), kr, mode='same')          # blue carries PSF_R * PSF_B
+    R = fftconvolve(onto(red), kb, mode='same')           # red carries PSF_B * PSF_R
+    N_R = onto(red, 'noise') if red.get('noise') is not None else None
+    if N_R is not None:
+        good = (N_R > 0) & np.isfinite(N_R)
+        # Fill invalid pixels with the median valid sigma^2 and mask afterwards by the
+        # convolved invalid weight: a huge fill value would ring through the FFT and
+        # destroy the whole frame (the 1e8-sentinel trap; measured 2026-11-17 on J0008:
+        # 1e30 fill gave var_R = -1e11 at the CENTRE).
+        fill = np.median(N_R[good] ** 2) if good.any() else 1.0
+        var_R = fftconvolve(np.where(good, N_R ** 2, fill), kb ** 2, mode='same')
+        bad_w = fftconvolve((~good).astype(float), kb ** 2, mode='same')
+        var_R = np.where(bad_w > 0.5, np.nan, var_R)
+        N_R = np.where(np.isfinite(var_R) & (var_R > 0), var_R ** 0.5, np.inf)
+    with np.errstate(divide='ignore', invalid='ignore'):
+        ratio = B / np.where(R > 0, R, np.nan)
+        snr_R = R / N_R if N_R is not None else np.full_like(R, np.inf)
+    cy, cx = (ny - 1) / 2.0, (nx - 1) / 2.0
+    rr = np.hypot(yy - cy, xx - cx) * ps_t        # arcsec
+    centre_ok = (rr < deflector_radius) & np.isfinite(ratio) & (snr_R > 2)
+    ref = np.nanmedian(ratio[centre_ok])
+    if not np.isfinite(ref) or ref <= 0:
+        return None, None
+    m = np.log10(ratio / ref)
+    m = np.where((snr_R >= snr_floor) & np.isfinite(m), m, np.nan)
+    # smooth on the finite values only (masked pixels must not bleed in)
+    filled = np.where(np.isfinite(m), m, 0.0)
+    w = np.isfinite(m).astype(float)
+    sm = gaussian_filter(filled, smooth_px) / np.clip(gaussian_filter(w, smooth_px), 1e-9, None)
+    sm[w < 0.5] = np.nan
+    return sm, base
+
+
+# FALLBACK order for "best band to draw the mask on" when --filt is not given, used when the
+# lens has no primary band set (mast_target_names.primary_band: no best_band_visual and no
+# measured best_band_arc_snr). f814W is the highest-S/N SLACS band, the stamp --center-band and
 # BELLS's only band; f606W is the gallery primary; the rest follow by typical arc S/N. f475X
 # leads (2026-10-05): only SL2S has it, and there it is the deep GO-17130 band (2366 s, UVIS
 # sampling, bright blue arcs), so every Dinos lens -- including J0959+0206, which also has
@@ -311,13 +479,20 @@ def _band_rank(filt):
         return len(_BAND_PRIORITY)
 
 
-def pick_display_filt(filts, requested):
+def pick_display_filt(filts, requested, lens=None, sample=None):
     """Choose which band to draw on. `requested` (--filt) wins if present among `filts`;
-    else the highest-priority available band. Returns None if the requested band is absent.
-    Shared with make_positions so both tools pick the same primary band per lens.
+    else the lens's PRIMARY band (mast_target_names.primary_band: the by-eye
+    `best_band_visual`, else choose_primary_band.py's measured `best_band_arc_snr`) when it is
+    among `filts`; else the highest-priority available band (_BAND_PRIORITY). Returns None if
+    the requested band is absent. Shared with make_positions and make_arc_masks so all three
+    GUIs pick the same primary band per lens.
     """
     if requested is not None:
         return requested if requested in filts else None
+    if lens is not None:
+        band, _source = mast_target_names.primary_band(lens, sample)
+        if band in filts:
+            return band
     return sorted(filts, key=lambda f: (_band_rank(f), f))[0]
 
 
@@ -360,7 +535,11 @@ def find_proposal_mask(filt_dirs, display_filt, display_hdr, drizzle_pass, propo
     process_lens_mask). Source preference, `propose_from='auto'`:
       1. the draw band's OWN existing mask, when there is one -- i.e. a `--force` redraw
          starts from the mask being replaced, so refining it does not mean redrawing it;
-      2. otherwise the highest-priority OTHER band of this lens that has a mask
+      2. for a split-visit band (`f450W_visit2`), the PRIMARY visit's mask in the SAME
+         filter (`f450W`): same field, same PSF, same depth -- only the grid moved, and the
+         WCS reprojection below lands it exactly. Beats the cross-filter primary band
+         (Sam, 2026-11-25);
+      3. otherwise the highest-priority OTHER band of this lens that has a mask
          (`_BAND_PRIORITY`, so f814W's mask is what usually seeds f555W/f160W).
     An explicit `propose_from='<band>'` restricts the search to that band; 'none' is handled
     by the caller (no search at all).
@@ -373,6 +552,10 @@ def find_proposal_mask(filt_dirs, display_filt, display_hdr, drizzle_pass, propo
     if propose_from == 'auto':
         others = sorted((f for f in filt_dirs if f != display_filt),
                         key=lambda f: (_band_rank(f), f))
+        base_filt = display_filt.split('_visit')[0]
+        if base_filt != display_filt and base_filt in others:
+            others.remove(base_filt)
+            others.insert(0, base_filt)
         candidates = ([display_filt] if force else []) + others
     else:
         candidates = [propose_from]
@@ -427,10 +610,35 @@ def confirm_proposal(lens, filt, source_filt, n_prop, n_add, n_erase, n_final, n
     return 'skip'
 
 
+def load_colour_bands(filt_dirs, drizzle_pass='auto'):
+    """Band dicts ({filt, data, hdr, ps, noise, psf}, raw sci flux) for lupton_rgb /
+    colour_index_map, for every band of a lens with a stamp for the pass. Shared by
+    make_masks.py / make_arc_masks.py (the Scribbler's colour panel) and make_positions.py
+    (the colour column). psf/noise are loaded when present (colour_index_map needs them for
+    the PSF-matching and the S/N floor; lupton_rgb ignores them)."""
+    bands = []
+    for filt in sorted(filt_dirs):
+        prefix = find_prefix(filt_dirs[filt], drizzle_pass)
+        if prefix is None:
+            continue
+        sci_path = stamp_paths.find_stamp(filt_dirs[filt], prefix, 'sci')
+        hdr = fits.getheader(sci_path)
+        noise_path = stamp_paths.find_stamp(filt_dirs[filt], prefix, 'noise')
+        psf_path = os.path.join(filt_dirs[filt], 'psf.fits')
+        bands.append({'filt': filt, 'data': fits.getdata(sci_path), 'hdr': hdr,
+                      'ps': pixel_scale_from_header(hdr),
+                      'noise': (np.asarray(fits.getdata(noise_path), float)
+                                if noise_path else None),
+                      'psf': (np.nan_to_num(np.asarray(fits.getdata(psf_path), float))
+                              if os.path.exists(psf_path) else None)})
+    return bands
+
+
 def draw_mask_gui(display_dir, display_prefix, lens, filt, brush_radius, brush_width,
                   display, subtract_radial=False, side_by_side=True, prompt=None,
                   proposal=None, proposal_label='proposed mask', positions=None,
-                  position_marker_size=None, mask_overlay=None, title=None):
+                  position_marker_size=None, mask_overlay=None, title=None,
+                  colour_bands=None):
     """Run the Scribbler GUI once on the chosen band, blocking until it is closed. Returns
     (scribbler, pixel_scales, sci_header, brush_width, start_radius, source_label); read the
     closed `scribbler` back with `get_scribble_masks()` (each brush on this band's grid) and
@@ -528,13 +736,49 @@ def draw_mask_gui(display_dir, display_prefix, lens, filt, brush_radius, brush_w
         if proposal is not None:
             title += f"  --  reviewing the {proposal_label}"
 
-    # Blocks here until Esc / q closes the window.
+    # Colour panel (2026-11-17, --colour default on; 2026-11-25 the COLOUR-INDEX map, not the
+    # raw-flux RGB): log10(bluest/reddest vs the deflector's own ratio, PSF-matched), on RdBu
+    # -- blue = bluer than the deflector, red = redder, deflector white. The raw Lupton RGB
+    # was uninformative on a disk-dominated lens (the red deflector owns every pixel: J0841,
+    # J0822) and, being RGB, can take no colourbar; the index map is scalar, so it has one.
+    # No ticks or axis labels on the panel (Sam, 2026-11-25).
+    # Shown IN the Scribbler's window as a left-hand panel -- one window total (Sam's call
+    # 2026-11-24; the separate companion window was refused). The Scribbler only paints on
+    # self.ax (its mouse callbacks guard on event.inaxes), so the added axes is display-only
+    # and safe. Its own rgb_image= hook is NOT usable: it draws the RGB on subplot(121) and
+    # the image on subplot(111) OVER it, hiding the colour panel entirely (verified
+    # 2026-11-24). So: build with block=False, shrink self.ax to the right, add the colour
+    # axes on the left, then start().
+    cmap_data = None
+    if colour_bands:
+        cmap_data, cbase = colour_index_map(colour_bands)
+
+    # Blocks at start() until Esc / q closes the window.
     scribbler = al.Scribbler(
         image=base, brush_width=brush_width, proposal=proposal,
         subtract_radial=subtract_radial, side_by_side=side_by_side,
         positions=positions or None, position_marker_size=position_marker_size,
-        mask_overlay=mask_overlay, title=title,
+        mask_overlay=mask_overlay, title=title, block=False,
+        figsize=((20, 10) if cmap_data is not None else (15, 15)),
         cmap='inferno')   # the dataset QC subplots' colour map (2026-11-02); the Scribbler's own arcsinh stretch
+    if cmap_data is not None:
+        names = sorted((b['filt'] for b in colour_bands), key=band_pivot_wavelength)
+        n_y, n_x = cmap_data.shape
+        hw = int(n_x / 2) * cbase['ps']
+        scribbler.ax.set_position([0.335, 0.03, 0.65, 0.90])
+        axc = scribbler.figure.add_axes([0.03, 0.10, 0.27, 0.72])
+        imc = axc.imshow(cmap_data, extent=[-hw, hw, -hw, hw], cmap='RdBu',
+                         vmin=-0.3, vmax=0.3)
+        axc.set_xticks([])
+        axc.set_yticks([])
+        axc.set_title(f'colour index ({names[0]}/{names[-1]})\nblue = bluer than the '
+                      f'deflector', fontsize=10)
+        cb = scribbler.figure.colorbar(imc, ax=axc, fraction=0.046)
+        cb.ax.tick_params(labelsize=8)
+        cb.set_label(f'log10({names[0]}/{names[-1]} vs deflector)', fontsize=8)
+        print(f"  colour index is the LEFT panel of the mask window ({names[0]}/{names[-1]} "
+              f"vs the deflector; blue = bluer) -- reference only, paint on the data panels")
+    scribbler.start()
     _drain_tk()
     return scribbler, pixel_scales, sci_hdr, brush_width, start_radius, source_label
 
@@ -618,7 +862,7 @@ def process_lens_mask(lens, filt_dirs, sample, requested_filt, drizzle_pass, for
                       broadcast=False, brush_radius=6, brush_width=None, display='snr',
                       subtract_radial=None, side_by_side=True,
                       size=None, dataset_subplot=True,
-                      propose_from='auto'):
+                      propose_from='auto', colour=True):
     """Draw a mask once for one lens, on its best/forced band. By default the mask is written
     for THAT BAND ONLY; `broadcast=True` also writes it to the lens's other bands by WCS
     reprojection. `filt_dirs` maps filt -> stamp_dir from discover_targets; the mask FITS
@@ -633,7 +877,7 @@ def process_lens_mask(lens, filt_dirs, sample, requested_filt, drizzle_pass, for
     practice, so the transfer is worth looking at in the band it is landing on.
     """
     filts = sorted(filt_dirs)
-    display_filt = pick_display_filt(filts, requested_filt)
+    display_filt = pick_display_filt(filts, requested_filt, lens=lens, sample=sample)
     if display_filt is None:
         print(f"{lens}: requested --filt {requested_filt} not present "
               f"(have {', '.join(filts)}), skipping")
@@ -667,7 +911,9 @@ def process_lens_mask(lens, filt_dirs, sample, requested_filt, drizzle_pass, for
      source_label) = draw_mask_gui(
         display_dir, display_prefix, lens, display_filt, brush_radius, brush_width, display,
         subtract_radial=subtract_radial, side_by_side=side_by_side,
-        proposal=proposal, proposal_label=f'{proposal_from} mask' if proposal_from else None)
+        proposal=proposal, proposal_label=f'{proposal_from} mask' if proposal_from else None,
+        colour_bands=(load_colour_bands(filt_dirs, drizzle_pass)
+                      if colour and len(filt_dirs) > 1 else None))
 
     painted, erased, drawn_only, reviewed = scribbles_from(scribbler)
     n_add, n_erase = int(painted.sum()), int(erased.sum())
@@ -751,11 +997,13 @@ def process_lens_mask(lens, filt_dirs, sample, requested_filt, drizzle_pass, for
 def main():
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument('--sample', default=mast_target_names.DEFAULT_SAMPLE,
-                   help=f'sample subdirectory of data/stamps/ (default '
-                        f'{mast_target_names.DEFAULT_SAMPLE})')
+    p.add_argument('--sample', default=None,
+                   help='sample subdirectory of data/stamps/. Default: with --lens, the '
+                        'lens\'s own sample (each lens is in exactly one); without --lens, '
+                        f'{mast_target_names.DEFAULT_SAMPLE}')
     p.add_argument('--lens', default=None,
-                   help='restrict to one lens; default every lens with stamps in --sample')
+                   help='restrict to one lens (no --sample needed -- it is resolved from '
+                        'the roster); default every lens with stamps in --sample')
     p.add_argument('--filt', default=None,
                    help='force which band you DRAW on (e.g. f606W); default the best available '
                         'band per lens (f475X>f814W>f606W>f555W>f160W>...). Only that band gets a '
@@ -776,6 +1024,13 @@ def main():
                         'every panel, and you add (white brush, key 1) / erase (black brush, '
                         'key 2) parts of it before choosing to apply, reject, or skip -- the '
                         'reviewed alternative to --broadcast')
+    p.add_argument('--colour', action=argparse.BooleanOptionalAction, default=True,
+                   help='open a non-interactive Lupton RGB colour companion window beside the '
+                        'Scribbler, built from every band the lens has (default on, '
+                        '2026-11-17; inactive for single-band lenses). Colour is the '
+                        'discriminant between blue lensed images and red contaminants. '
+                        'Reference only -- paint in the Scribbler; the window closes with it. '
+                        '--no-colour disables')
     p.add_argument('--pass', dest='drizzle_pass', choices=['auto', 'cr', 'nocrrej'],
                    default='auto',
                    help="which stamp pass to mask, matching make_stamps.py's --pass: "
@@ -829,6 +1084,7 @@ def main():
                         'work written there is non-regenerable and invisible to every clone. '
                         'Use only to work on a diagnostic deliberately.')
     a = p.parse_args()
+    sample = mast_target_names.resolve_sample(a.sample, a.lens)
 
     # --broadcast writes one draw to every band unseen; --propose-from reviews another band's
     # mask in the band it is landing on. They are two answers to the same question, and
@@ -845,24 +1101,24 @@ def main():
     # discover_targets yields per (lens, filt); regroup to filt -> stamp_dir per lens so we
     # know every band of a lens (filt=None: consider all bands; pick_display_filt picks one).
     lens_filts = {}
-    for lens, filt, stamp_dir in discover_targets(root, a.sample, a.lens, None,
+    for lens, filt, stamp_dir in discover_targets(root, sample, a.lens, None,
                                                    include_ignored=a.include_ignored):
         lens_filts.setdefault(lens, {})[filt] = stamp_dir
 
     if not lens_filts:
-        raise SystemExit(f"no stamps found under {root} for sample {a.sample} matching "
+        raise SystemExit(f"no stamps found under {root} for sample {sample} matching "
                          f"lens={a.lens!r}")
 
     print(f"{len(lens_filts)} lens(es) to process")
     made = skipped = 0
     for lens in sorted(lens_filts):
-        if process_lens_mask(lens, lens_filts[lens], a.sample, a.filt, a.drizzle_pass,
+        if process_lens_mask(lens, lens_filts[lens], sample, a.filt, a.drizzle_pass,
                              a.force, a.broadcast, brush_radius=a.brush_radius,
                              brush_width=a.brush_width, display=a.display,
                              subtract_radial=a.subtract_radial,
                              side_by_side=a.side_by_side, size=a.size,
                              dataset_subplot=a.dataset_subplot,
-                             propose_from=a.propose_from):
+                             propose_from=a.propose_from, colour=a.colour):
             made += 1
         else:
             skipped += 1

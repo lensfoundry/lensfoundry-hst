@@ -34,7 +34,8 @@ INFO_LAYOUT = {
     'provenance': ('lens_products.json', 'lens_instrument.json', 'lens_exptime.json',
                    'lens_stamp_qc.json', 'lens_masks.json', 'lens_arc_masks.json',
                    'lens_positions.json', 'lens_psf.json', 'lens_psf_injected.json',
-                   'lens_field_ties.json', 'lens_dataset_subplots.json'),
+                   'lens_field_ties.json', 'lens_dataset_subplots.json',
+                   'lens_primary_band.json'),
 }
 _SUBFOLDER = {name: sub for sub, names in INFO_LAYOUT.items() for name in names}
 
@@ -67,6 +68,26 @@ def update(path, sample, lens, key, value):
     data[sample] = dict(sorted(sample_data.items()))
     with open(path, 'w') as f:
         json.dump(dict(sorted(data.items())), f, indent=4)
+
+
+def prune_lens_keys(path, sample, lens, keep):
+    """Drop every key of {sample: {lens: ...}} except `keep`, rewriting the file.
+
+    For records of which there is exactly ONE per lens -- e.g. lens_positions.json, where
+    the key is the MARKED band: a re-mark on a different band (the 2026-11 GUI marks on the
+    primary band, not necessarily the band the old record was keyed under) would otherwise
+    leave the old record in place, describing a product the broadcast just overwrote.
+    Returns the list of dropped keys."""
+    data = load(path)
+    lens_entry = data.get(sample, {}).get(lens, {})
+    dropped = [k for k in lens_entry if k != keep]
+    if not dropped:
+        return []
+    for k in dropped:
+        del lens_entry[k]
+    with open(path, 'w') as f:
+        json.dump(data, f, indent=4)
+    return dropped
 
 
 def band_owner_conflict(path, sample, lens, key, instrument_prefix):

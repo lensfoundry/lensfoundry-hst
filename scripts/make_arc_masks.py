@@ -314,7 +314,8 @@ def process_lens_arc_mask(lens, filt_dirs, sample, requested_filt, drizzle_pass,
                           broadcast, brush_radius, brush_width, display, stretch,
                           vmin_percent, vmax_percent, asinh_a, subtract_radial,
                           side_by_side, show_positions, cross_size_px,
-                          propose_from='auto', detect_kw=None, show_contaminants=True):
+                          propose_from='auto', detect_kw=None, show_contaminants=True,
+                          colour=True):
     """Draw the arc mask once for one lens, on its best/forced band only unless
     `broadcast` is set (then also WCS-reprojected to the lens's other bands). Mirrors
     make_masks.process_lens_mask; differs only in polarity, product name, and the arc-specific
@@ -330,7 +331,7 @@ def process_lens_arc_mask(lens, filt_dirs, sample, requested_filt, drizzle_pass,
     (save_arc_qc_png); the GUI uses al.Scribbler's own arcsinh stretch.
     """
     filts = sorted(filt_dirs)
-    display_filt = make_masks.pick_display_filt(filts, requested_filt)
+    display_filt = make_masks.pick_display_filt(filts, requested_filt, lens=lens, sample=sample)
     if display_filt is None:
         print(f"{lens}: requested --filt {requested_filt} not present "
               f"(have {', '.join(filts)}), skipping")
@@ -411,7 +412,9 @@ def process_lens_arc_mask(lens, filt_dirs, sample, requested_filt, drizzle_pass,
         prompt=prompt, proposal=proposal,
         proposal_label=(f'{proposal_from} arc region' if proposal_from else None),
         positions=positions, position_marker_size=cross_size_px, mask_overlay=mask_overlay,
-        title=title)
+        title=title,
+        colour_bands=(make_masks.load_colour_bands(filt_dirs, drizzle_pass)
+                      if colour and len(filt_dirs) > 1 else None))
 
     # painted = the arcs to KEEP; the black brush trims an over-painted stroke back off it.
     # reviewed = scribbler.mask_from() = (proposal | painted) & ~erased
@@ -494,11 +497,13 @@ def process_lens_arc_mask(lens, filt_dirs, sample, requested_filt, drizzle_pass,
 def main():
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument('--sample', default=mast_target_names.DEFAULT_SAMPLE,
-                   help=f'sample subdirectory of data/stamps/ (default '
-                        f'{mast_target_names.DEFAULT_SAMPLE})')
+    p.add_argument('--sample', default=None,
+                   help='sample subdirectory of data/stamps/. Default: with --lens, the '
+                        'lens\'s own sample (each lens is in exactly one); without --lens, '
+                        f'{mast_target_names.DEFAULT_SAMPLE}')
     p.add_argument('--lens', default=None,
-                   help='restrict to one lens; default every lens with stamps in --sample')
+                   help='restrict to one lens (no --sample needed -- it is resolved from '
+                        'the roster); default every lens with stamps in --sample')
     p.add_argument('--filt', default=None,
                    help='force which band you DRAW on (e.g. f606W); default the best available '
                         'band per lens (f475X>f814W>f606W>f555W>f160W>...). Only that band gets an '
@@ -551,6 +556,12 @@ def main():
                         'The subtracted panel is where the arcs are visible; the as-observed '
                         'one is where their real extent against the galaxy envelope is '
                         '(default on)')
+    p.add_argument('--colour', action=argparse.BooleanOptionalAction, default=True,
+                   help='open a non-interactive Lupton RGB colour companion window beside the '
+                        'Scribbler, built from every band the lens has (default on, '
+                        '2026-11-17; inactive for single-band lenses). Reference only -- '
+                        'paint in the Scribbler; the window closes with it. --no-colour '
+                        'disables')
     p.add_argument('--show-positions', action=argparse.BooleanOptionalAction, default=True,
                    help="mark the images already marked by make_positions.py with a '+' "
                         "cross in the display (al.Scribbler's positions=), as a guide for "
@@ -586,6 +597,7 @@ def main():
                         'work written there is non-regenerable and invisible to every clone. '
                         'Use only to work on a diagnostic deliberately.')
     a = p.parse_args()
+    sample = mast_target_names.resolve_sample(a.sample, a.lens)
 
     # Same rule as make_masks.py: --broadcast writes one draw to every band unseen, which is
     # the opposite of reviewing a proposal per band. Combining them would push a region
@@ -600,23 +612,23 @@ def main():
 
     lens_filts = {}
     for lens, filt, stamp_dir in make_masks.discover_targets(
-            root, a.sample, a.lens, None, include_ignored=a.include_ignored):
+            root, sample, a.lens, None, include_ignored=a.include_ignored):
         lens_filts.setdefault(lens, {})[filt] = stamp_dir
 
     if not lens_filts:
-        raise SystemExit(f"no stamps found under {root} for sample {a.sample} matching "
+        raise SystemExit(f"no stamps found under {root} for sample {sample} matching "
                          f"lens={a.lens!r}")
 
     print(f"{len(lens_filts)} lens(es) to process")
     made = skipped = 0
     for lens in sorted(lens_filts):
-        if process_lens_arc_mask(lens, lens_filts[lens], a.sample, a.filt, a.drizzle_pass,
+        if process_lens_arc_mask(lens, lens_filts[lens], sample, a.filt, a.drizzle_pass,
                                  a.force, a.broadcast, a.brush_radius, a.brush_width,
                                  a.display, a.stretch, a.vmin_percent, a.vmax_percent,
                                  a.asinh_a, a.subtract_radial, a.side_by_side,
                                  a.show_positions, a.cross_size,
                                  propose_from=a.propose_from, detect_kw=detect_kw,
-                                 show_contaminants=a.show_contaminants):
+                                 show_contaminants=a.show_contaminants, colour=a.colour):
             made += 1
         else:
             skipped += 1

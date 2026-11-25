@@ -15,11 +15,16 @@ _SLACS_GROUPS = {
     'f160W':       ['f160W'],
     'f450W':       ['f450W'],     # WFPC2, swells J1103+5322 only
 }
+# swells adds the 2026-11-09 SWELLS-only lenses: GO-11978 WFPC2 F450W (J1203+2535's split
+# visit included) and GO-12292 ACS F435W.
+_SWELLS_GROUPS = dict(_SLACS_GROUPS)
+_SWELLS_GROUPS['f450W'] = ['f450W', 'f450W_visit2']
+_SWELLS_GROUPS['f435W'] = ['f435W']
 _GALLERY_FILTERS = ['f438W', 'f606W', 'f814W']   # F225W/F275W products deleted 2026-09-29
 
 SAMPLE_GROUPS = {
     'slacs':       _SLACS_GROUPS,
-    'swells':      _SLACS_GROUPS,
+    'swells':      _SWELLS_GROUPS,
     'gallery':     {f: [f] for f in _GALLERY_FILTERS},
     'bells':       {'f814W': ['f814W']},
 }

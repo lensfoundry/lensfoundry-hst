@@ -1,0 +1,27 @@
+{
+    "lens": "J2300+0022",
+    "sample": "slacs",
+    "primary_band": "f814W",
+    "primary_band_source": "visual",
+    "reviewed": false,
+    "best_band_visual": "f814W",
+    "best_band_arc_snr": null,
+    "theta_e": 1.2356,
+    "scores": {
+        "f555W": {
+            "arc_snr": 11.65,
+            "psf_fwhm_arcsec": 0.1094,
+            "resolution_factor": 1.0,
+            "score": 11.65,
+            "contaminant_mask": true
+        },
+        "f814W": {
+            "arc_snr": 1.5,
+            "psf_fwhm_arcsec": 0.1079,
+            "resolution_factor": 1.0,
+            "score": 1.5,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye). reviewed: the arc_snr choice has been confirmed by eye (visual choices are reviewed by construction)."
+}

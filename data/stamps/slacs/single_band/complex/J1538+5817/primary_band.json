@@ -1,0 +1,20 @@
+{
+    "lens": "J1538+5817",
+    "sample": "slacs",
+    "primary_band": "f606W",
+    "primary_band_source": "arc_snr",
+    "best_band_visual": null,
+    "best_band_arc_snr": "f606W",
+    "theta_e": 0.9952,
+    "scores": {
+        "f606W": {
+            "arc_snr": 77.31,
+            "psf_fwhm_arcsec": 0.2156,
+            "resolution_factor": 0.923,
+            "score": 71.37,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye)",
+    "reviewed": false
+}

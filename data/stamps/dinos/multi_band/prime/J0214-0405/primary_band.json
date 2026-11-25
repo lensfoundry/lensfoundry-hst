@@ -1,0 +1,27 @@
+{
+    "lens": "J0214-0405",
+    "sample": "dinos",
+    "primary_band": null,
+    "primary_band_source": null,
+    "best_band_visual": null,
+    "best_band_arc_snr": null,
+    "theta_e": 1.34,
+    "scores": {
+        "f475X": {
+            "arc_snr": 0.64,
+            "psf_fwhm_arcsec": 0.0876,
+            "resolution_factor": 1.0,
+            "score": 0.64,
+            "contaminant_mask": true
+        },
+        "f814W": {
+            "arc_snr": -1.98,
+            "psf_fwhm_arcsec": 0.1099,
+            "resolution_factor": 1.0,
+            "score": -1.98,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye)",
+    "reviewed": false
+}

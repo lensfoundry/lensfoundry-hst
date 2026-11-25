@@ -1,0 +1,20 @@
+{
+    "lens": "J1159-0007",
+    "sample": "bells",
+    "primary_band": "f814W",
+    "primary_band_source": "arc_snr",
+    "best_band_visual": null,
+    "best_band_arc_snr": "f814W",
+    "theta_e": 0.683,
+    "scores": {
+        "f814W": {
+            "arc_snr": 53.97,
+            "psf_fwhm_arcsec": 0.1111,
+            "resolution_factor": 1.0,
+            "score": 53.97,
+            "contaminant_mask": true
+        }
+    },
+    "how": "best_band_arc_snr: choose_primary_band.py (measured); best_band_visual: choose_best_band.py (by eye)",
+    "reviewed": false
+}

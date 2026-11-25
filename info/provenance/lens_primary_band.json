@@ -1,0 +1,4116 @@
+{
+    "bells": {
+        "J0151+0049": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 28.48,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1126,
+                    "resolution_factor": 1.0,
+                    "score": 28.48
+                }
+            },
+            "theta_e": 0.676
+        },
+        "J0747+4448": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 11.78,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1119,
+                    "resolution_factor": 1.0,
+                    "score": 11.78
+                }
+            },
+            "theta_e": 0.61
+        },
+        "J0747+5055": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 16.01,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1113,
+                    "resolution_factor": 1.0,
+                    "score": 16.01
+                }
+            },
+            "theta_e": 0.754
+        },
+        "J0801+4727": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": -10.64,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1115,
+                    "resolution_factor": 0.881,
+                    "score": -9.37
+                }
+            },
+            "theta_e": 0.491
+        },
+        "J0830+5116": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 54.57,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1054,
+                    "resolution_factor": 1.0,
+                    "score": 54.57
+                }
+            },
+            "theta_e": 1.142
+        },
+        "J0944-0147": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 10.37,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1118,
+                    "resolution_factor": 1.0,
+                    "score": 10.37
+                }
+            },
+            "theta_e": 0.725
+        },
+        "J1159-0007": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 53.97,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1111,
+                    "resolution_factor": 1.0,
+                    "score": 53.97
+                }
+            },
+            "theta_e": 0.683
+        },
+        "J1215+0047": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": -0.99,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.112,
+                    "resolution_factor": 1.0,
+                    "score": -0.99
+                }
+            },
+            "theta_e": 1.368
+        },
+        "J1221+3806": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 23.51,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1063,
+                    "resolution_factor": 1.0,
+                    "score": 23.51
+                }
+            },
+            "theta_e": 0.699
+        },
+        "J1234-0241": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 5.63,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1127,
+                    "resolution_factor": 0.946,
+                    "score": 5.33
+                }
+            },
+            "theta_e": 0.533
+        },
+        "J1318-0104": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 6.44,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1132,
+                    "resolution_factor": 1.0,
+                    "score": 6.44
+                }
+            },
+            "theta_e": 0.679
+        },
+        "J1352+3216": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 20.8,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.113,
+                    "resolution_factor": 1.0,
+                    "score": 20.8
+                }
+            },
+            "theta_e": 1.823
+        },
+        "J1541+1812": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 0.96,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1114,
+                    "resolution_factor": 1.0,
+                    "score": 0.96
+                }
+            },
+            "theta_e": 0.64
+        },
+        "J1545+2748": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 18.48,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1105,
+                    "resolution_factor": 1.0,
+                    "score": 18.48
+                }
+            },
+            "theta_e": 1.21
+        },
+        "J1601+2138": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": -1.46,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1122,
+                    "resolution_factor": 1.0,
+                    "score": -1.46
+                }
+            },
+            "theta_e": 0.858
+        },
+        "J1611+1705": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 8.5,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1133,
+                    "resolution_factor": 1.0,
+                    "score": 8.5
+                }
+            },
+            "theta_e": 0.58
+        },
+        "J1631+1854": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 216.68,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1109,
+                    "resolution_factor": 1.0,
+                    "score": 216.68
+                }
+            },
+            "theta_e": 1.634
+        },
+        "J1637+1439": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": -5.66,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1109,
+                    "resolution_factor": 1.0,
+                    "score": -5.66
+                }
+            },
+            "theta_e": 0.65
+        },
+        "J2122+0409": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": -0.6,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1106,
+                    "resolution_factor": 1.0,
+                    "score": -0.6
+                }
+            },
+            "theta_e": 1.58
+        },
+        "J2125+0411": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 12.97,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1113,
+                    "resolution_factor": 1.0,
+                    "score": 12.97
+                }
+            },
+            "theta_e": 1.204
+        },
+        "J2303+0037": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f814W": {
+                    "arc_snr": 29.1,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1105,
+                    "resolution_factor": 1.0,
+                    "score": 29.1
+                }
+            },
+            "theta_e": 1.016
+        }
+    },
+    "dinos": {
+        "J0205-0930": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 6.24,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0837,
+                    "resolution_factor": 1.0,
+                    "score": 6.24
+                }
+            },
+            "theta_e": 1.246
+        },
+        "J0212-0555": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 51.78,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0863,
+                    "resolution_factor": 1.0,
+                    "score": 51.78
+                }
+            },
+            "theta_e": 1.238
+        },
+        "J0214-0405": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 0.64,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0876,
+                    "resolution_factor": 1.0,
+                    "score": 0.64
+                },
+                "f814W": {
+                    "arc_snr": -1.98,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1099,
+                    "resolution_factor": 1.0,
+                    "score": -1.98
+                }
+            },
+            "theta_e": 1.34
+        },
+        "J0217-0513": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 196.7,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.231,
+                    "resolution_factor": 1.0,
+                    "score": 196.7
+                },
+                "f475X": {
+                    "arc_snr": 69.83,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0911,
+                    "resolution_factor": 1.0,
+                    "score": 69.83
+                },
+                "f606W": {
+                    "arc_snr": 102.5,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1215,
+                    "resolution_factor": 1.0,
+                    "score": 102.5
+                },
+                "f814W": {
+                    "arc_snr": 116.83,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2047,
+                    "resolution_factor": 1.0,
+                    "score": 116.83
+                }
+            },
+            "theta_e": 1.272
+        },
+        "J0218-0802": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 92.06,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0865,
+                    "resolution_factor": 1.0,
+                    "score": 92.06
+                }
+            },
+            "theta_e": 0.85
+        },
+        "J0219-0829": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f475X": {
+                    "arc_snr": 22.95,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0925,
+                    "resolution_factor": 1.0,
+                    "score": 22.95
+                },
+                "f600LP": {
+                    "arc_snr": 14.48,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0693,
+                    "resolution_factor": 1.0,
+                    "score": 14.48
+                }
+            },
+            "theta_e": 1.296
+        },
+        "J0220-0949": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -3.29,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0845,
+                    "resolution_factor": 1.0,
+                    "score": -3.29
+                }
+            },
+            "theta_e": 0.914
+        },
+        "J0226-0420": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -2.84,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0856,
+                    "resolution_factor": 1.0,
+                    "score": -2.84
+                },
+                "f606W": {
+                    "arc_snr": -4.72,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.218,
+                    "resolution_factor": 1.0,
+                    "score": -4.72
+                }
+            },
+            "theta_e": 1.152
+        },
+        "J0232-0408": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f475X": {
+                    "arc_snr": 25.86,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0709,
+                    "resolution_factor": 1.0,
+                    "score": 25.86
+                },
+                "f606W": {
+                    "arc_snr": 10.81,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2178,
+                    "resolution_factor": 0.936,
+                    "score": 10.11
+                }
+            },
+            "theta_e": 1.019
+        },
+        "J0849-0412": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -7.29,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0828,
+                    "resolution_factor": 1.0,
+                    "score": -7.29
+                },
+                "f600LP": {
+                    "arc_snr": 1.84,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0799,
+                    "resolution_factor": 1.0,
+                    "score": 1.84
+                }
+            },
+            "theta_e": 1.134
+        },
+        "J0855-0147": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 46.92,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0855,
+                    "resolution_factor": 1.0,
+                    "score": 46.92
+                }
+            },
+            "theta_e": 0.956
+        },
+        "J0904-0059": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f475X": {
+                    "arc_snr": 23.28,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.091,
+                    "resolution_factor": 1.0,
+                    "score": 23.28
+                },
+                "f606W": {
+                    "arc_snr": 8.75,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2177,
+                    "resolution_factor": 1.0,
+                    "score": 8.75
+                }
+            },
+            "theta_e": 1.411
+        },
+        "J0959+0206": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f475X",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 27.98,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.086,
+                    "resolution_factor": 1.0,
+                    "score": 27.98
+                },
+                "f606W": {
+                    "arc_snr": 11.64,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2177,
+                    "resolution_factor": 0.653,
+                    "score": 7.6
+                },
+                "f814W": {
+                    "arc_snr": 46.94,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1157,
+                    "resolution_factor": 1.0,
+                    "score": 46.94
+                }
+            },
+            "theta_e": 0.711
+        },
+        "J1359+5535": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f475X": {
+                    "arc_snr": 29.23,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0947,
+                    "resolution_factor": 1.0,
+                    "score": 29.23
+                },
+                "f606W": {
+                    "arc_snr": 15.73,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2164,
+                    "resolution_factor": 1.0,
+                    "score": 15.73
+                }
+            },
+            "theta_e": 1.092
+        },
+        "J1404+5200": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 27.5,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0691,
+                    "resolution_factor": 1.0,
+                    "score": 27.5
+                }
+            },
+            "theta_e": 2.394
+        },
+        "J1405+5243": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 12.05,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0845,
+                    "resolution_factor": 1.0,
+                    "score": 12.05
+                },
+                "f600LP": {
+                    "arc_snr": 10.06,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0767,
+                    "resolution_factor": 1.0,
+                    "score": 10.06
+                },
+                "f606W": {
+                    "arc_snr": 7.13,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2164,
+                    "resolution_factor": 1.0,
+                    "score": 7.13
+                }
+            },
+            "theta_e": 1.457
+        },
+        "J1406+5226": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f475X": {
+                    "arc_snr": 46.52,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.085,
+                    "resolution_factor": 1.0,
+                    "score": 46.52
+                },
+                "f606W": {
+                    "arc_snr": 20.29,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2176,
+                    "resolution_factor": 0.946,
+                    "score": 19.19
+                }
+            },
+            "theta_e": 1.029
+        },
+        "J2203+0205": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -7.67,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.087,
+                    "resolution_factor": 1.0,
+                    "score": -7.67
+                },
+                "f600LP": {
+                    "arc_snr": 4.8,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0806,
+                    "resolution_factor": 1.0,
+                    "score": 4.8
+                }
+            },
+            "theta_e": 1.677
+        },
+        "J2205+0147": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -5.19,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0875,
+                    "resolution_factor": 1.0,
+                    "score": -5.19
+                }
+            },
+            "theta_e": 1.814
+        },
+        "J2221+0115": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 11.75,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0897,
+                    "resolution_factor": 1.0,
+                    "score": 11.75
+                }
+            },
+            "theta_e": 1.274
+        }
+    },
+    "gallery": {
+        "J0029+2544": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f606W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f438W": {
+                    "arc_snr": 0.03,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0904,
+                    "resolution_factor": 1.0,
+                    "score": 0.03
+                },
+                "f606W": {
+                    "arc_snr": 77.66,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0994,
+                    "resolution_factor": 1.0,
+                    "score": 77.66
+                },
+                "f814W": {
+                    "arc_snr": 23.66,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0945,
+                    "resolution_factor": 1.0,
+                    "score": 23.66
+                }
+            },
+            "theta_e": 1.34
+        },
+        "J0201+3228": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f606W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 191.56,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0993,
+                    "resolution_factor": 1.0,
+                    "score": 191.56
+                }
+            },
+            "theta_e": 1.7
+        },
+        "J0237-0641": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 15.02,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0992,
+                    "resolution_factor": 1.0,
+                    "score": 15.02
+                }
+            },
+            "theta_e": 0.65
+        },
+        "J0742+3341": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f606W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f438W": {
+                    "arc_snr": 1.36,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0892,
+                    "resolution_factor": 1.0,
+                    "score": 1.36
+                },
+                "f606W": {
+                    "arc_snr": 69.3,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0997,
+                    "resolution_factor": 1.0,
+                    "score": 69.3
+                },
+                "f814W": {
+                    "arc_snr": 16.75,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0945,
+                    "resolution_factor": 1.0,
+                    "score": 16.75
+                }
+            },
+            "theta_e": 1.22
+        },
+        "J0755+3445": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f606W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f438W": {
+                    "arc_snr": null,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0903,
+                    "resolution_factor": 1.0,
+                    "score": null
+                },
+                "f606W": {
+                    "arc_snr": 84.92,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0991,
+                    "resolution_factor": 1.0,
+                    "score": 84.92
+                },
+                "f814W": {
+                    "arc_snr": 29.41,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0946,
+                    "resolution_factor": 1.0,
+                    "score": 29.41
+                }
+            },
+            "theta_e": 2.05
+        },
+        "J0856+2010": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 4.28,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0995,
+                    "resolution_factor": 1.0,
+                    "score": 4.28
+                }
+            },
+            "theta_e": 0.98
+        },
+        "J0918+5104": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f606W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f438W": {
+                    "arc_snr": 2.85,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0898,
+                    "resolution_factor": 1.0,
+                    "score": 2.85
+                },
+                "f606W": {
+                    "arc_snr": 97.97,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0994,
+                    "resolution_factor": 1.0,
+                    "score": 97.97
+                },
+                "f814W": {
+                    "arc_snr": 26.76,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0945,
+                    "resolution_factor": 1.0,
+                    "score": 26.76
+                }
+            },
+            "theta_e": 1.6
+        },
+        "J1110+2808": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f606W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f438W": {
+                    "arc_snr": -11.52,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0905,
+                    "resolution_factor": 1.0,
+                    "score": -11.52
+                },
+                "f606W": {
+                    "arc_snr": 7.58,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0993,
+                    "resolution_factor": 1.0,
+                    "score": 7.58
+                },
+                "f814W": {
+                    "arc_snr": 4.42,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0962,
+                    "resolution_factor": 1.0,
+                    "score": 4.42
+                }
+            },
+            "theta_e": 0.98
+        },
+        "J1110+3649": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 176.35,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.098,
+                    "resolution_factor": 1.0,
+                    "score": 176.35
+                }
+            },
+            "theta_e": 1.16
+        },
+        "J1116+0915": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -7.67,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0996,
+                    "resolution_factor": 1.0,
+                    "score": -7.67
+                }
+            },
+            "theta_e": 1.03
+        },
+        "J1141+2216": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 25.23,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0993,
+                    "resolution_factor": 1.0,
+                    "score": 25.23
+                }
+            },
+            "theta_e": 1.27
+        },
+        "J1201+4743": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 205.06,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0979,
+                    "resolution_factor": 1.0,
+                    "score": 205.06
+                }
+            },
+            "theta_e": 1.18
+        },
+        "J1226+5457": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 36.38,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0996,
+                    "resolution_factor": 1.0,
+                    "score": 36.38
+                }
+            },
+            "theta_e": 1.37
+        },
+        "J2228+1205": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 10.18,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1003,
+                    "resolution_factor": 1.0,
+                    "score": 10.18
+                }
+            },
+            "theta_e": 1.28
+        },
+        "J2342-0120": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f606W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f438W": {
+                    "arc_snr": 1.32,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0901,
+                    "resolution_factor": 1.0,
+                    "score": 1.32
+                },
+                "f606W": {
+                    "arc_snr": 40.79,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0993,
+                    "resolution_factor": 1.0,
+                    "score": 40.79
+                },
+                "f814W": {
+                    "arc_snr": 8.88,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0948,
+                    "resolution_factor": 1.0,
+                    "score": 8.88
+                }
+            },
+            "theta_e": 1.11
+        }
+    },
+    "sl2s": {
+        "J0223-0651": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -0.27,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0909,
+                    "resolution_factor": 1.0,
+                    "score": -0.27
+                },
+                "f600LP": {
+                    "arc_snr": -2.59,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0788,
+                    "resolution_factor": 1.0,
+                    "score": -2.59
+                }
+            },
+            "theta_e": 1.36
+        },
+        "J0225-0454": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -15.33,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2048,
+                    "resolution_factor": 1.0,
+                    "score": -15.33
+                }
+            },
+            "theta_e": 1.76
+        },
+        "J0226-0406": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -0.54,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2192,
+                    "resolution_factor": 1.0,
+                    "score": -0.54
+                }
+            },
+            "theta_e": 1.29
+        },
+        "J0849-0251": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 4.32,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2169,
+                    "resolution_factor": 1.0,
+                    "score": 4.32
+                }
+            },
+            "theta_e": 1.16
+        },
+        "J0858-0143": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 2.84,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2157,
+                    "resolution_factor": 0.834,
+                    "score": 2.37
+                }
+            },
+            "theta_e": 0.9
+        },
+        "J0901-0259": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 4.99,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2163,
+                    "resolution_factor": 0.953,
+                    "score": 4.76
+                }
+            },
+            "theta_e": 1.03
+        },
+        "J1358+5459": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -0.73,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0764,
+                    "resolution_factor": 1.0,
+                    "score": -0.73
+                },
+                "f600LP": {
+                    "arc_snr": 0.5,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0772,
+                    "resolution_factor": 1.0,
+                    "score": 0.5
+                },
+                "f606W": {
+                    "arc_snr": -1.14,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2163,
+                    "resolution_factor": 1.0,
+                    "score": -1.14
+                }
+            },
+            "theta_e": 1.21
+        },
+        "J1401+5544": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -2.09,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0869,
+                    "resolution_factor": 1.0,
+                    "score": -2.09
+                },
+                "f600LP": {
+                    "arc_snr": -8.56,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.073,
+                    "resolution_factor": 1.0,
+                    "score": -8.56
+                }
+            },
+            "theta_e": 2.03
+        },
+        "J1401+5557": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 4.96,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2167,
+                    "resolution_factor": 1.0,
+                    "score": 4.96
+                }
+            },
+            "theta_e": 1.74
+        },
+        "J1402+5505": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": 0.17,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0739,
+                    "resolution_factor": 1.0,
+                    "score": 0.17
+                },
+                "f600LP": {
+                    "arc_snr": 0.3,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0797,
+                    "resolution_factor": 1.0,
+                    "score": 0.3
+                }
+            },
+            "theta_e": 1.23
+        },
+        "J1411+5651": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f475X": {
+                    "arc_snr": 76.32,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.086,
+                    "resolution_factor": 1.0,
+                    "score": 76.32
+                },
+                "f600LP": {
+                    "arc_snr": 56.29,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0763,
+                    "resolution_factor": 1.0,
+                    "score": 56.29
+                }
+            },
+            "theta_e": 0.93
+        },
+        "J1419+5117": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f475X",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f475X": {
+                    "arc_snr": -15.81,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.074,
+                    "resolution_factor": 1.0,
+                    "score": -15.81
+                },
+                "f600LP": {
+                    "arc_snr": 1.93,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0822,
+                    "resolution_factor": 1.0,
+                    "score": 1.93
+                },
+                "f606W": {
+                    "arc_snr": -4.58,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2172,
+                    "resolution_factor": 1.0,
+                    "score": -4.58
+                }
+            },
+            "theta_e": 3.11
+        },
+        "J1420+5630": {
+            "best_band_arc_snr": "f475X",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f475X",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f475X": {
+                    "arc_snr": 24.3,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0855,
+                    "resolution_factor": 1.0,
+                    "score": 24.3
+                },
+                "f600LP": {
+                    "arc_snr": 21.61,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0847,
+                    "resolution_factor": 1.0,
+                    "score": 21.61
+                }
+            },
+            "theta_e": 1.4
+        },
+        "J1427+5516": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 13.95,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2179,
+                    "resolution_factor": 0.743,
+                    "score": 10.37
+                }
+            },
+            "theta_e": 0.81
+        },
+        "J2213-0009": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 5.89,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2184,
+                    "resolution_factor": 0.98,
+                    "score": 5.77
+                }
+            },
+            "theta_e": 1.07
+        }
+    },
+    "slacs": {
+        "J0008-0004": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 4.04,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2163,
+                    "resolution_factor": 1.0,
+                    "score": 4.04
+                },
+                "f814W": {
+                    "arc_snr": 9.61,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1085,
+                    "resolution_factor": 1.0,
+                    "score": 9.61
+                }
+            },
+            "theta_e": 1.1591
+        },
+        "J0029-0055": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f160W": {
+                    "arc_snr": 26.49,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2321,
+                    "resolution_factor": 0.824,
+                    "score": 21.83
+                },
+                "f606W": {
+                    "arc_snr": 62.38,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2121,
+                    "resolution_factor": 0.902,
+                    "score": 56.27
+                },
+                "f814W": {
+                    "arc_snr": 86.15,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1095,
+                    "resolution_factor": 1.0,
+                    "score": 86.15
+                }
+            },
+            "theta_e": 0.9566
+        },
+        "J0037-0942": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 15.31,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2207,
+                    "resolution_factor": 1.0,
+                    "score": 15.31
+                }
+            },
+            "theta_e": 1.5303
+        },
+        "J0044+0113": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 27.31,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2174,
+                    "resolution_factor": 0.731,
+                    "score": 19.97
+                }
+            },
+            "theta_e": 0.7951
+        },
+        "J0157-0056": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -0.17,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2258,
+                    "resolution_factor": 0.7,
+                    "score": -0.12
+                },
+                "f814W": {
+                    "arc_snr": -7.06,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1091,
+                    "resolution_factor": 1.0,
+                    "score": -7.06
+                }
+            },
+            "theta_e": 0.7903
+        },
+        "J0216-0813": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f555W": {
+                    "arc_snr": -0.17,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1093,
+                    "resolution_factor": 1.0,
+                    "score": -0.17
+                },
+                "f814W": {
+                    "arc_snr": -4.06,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1087,
+                    "resolution_factor": 1.0,
+                    "score": -4.06
+                }
+            },
+            "theta_e": 1.159
+        },
+        "J0252+0039": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 174.69,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2313,
+                    "resolution_factor": 0.896,
+                    "score": 156.58
+                },
+                "f606W": {
+                    "arc_snr": 82.32,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2387,
+                    "resolution_factor": 0.869,
+                    "score": 71.51
+                },
+                "f814W": {
+                    "arc_snr": 134.58,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.109,
+                    "resolution_factor": 1.0,
+                    "score": 134.58
+                }
+            },
+            "theta_e": 1.0367
+        },
+        "J0330-0020": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -3.35,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2167,
+                    "resolution_factor": 1.0,
+                    "score": -3.35
+                },
+                "f814W": {
+                    "arc_snr": -8.76,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1083,
+                    "resolution_factor": 1.0,
+                    "score": -8.76
+                }
+            },
+            "theta_e": 1.1012
+        },
+        "J0728+3835": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 98.95,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2332,
+                    "resolution_factor": 1.0,
+                    "score": 98.95
+                },
+                "f606W": {
+                    "arc_snr": 30.56,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2174,
+                    "resolution_factor": 1.0,
+                    "score": 30.56
+                },
+                "f814W": {
+                    "arc_snr": 53.16,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1074,
+                    "resolution_factor": 1.0,
+                    "score": 53.16
+                }
+            },
+            "theta_e": 1.2468
+        },
+        "J0737+3216": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 42.93,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1074,
+                    "resolution_factor": 1.0,
+                    "score": 42.93
+                },
+                "f814W": {
+                    "arc_snr": 116.66,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1084,
+                    "resolution_factor": 1.0,
+                    "score": 116.66
+                }
+            },
+            "theta_e": 0.9968
+        },
+        "J0819+4534": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f160W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f160W": {
+                    "arc_snr": 26.24,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2317,
+                    "resolution_factor": 0.732,
+                    "score": 19.2
+                },
+                "f606W": {
+                    "arc_snr": 5.35,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0302,
+                    "resolution_factor": 1.0,
+                    "score": 5.35
+                }
+            },
+            "theta_e": 0.8474
+        },
+        "J0822+2652": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 55.1,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2337,
+                    "resolution_factor": 1.0,
+                    "score": 55.1
+                },
+                "f606W": {
+                    "arc_snr": 34.94,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2169,
+                    "resolution_factor": 1.0,
+                    "score": 34.94
+                },
+                "f606W_visit2": {
+                    "arc_snr": 24.69,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2151,
+                    "resolution_factor": 1.0,
+                    "score": 24.69
+                },
+                "f814W": {
+                    "arc_snr": 37.98,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1086,
+                    "resolution_factor": 1.0,
+                    "score": 37.98
+                }
+            },
+            "theta_e": 1.1694
+        },
+        "J0903+4116": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 77.03,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2323,
+                    "resolution_factor": 1.0,
+                    "score": 77.03
+                },
+                "f606W": {
+                    "arc_snr": 27.84,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2157,
+                    "resolution_factor": 1.0,
+                    "score": 27.84
+                },
+                "f814W": {
+                    "arc_snr": 53.51,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1079,
+                    "resolution_factor": 1.0,
+                    "score": 53.51
+                }
+            },
+            "theta_e": 1.2887
+        },
+        "J0912+0029": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 42.17,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1137,
+                    "resolution_factor": 1.0,
+                    "score": 42.17
+                },
+                "f814W": {
+                    "arc_snr": 118.38,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1116,
+                    "resolution_factor": 1.0,
+                    "score": 118.38
+                }
+            },
+            "theta_e": 1.6274
+        },
+        "J0935-0003": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 2.29,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2204,
+                    "resolution_factor": 0.787,
+                    "score": 1.8
+                }
+            },
+            "theta_e": 0.8672
+        },
+        "J0936+0913": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f160W": {
+                    "arc_snr": 29.79,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2305,
+                    "resolution_factor": 0.945,
+                    "score": 28.14
+                },
+                "f606W": {
+                    "arc_snr": 27.27,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2177,
+                    "resolution_factor": 1.0,
+                    "score": 27.26
+                },
+                "f814W": {
+                    "arc_snr": 30.73,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1106,
+                    "resolution_factor": 1.0,
+                    "score": 30.73
+                }
+            },
+            "theta_e": 1.0887
+        },
+        "J0946+1006": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 290.49,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.232,
+                    "resolution_factor": 1.0,
+                    "score": 290.49
+                },
+                "f606W": {
+                    "arc_snr": 173.48,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2166,
+                    "resolution_factor": 1.0,
+                    "score": 173.48
+                },
+                "f814W": {
+                    "arc_snr": 215.17,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1079,
+                    "resolution_factor": 1.0,
+                    "score": 215.17
+                }
+            },
+            "theta_e": 1.3839
+        },
+        "J0956+5100": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 94.05,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.108,
+                    "resolution_factor": 1.0,
+                    "score": 94.05
+                },
+                "f814W": {
+                    "arc_snr": 190.34,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1086,
+                    "resolution_factor": 1.0,
+                    "score": 190.34
+                }
+            },
+            "theta_e": 1.3271
+        },
+        "J0959+0410": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f555W": {
+                    "arc_snr": 1.44,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1087,
+                    "resolution_factor": 1.0,
+                    "score": 1.44
+                },
+                "f814W": {
+                    "arc_snr": -9.83,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1084,
+                    "resolution_factor": 1.0,
+                    "score": -9.83
+                }
+            },
+            "theta_e": 0.9929
+        },
+        "J0959+4416": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f606W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": -36.34,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2317,
+                    "resolution_factor": 0.829,
+                    "score": -30.13
+                },
+                "f606W": {
+                    "arc_snr": 3.35,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2279,
+                    "resolution_factor": 0.843,
+                    "score": 2.82
+                },
+                "f814W": {
+                    "arc_snr": 7.36,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1091,
+                    "resolution_factor": 1.0,
+                    "score": 7.36
+                }
+            },
+            "theta_e": 0.9606
+        },
+        "J1016+3859": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f606W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 45.11,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.232,
+                    "resolution_factor": 0.94,
+                    "score": 42.42
+                },
+                "f606W": {
+                    "arc_snr": 4.97,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2171,
+                    "resolution_factor": 1.0,
+                    "score": 4.97
+                },
+                "f814W": {
+                    "arc_snr": 6.88,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1056,
+                    "resolution_factor": 1.0,
+                    "score": 6.88
+                }
+            },
+            "theta_e": 1.0905
+        },
+        "J1020+1122": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 35.51,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2318,
+                    "resolution_factor": 1.0,
+                    "score": 35.51
+                },
+                "f606W": {
+                    "arc_snr": 3.18,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2184,
+                    "resolution_factor": 1.0,
+                    "score": 3.18
+                },
+                "f814W": {
+                    "arc_snr": 14.41,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1098,
+                    "resolution_factor": 1.0,
+                    "score": 14.41
+                }
+            },
+            "theta_e": 1.2003
+        },
+        "J1023+4230": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f160W": {
+                    "arc_snr": 18.33,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2314,
+                    "resolution_factor": 1.0,
+                    "score": 18.33
+                },
+                "f606W": {
+                    "arc_snr": 23.31,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2167,
+                    "resolution_factor": 1.0,
+                    "score": 23.31
+                },
+                "f814W": {
+                    "arc_snr": 48.55,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1097,
+                    "resolution_factor": 1.0,
+                    "score": 48.55
+                }
+            },
+            "theta_e": 1.4142
+        },
+        "J1100+5329": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 68.14,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2145,
+                    "resolution_factor": 1.0,
+                    "score": 68.14
+                }
+            },
+            "theta_e": 1.5176
+        },
+        "J1106+5228": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 182.09,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2166,
+                    "resolution_factor": 1.0,
+                    "score": 182.09
+                }
+            },
+            "theta_e": 1.2314
+        },
+        "J1112+0826": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 4.78,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2164,
+                    "resolution_factor": 1.0,
+                    "score": 4.78
+                }
+            },
+            "theta_e": 1.4851
+        },
+        "J1134+6027": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f160W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f160W": {
+                    "arc_snr": 26.69,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2314,
+                    "resolution_factor": 0.953,
+                    "score": 25.43
+                },
+                "f606W": {
+                    "arc_snr": -16.18,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.218,
+                    "resolution_factor": 1.0,
+                    "score": -16.18
+                }
+            },
+            "theta_e": 1.1024
+        },
+        "J1142+1001": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f606W": {
+                    "arc_snr": 6.67,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2188,
+                    "resolution_factor": 0.899,
+                    "score": 6.0
+                },
+                "f606W_visit2": {
+                    "arc_snr": 7.36,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.217,
+                    "resolution_factor": 0.907,
+                    "score": 6.67
+                },
+                "f814W": {
+                    "arc_snr": 20.05,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1084,
+                    "resolution_factor": 1.0,
+                    "score": 20.05
+                }
+            },
+            "theta_e": 0.9841
+        },
+        "J1143-0144": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f555W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f555W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f555W": {
+                    "arc_snr": 27.65,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1085,
+                    "resolution_factor": 1.0,
+                    "score": 27.65
+                },
+                "f814W": {
+                    "arc_snr": 67.68,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1094,
+                    "resolution_factor": 1.0,
+                    "score": 67.68
+                }
+            },
+            "theta_e": 1.6842
+        },
+        "J1153+4612": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f160W": {
+                    "arc_snr": 15.18,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2324,
+                    "resolution_factor": 0.902,
+                    "score": 13.69
+                },
+                "f606W": {
+                    "arc_snr": 9.85,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2251,
+                    "resolution_factor": 0.931,
+                    "score": 9.16
+                },
+                "f814W": {
+                    "arc_snr": 16.4,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.108,
+                    "resolution_factor": 1.0,
+                    "score": 16.4
+                }
+            },
+            "theta_e": 1.0478
+        },
+        "J1204+0358": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 41.18,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2192,
+                    "resolution_factor": 1.0,
+                    "score": 41.18
+                }
+            },
+            "theta_e": 1.3076
+        },
+        "J1205+4910": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 25.8,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1086,
+                    "resolution_factor": 1.0,
+                    "score": 25.8
+                },
+                "f814W": {
+                    "arc_snr": 70.24,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.108,
+                    "resolution_factor": 1.0,
+                    "score": 70.24
+                }
+            },
+            "theta_e": 1.2234
+        },
+        "J1213+6708": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 7.2,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2171,
+                    "resolution_factor": 1.0,
+                    "score": 7.2
+                },
+                "f814W": {
+                    "arc_snr": 14.72,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.0906,
+                    "resolution_factor": 1.0,
+                    "score": 14.72
+                }
+            },
+            "theta_e": 1.4164
+        },
+        "J1218+0830": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 20.4,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2203,
+                    "resolution_factor": 1.0,
+                    "score": 20.4
+                },
+                "f814W": {
+                    "arc_snr": 15.44,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1085,
+                    "resolution_factor": 1.0,
+                    "score": 15.44
+                }
+            },
+            "theta_e": 1.4502
+        },
+        "J1250+0523": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f555W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f555W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f555W": {
+                    "arc_snr": 36.32,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1086,
+                    "resolution_factor": 1.0,
+                    "score": 36.32
+                },
+                "f814W": {
+                    "arc_snr": 55.28,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1086,
+                    "resolution_factor": 1.0,
+                    "score": 55.28
+                }
+            },
+            "theta_e": 1.1302
+        },
+        "J1306+0600": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 4.42,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2139,
+                    "resolution_factor": 1.0,
+                    "score": 4.42
+                },
+                "f606W_visit2": {
+                    "arc_snr": 5.9,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2181,
+                    "resolution_factor": 1.0,
+                    "score": 5.9
+                },
+                "f814W": {
+                    "arc_snr": 3.15,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2375,
+                    "resolution_factor": 1.0,
+                    "score": 3.15
+                }
+            },
+            "theta_e": 1.3165
+        },
+        "J1313+4615": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -4.72,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.218,
+                    "resolution_factor": 1.0,
+                    "score": -4.72
+                },
+                "f606W_visit2": {
+                    "arc_snr": -8.74,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2181,
+                    "resolution_factor": 1.0,
+                    "score": -8.74
+                },
+                "f814W": {
+                    "arc_snr": -8.82,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2352,
+                    "resolution_factor": 1.0,
+                    "score": -8.82
+                }
+            },
+            "theta_e": 1.3699
+        },
+        "J1318-0313": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f606W": {
+                    "arc_snr": 22.05,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2171,
+                    "resolution_factor": 1.0,
+                    "score": 22.05
+                },
+                "f606W_visit2": {
+                    "arc_snr": 21.48,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2172,
+                    "resolution_factor": 1.0,
+                    "score": 21.48
+                },
+                "f814W": {
+                    "arc_snr": 10.19,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.234,
+                    "resolution_factor": 1.0,
+                    "score": 10.19
+                }
+            },
+            "theta_e": 1.5843
+        },
+        "J1330-0148": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 101.19,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2151,
+                    "resolution_factor": 0.804,
+                    "score": 81.31
+                }
+            },
+            "theta_e": 0.8644
+        },
+        "J1402+6321": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 31.19,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1085,
+                    "resolution_factor": 1.0,
+                    "score": 31.19
+                },
+                "f814W": {
+                    "arc_snr": 59.73,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1049,
+                    "resolution_factor": 1.0,
+                    "score": 59.73
+                }
+            },
+            "theta_e": 1.3466
+        },
+        "J1403+0006": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 34.88,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.216,
+                    "resolution_factor": 0.769,
+                    "score": 26.81
+                }
+            },
+            "theta_e": 0.8303
+        },
+        "J1416+5136": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -21.49,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2163,
+                    "resolution_factor": 1.0,
+                    "score": -21.49
+                },
+                "f814W": {
+                    "arc_snr": -48.28,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1104,
+                    "resolution_factor": 1.0,
+                    "score": -48.28
+                }
+            },
+            "theta_e": 1.3681
+        },
+        "J1420+6019": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 243.98,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1088,
+                    "resolution_factor": 1.0,
+                    "score": 243.98
+                },
+                "f814W": {
+                    "arc_snr": 493.5,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1081,
+                    "resolution_factor": 1.0,
+                    "score": 493.5
+                }
+            },
+            "theta_e": 1.0388
+        },
+        "J1430+4105": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 128.69,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2323,
+                    "resolution_factor": 1.0,
+                    "score": 128.69
+                },
+                "f606W": {
+                    "arc_snr": 26.43,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2185,
+                    "resolution_factor": 1.0,
+                    "score": 26.43
+                },
+                "f814W": {
+                    "arc_snr": 107.6,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1085,
+                    "resolution_factor": 1.0,
+                    "score": 107.6
+                }
+            },
+            "theta_e": 1.5195
+        },
+        "J1432+6317": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -6.66,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2174,
+                    "resolution_factor": 1.0,
+                    "score": -6.66
+                },
+                "f814W": {
+                    "arc_snr": 5.03,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.11,
+                    "resolution_factor": 1.0,
+                    "score": 5.03
+                }
+            },
+            "theta_e": 1.258
+        },
+        "J1436-0000": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 22.73,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2111,
+                    "resolution_factor": 1.0,
+                    "score": 22.73
+                }
+            },
+            "theta_e": 1.1169
+        },
+        "J1443+0304": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 61.12,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2174,
+                    "resolution_factor": 0.747,
+                    "score": 45.65
+                }
+            },
+            "theta_e": 0.8117
+        },
+        "J1451-0239": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f555W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f555W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f555W": {
+                    "arc_snr": 16.13,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1084,
+                    "resolution_factor": 1.0,
+                    "score": 16.13
+                },
+                "f814W": {
+                    "arc_snr": 32.5,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1099,
+                    "resolution_factor": 1.0,
+                    "score": 32.5
+                }
+            },
+            "theta_e": 1.0399
+        },
+        "J1525+3327": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -2.28,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2485,
+                    "resolution_factor": 1.0,
+                    "score": -2.28
+                },
+                "f814W": {
+                    "arc_snr": -5.5,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1087,
+                    "resolution_factor": 1.0,
+                    "score": -5.5
+                }
+            },
+            "theta_e": 1.3068
+        },
+        "J1531-0105": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 50.61,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2143,
+                    "resolution_factor": 1.0,
+                    "score": 50.61
+                }
+            },
+            "theta_e": 1.7078
+        },
+        "J1538+5817": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 77.31,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2156,
+                    "resolution_factor": 0.923,
+                    "score": 71.37
+                }
+            },
+            "theta_e": 0.9952
+        },
+        "J1614+4522": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f160W": {
+                    "arc_snr": -11.05,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2309,
+                    "resolution_factor": 0.731,
+                    "score": -8.08
+                },
+                "f606W": {
+                    "arc_snr": 16.52,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2173,
+                    "resolution_factor": 0.777,
+                    "score": 12.84
+                }
+            },
+            "theta_e": 0.8444
+        },
+        "J1621+3931": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 29.32,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2179,
+                    "resolution_factor": 1.0,
+                    "score": 29.32
+                }
+            },
+            "theta_e": 1.2902
+        },
+        "J1627-0053": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 70.49,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1085,
+                    "resolution_factor": 1.0,
+                    "score": 70.49
+                },
+                "f814W": {
+                    "arc_snr": 161.85,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1085,
+                    "resolution_factor": 1.0,
+                    "score": 161.85
+                }
+            },
+            "theta_e": 1.2286
+        },
+        "J1630+4520": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 27.62,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1088,
+                    "resolution_factor": 1.0,
+                    "score": 27.62
+                },
+                "f814W": {
+                    "arc_snr": 44.37,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1084,
+                    "resolution_factor": 1.0,
+                    "score": 44.37
+                }
+            },
+            "theta_e": 1.7777
+        },
+        "J1636+4707": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f160W": {
+                    "arc_snr": 4.03,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2366,
+                    "resolution_factor": 0.917,
+                    "score": 3.7
+                },
+                "f606W": {
+                    "arc_snr": 29.53,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2176,
+                    "resolution_factor": 0.997,
+                    "score": 29.45
+                }
+            },
+            "theta_e": 1.0849
+        },
+        "J1644+2625": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 6.1,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2163,
+                    "resolution_factor": 1.0,
+                    "score": 6.1
+                },
+                "f606W_visit2": {
+                    "arc_snr": -5.03,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2179,
+                    "resolution_factor": 1.0,
+                    "score": -5.03
+                },
+                "f814W": {
+                    "arc_snr": 2.54,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2366,
+                    "resolution_factor": 1.0,
+                    "score": 2.54
+                }
+            },
+            "theta_e": 1.2671
+        },
+        "J1709+2324": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -5.94,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2171,
+                    "resolution_factor": 0.926,
+                    "score": -5.5
+                }
+            },
+            "theta_e": 1.0057
+        },
+        "J1719+2939": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f606W": {
+                    "arc_snr": 57.78,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2165,
+                    "resolution_factor": 1.0,
+                    "score": 57.78
+                },
+                "f814W": {
+                    "arc_snr": 43.56,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2353,
+                    "resolution_factor": 1.0,
+                    "score": 43.56
+                }
+            },
+            "theta_e": 1.276
+        },
+        "J2238-0754": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 48.34,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1044,
+                    "resolution_factor": 1.0,
+                    "score": 48.34
+                },
+                "f814W": {
+                    "arc_snr": 76.86,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1089,
+                    "resolution_factor": 1.0,
+                    "score": 76.86
+                }
+            },
+            "theta_e": 1.2713
+        },
+        "J2300+0022": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f555W": {
+                    "arc_snr": 11.65,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1094,
+                    "resolution_factor": 1.0,
+                    "score": 11.65
+                },
+                "f814W": {
+                    "arc_snr": 1.5,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1079,
+                    "resolution_factor": 1.0,
+                    "score": 1.5
+                }
+            },
+            "theta_e": 1.2356
+        },
+        "J2303+1422": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f555W": {
+                    "arc_snr": 3.04,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1112,
+                    "resolution_factor": 1.0,
+                    "score": 3.04
+                },
+                "f814W": {
+                    "arc_snr": 35.24,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.1094,
+                    "resolution_factor": 1.0,
+                    "score": 35.24
+                }
+            },
+            "theta_e": 1.6192
+        },
+        "J2321-0939": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 92.87,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2121,
+                    "resolution_factor": 1.0,
+                    "score": 92.87
+                }
+            },
+            "theta_e": 1.5997
+        },
+        "J2341+0000": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-12",
+            "scores": {
+                "f606W": {
+                    "arc_snr": 115.01,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2186,
+                    "resolution_factor": 1.0,
+                    "score": 115.01
+                },
+                "f814W": {
+                    "arc_snr": 145.57,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.109,
+                    "resolution_factor": 1.0,
+                    "score": 145.57
+                }
+            },
+            "theta_e": 1.4443
+        },
+        "J2343-0030": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 275.01,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2171,
+                    "resolution_factor": 1.0,
+                    "score": 275.01
+                }
+            },
+            "theta_e": 1.5155
+        },
+        "J2347-0005": {
+            "best_band_arc_snr": null,
+            "best_band_visual": null,
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": null,
+            "primary_band_source": null,
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": -2.42,
+                    "contaminant_mask": true,
+                    "psf_fwhm_arcsec": 0.2229,
+                    "resolution_factor": 0.993,
+                    "score": -2.41
+                }
+            },
+            "theta_e": 1.1072
+        }
+    },
+    "swells": {
+        "J0820+4847": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f450W": {
+                    "arc_snr": 27.29,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.3359,
+                    "resolution_factor": 0.488,
+                    "score": 13.33
+                },
+                "f606W": {
+                    "arc_snr": 67.34,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2325,
+                    "resolution_factor": 0.705,
+                    "score": 47.49
+                },
+                "f814W": {
+                    "arc_snr": 63.27,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2333,
+                    "resolution_factor": 0.703,
+                    "score": 44.47
+                }
+            },
+            "theta_e": 0.82
+        },
+        "J0822+1828": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f435W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f435W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f435W": {
+                    "arc_snr": 26.6,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.1103,
+                    "resolution_factor": 1.0,
+                    "score": 26.6
+                },
+                "f814W": {
+                    "arc_snr": 69.46,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.1105,
+                    "resolution_factor": 1.0,
+                    "score": 69.46
+                }
+            },
+            "theta_e": 0.83
+        },
+        "J0841+3824": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f450W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f450W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 123.9,
+                    "psf_fwhm_arcsec": 0.2312,
+                    "resolution_factor": 1.0,
+                    "score": 123.9,
+                    "contaminant_mask": false
+                },
+                "f450W": {
+                    "arc_snr": 15.93,
+                    "psf_fwhm_arcsec": 0.3476,
+                    "resolution_factor": 0.811,
+                    "score": 12.91,
+                    "contaminant_mask": true
+                },
+                "f606W": {
+                    "arc_snr": 62.48,
+                    "psf_fwhm_arcsec": 0.2266,
+                    "resolution_factor": 1.0,
+                    "score": 62.48,
+                    "contaminant_mask": true
+                },
+                "f814W": {
+                    "arc_snr": 46.8,
+                    "psf_fwhm_arcsec": 0.1085,
+                    "resolution_factor": 1.0,
+                    "score": 46.8,
+                    "contaminant_mask": true
+                }
+            },
+            "theta_e": 1.4091
+        },
+        "J0915+4211": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f435W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f435W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-24",
+            "scores": {
+                "f435W": {
+                    "arc_snr": 17.07,
+                    "psf_fwhm_arcsec": 0.1123,
+                    "resolution_factor": 1.0,
+                    "score": 17.07,
+                    "contaminant_mask": true
+                },
+                "f814W": {
+                    "arc_snr": 120.79,
+                    "psf_fwhm_arcsec": 0.111,
+                    "resolution_factor": 1.0,
+                    "score": 120.79,
+                    "contaminant_mask": true
+                }
+            },
+            "theta_e": 0.98
+        },
+        "J0930+2855": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f435W": {
+                    "arc_snr": 15.37,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.112,
+                    "resolution_factor": 1.0,
+                    "score": 15.37
+                },
+                "f814W": {
+                    "arc_snr": 269.71,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.1127,
+                    "resolution_factor": 1.0,
+                    "score": 269.71
+                }
+            },
+            "theta_e": 1.05
+        },
+        "J0955+0101": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 104.43,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2173,
+                    "resolution_factor": 0.833,
+                    "score": 87.01
+                }
+            },
+            "theta_e": 0.9052
+        },
+        "J1021+2028": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f435W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f435W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f435W": {
+                    "arc_snr": 25.99,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.1077,
+                    "resolution_factor": 0.91,
+                    "score": 23.64
+                },
+                "f814W": {
+                    "arc_snr": 134.14,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.1097,
+                    "resolution_factor": 0.893,
+                    "score": 119.78
+                }
+            },
+            "theta_e": 0.49
+        },
+        "J1029+0420": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f814W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 265.18,
+                    "psf_fwhm_arcsec": 0.2311,
+                    "resolution_factor": 0.87,
+                    "score": 230.74,
+                    "contaminant_mask": true
+                },
+                "f450W": {
+                    "arc_snr": 39.81,
+                    "psf_fwhm_arcsec": 0.3462,
+                    "resolution_factor": 0.581,
+                    "score": 23.13,
+                    "contaminant_mask": false
+                },
+                "f606W": {
+                    "arc_snr": 170.34,
+                    "psf_fwhm_arcsec": 0.2275,
+                    "resolution_factor": 0.884,
+                    "score": 150.59,
+                    "contaminant_mask": true
+                },
+                "f814W": {
+                    "arc_snr": 206.61,
+                    "psf_fwhm_arcsec": 0.1083,
+                    "resolution_factor": 1.0,
+                    "score": 206.61,
+                    "contaminant_mask": true
+                }
+            },
+            "theta_e": 1.0056
+        },
+        "J1032+5322": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f450W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f450W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 253.12,
+                    "psf_fwhm_arcsec": 0.2325,
+                    "resolution_factor": 0.888,
+                    "score": 224.81,
+                    "contaminant_mask": true
+                },
+                "f450W": {
+                    "arc_snr": 9.56,
+                    "psf_fwhm_arcsec": 0.3382,
+                    "resolution_factor": 0.611,
+                    "score": 5.84,
+                    "contaminant_mask": false
+                },
+                "f606W": {
+                    "arc_snr": 103.26,
+                    "psf_fwhm_arcsec": 0.2264,
+                    "resolution_factor": 0.912,
+                    "score": 94.21,
+                    "contaminant_mask": true
+                },
+                "f814W": {
+                    "arc_snr": 161.65,
+                    "psf_fwhm_arcsec": 0.1086,
+                    "resolution_factor": 1.0,
+                    "score": 161.65,
+                    "contaminant_mask": true
+                }
+            },
+            "theta_e": 1.0327
+        },
+        "J1103+5322": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-14",
+            "scores": {
+                "f450W": {
+                    "arc_snr": 51.26,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.3446,
+                    "resolution_factor": 0.591,
+                    "score": 30.3
+                },
+                "f606W": {
+                    "arc_snr": 184.03,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2275,
+                    "resolution_factor": 0.896,
+                    "score": 164.81
+                },
+                "f814W": {
+                    "arc_snr": 242.49,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.1084,
+                    "resolution_factor": 1.0,
+                    "score": 242.49
+                }
+            },
+            "theta_e": 1.0185
+        },
+        "J1111+2234": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f435W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f435W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f435W": {
+                    "arc_snr": 27.61,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.1119,
+                    "resolution_factor": 1.0,
+                    "score": 27.61
+                },
+                "f814W": {
+                    "arc_snr": 100.18,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.1108,
+                    "resolution_factor": 1.0,
+                    "score": 100.18
+                }
+            },
+            "theta_e": 1.1
+        },
+        "J1117+4704": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f450W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f450W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f450W": {
+                    "arc_snr": 49.58,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.3446,
+                    "resolution_factor": 0.447,
+                    "score": 22.16
+                },
+                "f606W": {
+                    "arc_snr": 41.38,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.226,
+                    "resolution_factor": 0.682,
+                    "score": 28.2
+                },
+                "f814W": {
+                    "arc_snr": 31.8,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2368,
+                    "resolution_factor": 0.65,
+                    "score": 20.68
+                }
+            },
+            "theta_e": 0.77
+        },
+        "J1135+3720": {
+            "best_band_arc_snr": null,
+            "best_band_visual": "f814W",
+            "measurable": false,
+            "min_arc_snr": 15.0,
+            "primary_band": "f814W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f435W": {
+                    "arc_snr": 14.35,
+                    "psf_fwhm_arcsec": 0.1124,
+                    "resolution_factor": 1.0,
+                    "score": 14.35,
+                    "contaminant_mask": true
+                },
+                "f814W": {
+                    "arc_snr": 12.13,
+                    "psf_fwhm_arcsec": 0.1111,
+                    "resolution_factor": 1.0,
+                    "score": 12.13,
+                    "contaminant_mask": true
+                }
+            },
+            "theta_e": 0.71
+        },
+        "J1203+2535": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": "f450W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f450W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f450W": {
+                    "arc_snr": 89.6,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.3427,
+                    "resolution_factor": 0.508,
+                    "score": 45.49
+                },
+                "f450W_visit2": {
+                    "arc_snr": 83.88,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.3471,
+                    "resolution_factor": 0.501,
+                    "score": 42.05
+                },
+                "f606W": {
+                    "arc_snr": 115.96,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2258,
+                    "resolution_factor": 0.771,
+                    "score": 89.37
+                },
+                "f814W": {
+                    "arc_snr": 104.27,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.235,
+                    "resolution_factor": 0.741,
+                    "score": 77.21
+                }
+            },
+            "theta_e": 0.87
+        },
+        "J1251-0208": {
+            "best_band_arc_snr": "f160W",
+            "best_band_visual": "f606W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f160W": {
+                    "arc_snr": 30.11,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2302,
+                    "resolution_factor": 0.731,
+                    "score": 22.0
+                },
+                "f606W": {
+                    "arc_snr": 13.09,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2415,
+                    "resolution_factor": 0.697,
+                    "score": 9.12
+                }
+            },
+            "theta_e": 0.8413
+        },
+        "J1313+0506": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f606W": {
+                    "arc_snr": 93.22,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2169,
+                    "resolution_factor": 0.489,
+                    "score": 45.56
+                }
+            },
+            "theta_e": 0.53
+        },
+        "J1331+3638": {
+            "best_band_arc_snr": "f814W",
+            "best_band_visual": "f450W",
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f450W",
+            "primary_band_source": "visual",
+            "r0": 5.0,
+            "reviewed": false,
+            "scores": {
+                "f450W": {
+                    "arc_snr": 24.01,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.3519,
+                    "resolution_factor": 0.546,
+                    "score": 13.1
+                },
+                "f606W": {
+                    "arc_snr": 31.36,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2308,
+                    "resolution_factor": 0.832,
+                    "score": 26.08
+                },
+                "f814W": {
+                    "arc_snr": 35.61,
+                    "contaminant_mask": false,
+                    "psf_fwhm_arcsec": 0.2341,
+                    "resolution_factor": 0.82,
+                    "score": 29.2
+                }
+            },
+            "theta_e": 0.96
+        },
+        "J2141-0001": {
+            "best_band_arc_snr": "f606W",
+            "best_band_visual": null,
+            "measurable": true,
+            "min_arc_snr": 15.0,
+            "primary_band": "f606W",
+            "primary_band_source": "arc_snr",
+            "r0": 5.0,
+            "review_note": "Confirmed by eye with choose_best_band.py (the measured band accepted).",
+            "reviewed": true,
+            "reviewed_date": "2026-11-16",
+            "scores": {
+                "f450W": {
+                    "arc_snr": 15.42,
+                    "psf_fwhm_arcsec": 0.3471,
+                    "resolution_factor": 0.507,
+                    "score": 7.82,
+                    "contaminant_mask": false
+                },
+                "f606W": {
+                    "arc_snr": 35.63,
+                    "psf_fwhm_arcsec": 0.2267,
+                    "resolution_factor": 0.776,
+                    "score": 27.65,
+                    "contaminant_mask": true
+                }
+            },
+            "theta_e": 0.88
+        }
+    }
+}
