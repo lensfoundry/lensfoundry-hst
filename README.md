@@ -58,9 +58,10 @@ The data come from four HST cameras. They differ in pixel size, so the stamps do
 | WFC3/UVIS | F438W, F475X, F600LP, F606W, F814W | 0.0396″ | 303 × 303 |
 | WFC3/IR | F160W | 0.06″ (resampled from 0.13″) | 200 × 200 |
 
-Every stamp covers a 12″ × 12″ patch of sky centred on the deflector, except the `multi_galaxy`
-lenses, whose stamps are 30″ × 30″ (pixel counts scale to match) and centred on the group of
-deflector galaxies.
+Every stamp covers a 12″ × 12″ patch of sky centred on the deflector, except the `swells`
+lenses, whose stamps are 20″ × 20″ (the disk deflectors are too large for a 12″ patch), and
+the `multi_galaxy` lenses, whose stamps are 30″ × 30″ and centred on the group of
+deflector galaxies (pixel counts scale to match in both cases).
 
 ## Using the finished products
 
@@ -77,11 +78,15 @@ Each lens and filter has one folder, `data/stamps/<sample>/<band_mode>/<category
 | `stamp12_positions.json` | **Image positions**: where the multiple images of the lensed source are, hand-marked (see below). |
 | `stamp12_dataset.png` | A quick-look figure of the image, noise, PSF and mask together — the fastest way to check a lens. |
 
-The `12` in the names is the stamp size: 12 arcseconds on a side. A stamp cut at another size
-(`make_stamps.py --size 20`) is written beside these as `stamp20_*` and is not kept in git.
+The `12` in the names is the stamp size: 12 arcseconds on a side (`swells` bands are
+`stamp20_*` instead, and `multi_galaxy` bands `stamp30_*`). A stamp cut at a non-standard size
+(`make_stamps.py --size 16`) is written beside these as `stamp16_*` and is not kept in git.
 The PSF has no size in its name because it does not depend on the stamp size.
 A few lenses carry extra files beside these (for example `psf_injected.fits`, an
 alternative PSF kept for comparison); the files in the table are the ones to use.
+Each lens folder also holds `primary_band.json` (which band is the best to model first, and
+whether that was measured from the arc S/N or chosen by eye — see `choose_primary_band.py`)
+and `stamp<S>_bands.png`, a side-by-side figure of every band on one shared stretch.
 
 **Orientation.** North is towards increasing row number and West towards increasing column
 number, so with Python's usual display (row 0 at the top) **North appears at the bottom and
