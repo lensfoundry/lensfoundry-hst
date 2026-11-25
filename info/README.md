@@ -23,7 +23,7 @@ file name to its folder.
 | `coords/` | `lens_coords.py` and one `*_coords.py` per sample | hand, from the papers |
 | `catalogues/` | `lens_einstein_radii.json` | hand, and `detect_arcs.py --fetch-theta-e` |
 | `overrides/` | `lens_cr_params.json`, `psf_stars.json`, `noise_corr_factors.json`, `wfpc2_alignment.json`, `lens_crfill.json` | hand; the scripts only read them |
-| `provenance/` | `lens_products.json`, `lens_instrument.json`, `lens_exptime.json`, `lens_stamp_qc.json`, `lens_masks.json`, `lens_arc_masks.json`, `lens_positions.json`, `lens_dataset_subplots.json`, `lens_psf.json`, `lens_psf_injected.json`, `lens_field_ties.json` | the pipeline, as it runs |
+| `provenance/` | `lens_products.json`, `lens_instrument.json`, `lens_exptime.json`, `lens_stamp_qc.json`, `lens_masks.json`, `lens_arc_masks.json`, `lens_positions.json`, `lens_dataset_subplots.json`, `lens_psf.json`, `lens_psf_injected.json`, `lens_field_ties.json`, `lens_primary_band.json` | the pipeline, as it runs |
 
 ## Where to look
 
@@ -37,6 +37,7 @@ file name to its folder.
 | What noise inflation does a band carry? | `overrides/noise_corr_factors.json` |
 | Who drew the mask, from what, and what did they note? | `provenance/lens_masks.json` |
 | Which images were marked, and on which band? | `provenance/lens_positions.json` |
+| Which band is a lens's primary (drawn/marked first), and was that measured or by eye? | `provenance/lens_primary_band.json` (`choose_primary_band.py` / `choose_best_band.py`) |
 | What PSF does a band have and how uncertain is it? | `provenance/lens_psf.json`, `lens_psf_injected.json` |
 | Were any bands re-registered after drizzling? | `provenance/lens_field_ties.json`, `overrides/wfpc2_alignment.json` |
 | Does a lens have non-default CR or PSF-star settings? | `overrides/lens_cr_params.json`, `psf_stars.json` |
