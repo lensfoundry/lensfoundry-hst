@@ -21,5 +21,23 @@
                 "lacosmic_relax_radius": 2.5
             }
         }
+    },
+    "dinos": {
+        "J0959+0206": {
+            "f606W": {
+                "lacosmic_sigclip": 10.0,
+                "lacosmic_objlim": 12.0,
+                "lacosmic_relax_radius": 2.5
+            }
+        }
+    },
+    "swells": {
+        "J0841+3824": {
+            "f606W": {
+                "lacosmic_sigclip": 10.0,
+                "lacosmic_objlim": 12.0,
+                "lacosmic_relax_radius": 3.0
+            }
+        }
     }
 }

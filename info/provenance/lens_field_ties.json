@@ -393,5 +393,41 @@
                 ]
             }
         }
+    },
+    "swells": {
+        "J1135+3720": {
+            "f435W": {
+                "ref": "f814W",
+                "history": [
+                    {
+                        "date": "2026-11-24",
+                        "ref": "f814W",
+                        "dE_mas": -71.4,
+                        "dN_mas": 234.4,
+                        "err_mas": 2.1,
+                        "n_sources": 144,
+                        "files": 2,
+                        "residual_after": "1 mas"
+                    }
+                ]
+            }
+        },
+        "J1203+2535": {
+            "f450W_visit2": {
+                "ref": "f450W",
+                "history": [
+                    {
+                        "date": "2026-11-24",
+                        "ref": "f450W",
+                        "dE_mas": -30.6,
+                        "dN_mas": -357.7,
+                        "err_mas": 14.7,
+                        "n_sources": 9,
+                        "files": 2,
+                        "residual_after": "0 mas"
+                    }
+                ]
+            }
+        }
     }
 }

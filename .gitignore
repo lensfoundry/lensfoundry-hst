@@ -30,6 +30,9 @@ data/stamps/**/stamp*
 !data/stamps/**/stamp12_*
 # The multi_galaxy lenses' modelling size is 30" (per-lens stamp_size, 2026-10-30).
 !data/stamps/*/*/multi_galaxy/**/stamp30_*
+# The swells sample's modelling size is 20" (sample-level stamp_size, 2026-11-10;
+# the disk deflectors overflow a 12" stamp).
+!data/stamps/swells/**/stamp20_*
 
 # ── QC renders of tracked stamps ───────────────────────────────────────────────
 # stamp12.png is a plain 3-panel render of the tracked sci/noise stamp, rebuilt by

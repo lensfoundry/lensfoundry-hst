@@ -1,0 +1,65 @@
+{
+    "type": "list",
+    "values": [
+        {
+            "type": "instance",
+            "class_path": "autoarray.structures.grids.irregular_2d.Grid2DIrregular",
+            "arguments": {
+                "values": {
+                    "type": "ndarray",
+                    "array": [
+                        [
+                            -0.13061734900569794,
+                            0.9493607390248858
+                        ],
+                        [
+                            0.41938265102208183,
+                            -0.9506392609965278
+                        ]
+                    ],
+                    "dtype": "float64"
+                }
+            }
+        },
+        {
+            "type": "instance",
+            "class_path": "autoarray.structures.grids.irregular_2d.Grid2DIrregular",
+            "arguments": {
+                "values": {
+                    "type": "ndarray",
+                    "array": [
+                        [
+                            2.0749999999998674,
+                            -0.42499999999997284
+                        ],
+                        [
+                            -1.924999999999877,
+                            0.6749999999999569
+                        ]
+                    ],
+                    "dtype": "float64"
+                }
+            }
+        },
+        {
+            "type": "instance",
+            "class_path": "autoarray.structures.grids.irregular_2d.Grid2DIrregular",
+            "arguments": {
+                "values": {
+                    "type": "ndarray",
+                    "array": [
+                        [
+                            -1.3806173490183908,
+                            0.2993607390297378
+                        ],
+                        [
+                            1.6193826509593992,
+                            -0.35063926097232956
+                        ]
+                    ],
+                    "dtype": "float64"
+                }
+            }
+        }
+    ]
+}

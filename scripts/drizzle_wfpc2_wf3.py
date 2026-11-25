@@ -21,6 +21,7 @@ import os
 import glob
 import shutil
 import sys
+import time as _time
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -303,12 +304,46 @@ else:
     try:
         obs_table = None
         for _pat in mast_target_names.target_patterns(lens, sample):
-            obs_table = Observations.query_criteria(
-                target_name=_pat,
-                obs_collection='HST',
-                instrument_name=['WFPC2/PC', 'WFPC2/WFC'],
-                filters=[filt_key.upper()],
-            )
+            obs_table = None
+            # MAST intermittently kills query connections server-side, more often for
+            # some target names than others (SDSSJ1703+2451% failed ~4 times out of 5
+            # on 2026-11-09, then succeeded). Retry the wildcard query, then fall back
+            # to the exact name, then to a cone search at the catalogue position (rows
+            # restricted to this lens's target names).
+            for _attempt in range(4):
+                try:
+                    obs_table = Observations.query_criteria(
+                        target_name=_pat,
+                        obs_collection='HST',
+                        instrument_name=['WFPC2/PC', 'WFPC2/WFC'],
+                        filters=[filt_key.upper()],
+                    )
+                    break
+                except Exception as _e:
+                    print(f'  MAST target {_pat}: query failed, attempt {_attempt + 1}/4 '
+                          f'({_e})')
+                    _time.sleep(10)
+            if obs_table is None:
+                try:
+                    obs_table = Observations.query_criteria(
+                        target_name=_pat.rstrip('%'),
+                        obs_collection='HST',
+                        instrument_name=['WFPC2/PC', 'WFPC2/WFC'],
+                        filters=[filt_key.upper()],
+                    )
+                except Exception as _e2:
+                    if _lc is None:
+                        raise
+                    print(f'  exact-name query failed too ({_e2}); cone search instead')
+                    _t = Observations.query_criteria(
+                        coordinates=f'{_lc.ra.deg} {_lc.dec.deg}',
+                        radius='120 arcsec',
+                        obs_collection='HST',
+                        instrument_name=['WFPC2/PC', 'WFPC2/WFC'],
+                        filters=[filt_key.upper()],
+                    )
+                    _keep = _pat.rstrip('%')
+                    obs_table = _t[[str(x).startswith(_keep) for x in _t['target_name']]]
             if len(obs_table) > 0:
                 print(f'  MAST target {_pat}: {len(obs_table)} observations')
                 break

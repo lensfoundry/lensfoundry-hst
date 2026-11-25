@@ -785,34 +785,83 @@
         }
     },
     "swells": {
+        "J0820+4847": {
+            "f450W": "WFPC2/WF3",
+            "f606W": "WFPC2/WF3",
+            "f814W": "WFPC2/WF3"
+        },
+        "J0822+1828": {
+            "f435W": "ACS/WFC",
+            "f814W": "ACS/WFC"
+        },
         "J0841+3824": {
             "f160W": "WFC3/IR",
+            "f450W": "WFPC2/WF3",
             "f555W": null,
             "f606W": "WFPC2/WF3",
             "f814W": "ACS/WFC"
         },
+        "J0915+4211": {
+            "f435W": "ACS/WFC",
+            "f814W": "ACS/WFC"
+        },
+        "J0930+2855": {
+            "f435W": "ACS/WFC",
+            "f814W": "ACS/WFC"
+        },
         "J0955+0101": {
             "f160W": null,
+            "f435W": null,
             "f555W": null,
             "f606W": "WFPC2/WF3",
             "f814W": null
         },
+        "J1021+2028": {
+            "f435W": "ACS/WFC",
+            "f814W": "ACS/WFC"
+        },
         "J1029+0420": {
             "f160W": "WFC3/IR",
+            "f450W": "WFPC2/WF3",
             "f555W": null,
             "f606W": "WFPC2/WF3",
             "f814W": "ACS/WFC"
         },
         "J1032+5322": {
             "f160W": "WFC3/IR",
+            "f450W": "WFPC2/WF3",
             "f555W": null,
             "f606W": "WFPC2/WF3",
             "f814W": "ACS/WFC"
+        },
+        "J1037+3517": {
+            "f450W": "WFPC2/WF3",
+            "f606W": "WFPC2/WF3",
+            "f814W": "WFPC2/WF3"
         },
         "J1103+5322": {
             "f450W": "WFPC2/WF3",
             "f606W": "WFPC2/WF3",
             "f814W": "ACS/WFC"
+        },
+        "J1111+2234": {
+            "f435W": "ACS/WFC",
+            "f814W": "ACS/WFC"
+        },
+        "J1117+4704": {
+            "f450W": "WFPC2/WF3",
+            "f606W": "WFPC2/WF3",
+            "f814W": "WFPC2/WF3"
+        },
+        "J1135+3720": {
+            "f435W": "ACS/WFC",
+            "f814W": "ACS/WFC"
+        },
+        "J1203+2535": {
+            "f450W": "WFPC2/WF3",
+            "f450W_visit2": "WFPC2/WF3",
+            "f606W": "WFPC2/WF3",
+            "f814W": "WFPC2/WF3"
         },
         "J1251-0208": {
             "f160W": "WFC3/IR",
@@ -824,8 +873,14 @@
             "f606W": "WFPC2/WF3",
             "f814W": null
         },
+        "J1331+3638": {
+            "f450W": "WFPC2/WF3",
+            "f606W": "WFPC2/WF3",
+            "f814W": "WFPC2/WF3"
+        },
         "J2141-0001": {
             "f160W": null,
+            "f450W": "WFPC2/WF3",
             "f555W": null,
             "f606W": "WFPC2/WF3",
             "f814W": null
