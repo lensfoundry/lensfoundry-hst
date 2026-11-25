@@ -6,7 +6,8 @@
         "ACS/WFC": {
             "F555W": 0.1037,
             "F606W": 0.4134,
-            "F814W": 0.0395
+            "F814W": 0.0377,
+            "F435W": 0.136
         },
         "WFC3/UVIS": {
             "F438W": 0.0,
@@ -29,6 +30,16 @@
                 "blur_used": 0.1082,
                 "residual_det_px": 0.006,
                 "n_stars": 86
+            },
+            {
+                "blur_used": 0.1259,
+                "residual_det_px": 0.0,
+                "n_stars": 70
+            },
+            {
+                "blur_used": 0.1084,
+                "residual_det_px": 0.0,
+                "n_stars": 91
             }
         ],
         "ACSWFC_F555W": [
@@ -56,15 +67,20 @@
             },
             {
                 "blur_used": 0.408,
-                "residual_det_px": 0.0561,
-                "n_stars": 4
+                "residual_det_px": 0.1121,
+                "n_stars": 7
+            },
+            {
+                "blur_used": 0.4134,
+                "residual_det_px": 0.0,
+                "n_stars": 5
             }
         ],
         "ACSWFC_F814W": [
             {
                 "blur_used": 0.0,
-                "residual_det_px": 0.0395,
-                "n_stars": 662
+                "residual_det_px": 0.0377,
+                "n_stars": 664
             }
         ],
         "WFC3UVIS_F438W": [
@@ -82,7 +98,12 @@
             },
             {
                 "blur_used": 0.1454,
-                "residual_det_px": 0.0549,
+                "residual_det_px": 0.0923,
+                "n_stars": 57
+            },
+            {
+                "blur_used": 0.157,
+                "residual_det_px": 0.0,
                 "n_stars": 34
             }
         ],
@@ -90,14 +111,14 @@
             {
                 "blur_used": 0.0,
                 "residual_det_px": 0.0,
-                "n_stars": 14
+                "n_stars": 13
             }
         ],
         "WFPC2_F606W": [
             {
                 "blur_used": 0.0,
-                "residual_det_px": 0.753,
-                "n_stars": 5
+                "residual_det_px": 0.2305,
+                "n_stars": 6
             }
         ],
         "WFPC2_F814W": [
@@ -108,20 +129,37 @@
             },
             {
                 "blur_used": 0.0,
-                "residual_det_px": 0.2787,
-                "n_stars": 1
+                "residual_det_px": 0.1921,
+                "n_stars": 2
+            }
+        ],
+        "ACSWFC_F435W": [
+            {
+                "blur_used": 0.0,
+                "residual_det_px": 0.0915,
+                "n_stars": 6
+            },
+            {
+                "blur_used": 0.092,
+                "residual_det_px": 0.0673,
+                "n_stars": 6
+            },
+            {
+                "blur_used": 0.136,
+                "residual_det_px": 0.0,
+                "n_stars": 6
             }
         ]
     },
     "calibration_fit": {
         "WFC3IR_F160W": {
-            "n_stars": 86,
-            "residual_det_px": 0.006,
+            "n_stars": 91,
+            "residual_det_px": 0.0,
             "residual_16_84_det_px": [
                 0.0,
-                0.2787
+                0.0659
             ],
-            "blur_used": 0.1082,
+            "blur_used": 0.1084,
             "blur_next": 0.1084
         },
         "ACSWFC_F555W": {
@@ -135,116 +173,288 @@
             "blur_next": 0.1037
         },
         "ACSWFC_F606W": {
-            "n_stars": 4,
-            "residual_det_px": 0.0561,
-            "residual_16_84_det_px": [
-                0.0,
-                0.1479
-            ],
-            "blur_used": 0.408,
-            "blur_next": 0.4134
-        },
-        "ACSWFC_F814W": {
-            "n_stars": 662,
-            "residual_det_px": 0.0395,
-            "residual_16_84_det_px": [
-                0.0,
-                0.1109
-            ],
-            "blur_used": 0.0,
-            "blur_next": 0.0395
-        },
-        "WFC3UVIS_F438W": {
-            "n_stars": 7,
+            "n_stars": 5,
             "residual_det_px": 0.0,
             "residual_16_84_det_px": [
                 0.0,
                 0.0
             ],
+            "blur_used": 0.4134,
+            "blur_next": 0.4134
+        },
+        "ACSWFC_F814W": {
+            "n_stars": 664,
+            "residual_det_px": 0.0377,
+            "residual_16_84_det_px": [
+                0.0,
+                0.1065
+            ],
+            "blur_used": 0.0,
+            "blur_next": 0.0377
+        },
+        "WFC3UVIS_F438W": {
+            "n_stars": 7,
+            "residual_det_px": 0.0,
+            "residual_16_84_det_px": [
+                0.0,
+                0.1463
+            ],
             "blur_used": 0.0,
             "blur_next": 0.0
         },
         "WFC3UVIS_F606W": {
             "n_stars": 34,
-            "residual_det_px": 0.0549,
-            "residual_16_84_det_px": [
-                0.0,
-                0.1527
-            ],
-            "blur_used": 0.1454,
-            "blur_next": 0.157
-        },
-        "WFC3UVIS_F814W": {
-            "n_stars": 14,
             "residual_det_px": 0.0,
             "residual_16_84_det_px": [
                 0.0,
-                0.0983
+                0.0808
+            ],
+            "blur_used": 0.157,
+            "blur_next": 0.157
+        },
+        "WFC3UVIS_F814W": {
+            "n_stars": 13,
+            "residual_det_px": 0.0,
+            "residual_16_84_det_px": [
+                0.0,
+                0.1026
             ],
             "blur_used": 0.0,
             "blur_next": 0.0
         },
-        "WFPC2_F606W": {
-            "n_stars": 5,
-            "residual_det_px": 0.753,
-            "residual_16_84_det_px": [
-                0.1486,
-                0.753
-            ],
-            "blur_used": 0.0,
-            "blur_next": 0.753
-        },
         "WFPC2_F814W": {
-            "n_stars": 1,
-            "residual_det_px": 0.2787,
+            "n_stars": 2,
+            "residual_det_px": 0.1921,
             "residual_16_84_det_px": [
-                0.2787,
-                0.2787
+                0.1361,
+                0.2481
             ],
             "blur_used": 0.0,
-            "blur_next": 0.4028
+            "blur_next": 0.0
+        },
+        "ACSWFC_F435W": {
+            "n_stars": 6,
+            "residual_det_px": 0.0,
+            "residual_16_84_det_px": [
+                0.0,
+                0.0282
+            ],
+            "blur_used": 0.136,
+            "blur_next": 0.136
+        },
+        "WFPC2_F606W": {
+            "n_stars": 6,
+            "residual_det_px": 0.2305,
+            "residual_16_84_det_px": [
+                0.1633,
+                0.3743
+            ],
+            "blur_used": 0.0,
+            "blur_next": 0.2305
         }
     },
     "_how": "psf_star_check.py --calibrate: each real PSF star against its noiseless twin injected at the same position into the same frames (point-like stars, peak S/N >= 100); per star the extra Gaussian blur of the twin that minimises the core chi^2, the median over the stars, in detector px; iterated (secant) because a blur on the resampled star stands in for one on the detector.",
     "model_error": {
         "WFC3IR_F160W": {
-            "n_stars": 86,
-            "err_frac": 0.0142
+            "n_stars": 91,
+            "err_frac": 0.00657
         },
         "ACSWFC_F555W": {
-            "n_stars": 122,
-            "err_frac": 0.01127
+            "n_stars": 172,
+            "err_frac": 0.01102
         },
         "ACSWFC_F606W": {
-            "n_stars": 4,
-            "err_frac": 0.15796
+            "n_stars": 8,
+            "err_frac": 0.0811
         },
         "ACSWFC_F814W": {
-            "n_stars": 662,
-            "err_frac": 0.01259
+            "n_stars": 863,
+            "err_frac": 0.00915
         },
         "WFC3UVIS_F438W": {
-            "n_stars": 7,
-            "err_frac": 0.039
+            "n_stars": 15,
+            "err_frac": 0.0222
         },
         "WFC3UVIS_F606W": {
-            "n_stars": 34,
-            "err_frac": 0.01146
+            "n_stars": 57,
+            "err_frac": 0.01031
         },
         "WFC3UVIS_F814W": {
-            "n_stars": 14,
-            "err_frac": 0.01264
+            "n_stars": 28,
+            "err_frac": 0.01093
         },
         "WFPC2_F606W": {
-            "n_stars": 5,
-            "err_frac": 5.41856
+            "n_stars": 19,
+            "err_frac": 0.02304
         },
         "WFPC2_F814W": {
-            "n_stars": 1,
-            "err_frac": 0.02882
+            "n_stars": 2,
+            "err_frac": 0.0171
+        },
+        "ACSWFC_F435W": {
+            "n_stars": 20,
+            "err_frac": 0.01289
         }
     },
     "notes": {
-        "WFPC2": "2026-11-05: blur set to 0 by hand after the auto-calibration disagreed with itself. F606W pass-1 chi^2 residual 0.753 det px rested on 5 marginal stars with a FLAT chi^2 landscape (flat-topped WFPC2 cores); applied to the twins it produced a 2.2x peak-flux deficit vs the real stars (median peak_frac 0.022 vs 0.051). At blur 0 the 22 S/N>=100 stars prefer no extra blur (FWHM ratios 0.51-0.84 i.e. real stars NARROWER than the model, peak-frac ratio 1.40 +/- 0.5): the MAST-DB model runs slightly wide for some fields, which is a model-error matter for psf_err, not fixable by blur>=0. F814W rested on 1 star. Revisit with a peak-flux-based calibrator if WFPC2 model width becomes a science question."
-    }
+        "WFPC2": "2026-11-05: blur set to 0 by hand after the auto-calibration disagreed with itself. F606W pass-1 chi^2 residual 0.753 det px rested on 5 marginal stars with a FLAT chi^2 landscape (flat-topped WFPC2 cores); applied to the twins it produced a 2.2x peak-flux deficit vs the real stars (median peak_frac 0.022 vs 0.051). At blur 0 the 22 S/N>=100 stars prefer no extra blur (FWHM ratios 0.51-0.84 i.e. real stars NARROWER than the model, peak-frac ratio 1.40 +/- 0.5): the MAST-DB model runs slightly wide for some fields, which is a model-error matter for psf_err, not fixable by blur>=0. F814W rested on 1 star. Revisit with a peak-flux-based calibrator if WFPC2 model width becomes a science question. 2026-11-09 follow-up: the width-SCALE alternative (option 4) was measured on the star-check crops and REJECTED -- per-star best scales scatter 0.3-1.2 with no global value that helps (median chi2(s)/chi2(1) 0.97 at any s in 0.5-0.8, 16-84% spanning 0.74-2.05; the mismatch is per-field focus/breathing SHAPE, not a coherent width). The err_frac ~4.9 F606W map was then traced to 3 outlier stars (J0819+4534, J1153+4612, J1405+5243; error_map_pool_outliers) and the pool-cleaned map reads 0.041, in line with F814W 0.035. The blur veto stands; WFPC2 model error ships as the cleaned model_vs_stars map. 2026-11-10 CORRECTION: the \"scale rejected\" conclusion above was drawn on a corrupted pool -- 15 of 26 F606W star-check records had twin crops miscut by 1-12 px (edge/lattice-mismatch stars; the miscut records were also the flat-chi^2-landscape evidence and the 4.9-map outliers). On well-centred pairs (guards now in band() and load_checks) the scale fit is tight: F606W 0.832, applied as width_scale (PSFSCALE) to every WFPC2 F606W kernel; residual after rebuild 0.967 (scatter 0.87-1.04), the field-to-field part left to the error map. The blur veto itself stands (a blur cannot shrink).",
+        "WFPC2_F450W": "2026-11-18: re-derived at S/N>=20 (2 stars, both J0820+4847: 0.721/0.883, median 0.80; supersedes the S/N>=50 n=1 value 0.7207). The correction is real and larger than F606W/F814W (0.9448/0.9445) because the F450W DB ePSF is built from only 39 stars: its azimuthal wing is ~2x the F606W ePSF wing relative to peak at r=2-7 native px (the 94-131-star builds sit close to physical), i.e. the small-sample build leaves noisy, elevated wings. The bulk of all 7 checked stars (S/N 7-164) reads 0.62-0.83, consistent. If more F450W fields with stars arrive, re-derive."
+    },
+    "error_map_pool_outliers": {
+        "_note": "2026-11-09: per-star residual breakdown of the WFPC2_F606W model_vs_stars pool. The shipped err_frac ~4.9 map is these three stars, not a genuine 5x model error; the three clean stars imply ~0.04 (in line with WFPC2_F814W 0.035). Recorded in case option 2 (per-star outlier rejection in --error-maps) is revisited; option 4 (width-scale calibration) was chosen instead.",
+        "WFPC2_F606W": [
+            {
+                "lens": "J0819+4534",
+                "sample": "slacs",
+                "peak_snr": 163,
+                "fwhm_ratio": 1.121,
+                "star_err_frac": 11.38,
+                "why": "borderline extended (EXTENDED_RATIO=1.15 cut), dominates the pool"
+            },
+            {
+                "lens": "J1153+4612",
+                "sample": "slacs",
+                "peak_snr": 164,
+                "fwhm_ratio": 1.044,
+                "star_err_frac": 3.01
+            },
+            {
+                "lens": "J1405+5243",
+                "sample": "dinos",
+                "peak_snr": 145,
+                "fwhm_ratio": 0.883,
+                "star_err_frac": 2.86,
+                "why": "borderline narrow"
+            }
+        ],
+        "clean_pool": [
+            {
+                "lens": "J1443+0304",
+                "fwhm_ratio": 0.883,
+                "star_err_frac": 0.052
+            },
+            {
+                "lens": "J1331+3638",
+                "fwhm_ratio": 1.004,
+                "star_err_frac": 0.038
+            },
+            {
+                "lens": "J1250-0135",
+                "fwhm_ratio": 0.971,
+                "star_err_frac": 0.029
+            }
+        ]
+    },
+    "width_scale": {
+        "ACS/WFC": {
+            "F435W": 0.999,
+            "F555W": 1.0052,
+            "F606W": 0.8837,
+            "F814W": 1.0027
+        },
+        "WFC3/IR": {
+            "F160W": 0.9977
+        },
+        "WFC3/UVIS": {
+            "F438W": 0.9154,
+            "F606W": 1.0139,
+            "F814W": 0.9917
+        },
+        "WFPC2": {
+            "F606W": 0.9448,
+            "F814W": 0.9445,
+            "F450W": 0.8
+        }
+    },
+    "scale_fit": {
+        "ACSWFC_F435W": {
+            "n_stars": 20,
+            "scale": 0.999,
+            "scale_16_84": [
+                0.9908,
+                1.0133
+            ]
+        },
+        "ACSWFC_F555W": {
+            "n_stars": 175,
+            "scale": 1.0052,
+            "scale_16_84": [
+                0.9895,
+                1.0274
+            ]
+        },
+        "ACSWFC_F606W": {
+            "n_stars": 9,
+            "scale": 0.8837,
+            "scale_16_84": [
+                0.8578,
+                0.9253
+            ]
+        },
+        "ACSWFC_F814W": {
+            "n_stars": 889,
+            "scale": 1.0026,
+            "scale_16_84": [
+                0.9903,
+                1.0169
+            ]
+        },
+        "WFC3IR_F160W": {
+            "n_stars": 91,
+            "scale": 0.9995,
+            "scale_16_84": [
+                0.9913,
+                1.006
+            ]
+        },
+        "WFC3UVIS_F438W": {
+            "n_stars": 15,
+            "scale": 0.9839,
+            "scale_16_84": [
+                0.9554,
+                1.0149
+            ]
+        },
+        "WFC3UVIS_F606W": {
+            "n_stars": 57,
+            "scale": 1.0008,
+            "scale_16_84": [
+                0.9602,
+                1.0388
+            ]
+        },
+        "WFC3UVIS_F814W": {
+            "n_stars": 28,
+            "scale": 0.9917,
+            "scale_16_84": [
+                0.9799,
+                1.0034
+            ]
+        },
+        "WFPC2_F606W": {
+            "n_stars": 23,
+            "scale": 0.9448,
+            "scale_16_84": [
+                0.8811,
+                1.0024
+            ]
+        },
+        "WFPC2_F814W": {
+            "n_stars": 2,
+            "scale": 0.9445,
+            "scale_16_84": [
+                0.922,
+                0.9671
+            ]
+        },
+        "WFPC2_F450W": {
+            "n_stars": 2,
+            "scale": 0.8,
+            "scale_16_84": [
+                0.747,
+                0.857
+            ]
+        }
+    },
+    "_how_scale": "psf_star_check.py --calibrate-scale: each real PSF star against its noiseless twin, well-centred pairs at peak S/N >= 50, narrow stars kept; per star the width scale of the twin that minimises the core chi^2 (flux-conserving stretch), the median over the stars. Twins carry the calibrated blur, so ~1 is expected for blur-calibrated cameras; for WFPC2 (blur vetoed) it is the width correction."
 }

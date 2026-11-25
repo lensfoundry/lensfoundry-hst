@@ -86,8 +86,8 @@ _LIB = {
 # Filter pivot wavelengths (nm), enough to pick a nearest neighbour.
 _PIVOT = {
     'F225W': 236, 'F275W': 271, 'F336W': 335, 'F390W': 392, 'F410M': 411,
-    'F435W': 431, 'F438W': 433, 'F450W': 456, 'F467M': 468, 'F475W': 477, 'F555W': 539,
-    'F606W': 589, 'F621M': 622, 'F625W': 632,
+    'F435W': 431, 'F438W': 433, 'F450W': 456, 'F467M': 468, 'F475W': 477, 'F475X': 478,
+    'F555W': 539, 'F600LP': 642, 'F606W': 589, 'F621M': 622, 'F625W': 632,
     'F658N': 658, 'F675W': 673, 'F775W': 765, 'F814W': 802, 'F850L': 917,
     'F098M': 986, 'F105W': 1055, 'F110W': 1153, 'F125W': 1248, 'F127M': 1274,
     'F140W': 1392, 'F153M': 1531, 'F160W': 1537,
@@ -225,8 +225,10 @@ def model_psf(inst_key, filt, oversample, size, out_scale, cd_detector=None, blu
         xx, yy = np.meshgrid(xc + offs, yc + offs)
 
     stamp = np.asarray(grid.evaluate(xx, yy, flux=1.0, x_0=xc, y_0=yc), dtype=float)
-    # the calibrated extra blur (detector px; model_blur_sigma): isotropic, so it is applied
-    # on this output-scale fine grid at sigma x det_scale / (out_scale / oversample)
+    # the calibrated width scale (model_width_scale; dimensionless, so the sampling grid is
+    # irrelevant) then the calibrated extra blur (detector px; model_blur_sigma): isotropic,
+    # so it is applied on this output-scale fine grid at sigma x det_scale / (out_scale / oversample)
+    stamp = np.clip(scale_kernel(stamp, model_width_scale(inst_key, filt)), 0.0, None)
     blur = model_blur_sigma(inst_key, filt) if blur_sigma_det is None else blur_sigma_det
     if blur and blur > 0:
         stamp = np.clip(gaussian_blur(stamp, blur * _DET_SCALE[inst_key] / (out_scale / oversample)), 0.0, None)
@@ -330,7 +332,38 @@ _F606W_DB = dict(
     max_center_off=2.0,   # reject a cutout whose windowed centroid is >2px off centre
     min_stars=15,         # need at least this many clean stars, else fall back to STDPSF
     maxiters=12,
+    min_core_frac=0.55,   # reject a cutout holding <55% of its flux within r<=3px of the
+                          # centroid (a star reads 0.7-0.9; the junk cutouts 0.04-0.2)
+    defect_sigma=8.0,     # |pixel - 3x3 median| above this x local sigma is a defect,
+    defect_core_r=3.5,    # replaced by the median OUTSIDE this radius of the centroid
+                          # (the core is protected: a steep PSF trips a median filter)
 )
+
+
+def _clean_db_stamp(sub, centroid, cfg):
+    """Remove hot pixels / CR hits from one DB cutout, outside a protected core.
+
+    The MAST PSF DB cutouts come from un-CR-cleaned c0m files, and they are all cut at
+    INTEGER detector pixels, so every stamp shares the detector lattice: a hot pixel or CR
+    in a stamp lands on a lattice point of the oversampled ePSF grid, where EPSFBuilder's
+    smoothing turns the repeated hits into a CHECKERBOARD of detached clumps around the
+    genuine PSF (found 2026-11-17: ~9% of the F814W ePSF's flux sat in such clumps, and
+    they survived into every shipped WFPC2 kernel as free-floating blobs). The median stack
+    of the stamps is clean, so the fix is per-stamp cleaning, not a better ePSF statistic.
+
+    The local noise model is the pipeline's WFPC2 one (var_DN = DN/ATODGAIN + rn^2,
+    gain 7, rn 5.3 DN); a pixel more than defect_sigma x that from its 3x3 median is
+    replaced by the median. Pixels within defect_core_r of the star centroid are never
+    touched -- there the gradient is steep enough that a 3x3 median misreads the core.
+    """
+    from scipy import ndimage
+    rr = np.hypot(*np.indices(sub.shape)[::-1] - np.asarray(centroid)[:, None, None])
+    med = ndimage.median_filter(sub, 3)
+    sig = np.sqrt(np.clip(med, 0.0, None) / 7.0 + 5.3 ** 2)
+    bad = (np.abs(sub - med) > cfg['defect_sigma'] * sig) & (rr > cfg['defect_core_r'])
+    out = sub.copy()
+    out[bad] = med[bad]
+    return out, int(bad.sum())
 
 
 def wfpc2_f606w_db_epsf(oversample, size, out_scale, cd_detector=None,
@@ -399,6 +432,7 @@ def _wfpc2_f606w_collect_stars(force_rebuild=False, filt='F606W'):
     os.makedirs(cutdir, exist_ok=True)
     half = cfg['inner_half']
     stars = []
+    n_lowconc = n_cleaned_px = 0
     for uri in uris:
         fn = os.path.join(cutdir, uri.split('/')[-1])
         if not os.path.exists(fn) or os.path.getsize(fn) < 1000:
@@ -418,14 +452,57 @@ def _wfpc2_f606w_collect_stars(force_rebuild=False, filt='F606W'):
         c = centroid_com(np.clip(sub, 0, None))  # windowed centroid drops edge contaminants
         if not np.all(np.isfinite(c)) or np.hypot(c[0] - half, c[1] - half) > cfg['max_center_off']:
             continue
-        peak = sub.max()
-        if peak <= 0:
+        if sub.max() <= 0:
+            continue
+        # Concentration gate (2026-11-17): a real WF3 star keeps 0.7-0.9 of its flux within
+        # r<=3px of its centroid; the DB also serves cutouts full of CRs/neighbours that pass
+        # qfit and the centroid gate (down to 0.04) and print a checkerboard of clumps into
+        # the ePSF.
+        rr = np.hypot(*np.indices(sub.shape)[::-1] - np.asarray(c)[:, None, None])
+        if sub[rr <= 3.0].sum() / sub.sum() < cfg['min_core_frac']:
+            n_lowconc += 1
+            continue
+        sub, n_bad = _clean_db_stamp(sub, c, cfg)
+        n_cleaned_px += n_bad
+        peak = sub.max()          # after cleaning: a CR brighter than the core must not
+        if peak <= 0:             # set the normalisation
             continue
         stars.append(EPSFStar(sub / peak, cutout_center=(float(c[0]), float(c[1]))))
+    if n_lowconc:
+        print(f'    dropped {n_lowconc} low-concentration DB cutouts '
+              f'(<{cfg["min_core_frac"]} of flux within r=3px)')
+    print(f'    cleaned {n_cleaned_px} defect pixels across {len(stars)} DB stamps '
+          f'(>{cfg["defect_sigma"]:g} sigma from the 3x3 median, core protected)')
     if len(stars) < cfg['min_stars']:
         raise RuntimeError(f'only {len(stars)} usable WF3 {filt} DB stars '
                            f'(<{cfg["min_stars"]})')
     return stars
+
+
+def _connected_support(data, thresh=1e-3):
+    """Zero everything outside the >=thresh x peak component that holds the peak.
+
+    The DB cutouts are all cut on the INTEGER detector lattice, and with ~130 stars the
+    wing of the EPSFBuilder result is unconstrained: the measured per-star wing noise
+    (~2e-3 of the star peak) should average down to ~2e-4 over 128 stars, but the build
+    amplifies it ~20x (ensemble std 3e-3), landing as a lattice of clumps AND holes at
+    1e-3-3e-2 of peak across the whole grid (found 2026-11-17). They carry ~0 net flux
+    (the clumps and holes cancel to 0.4%) but up to 9% in |flux|, and they survive into
+    the injected kernels as free-floating blobs. A real PSF is connected at every level
+    in its wing, so the cut removes only noise: FWHM unchanged, flux change <0.5%.
+    psf_models must stay importable without make_psf (circular import), so this duplicates
+    make_psf.remove_detached_components -- keep the two in step.
+    """
+    from scipy import ndimage
+    arr = np.asarray(data, float)
+    peak = arr.max()
+    if peak <= 0:
+        return arr
+    lab, n = ndimage.label(arr >= thresh * peak)
+    if n <= 1:
+        return np.where(lab == 1, arr, 0.0)
+    keep = lab[np.unravel_index(np.argmax(arr), arr.shape)]
+    return np.where(lab == keep, arr, 0.0)
 
 
 def _wfpc2_f606w_db_build(force_rebuild=False, filt='F606W'):
@@ -444,7 +521,7 @@ def _wfpc2_f606w_db_build(force_rebuild=False, filt='F606W'):
     builder = EPSFBuilder(oversampling=cfg['build_oversample'], maxiters=cfg['maxiters'],
                           recentering_maxiters=8, progress_bar=False)
     epsf, _ = builder(EPSFStars(stars))
-    data = np.nan_to_num(np.asarray(epsf.data, float))
+    data = _connected_support(np.nan_to_num(np.asarray(epsf.data, float)))
 
     hdr = fits.Header()
     hdr['PSFSRC'] = ('MAST_PSF_DB', f'WFPC2 {filt} PSF DB (Dauphin ISR WFC3 2021-12)')
@@ -452,6 +529,7 @@ def _wfpc2_f606w_db_build(force_rebuild=False, filt='F606W'):
     hdr['QFITMAX'] = (cfg['qfit_max'], 'max qfit selected')
     hdr['BUILDOVR'] = (cfg['build_oversample'], 'EPSFBuilder oversampling vs WF3 scale')
     hdr['PIXSCALE'] = (round(samp, 5), 'ePSF arcsec/pixel')
+    hdr['PSFSUPP'] = (1e-3, 'connected-support cut: only the >=this x peak component kept')
     fits.writeto(cache, data, hdr, overwrite=True)
     print(f'    built WF3 {filt} MAST-PSF-DB ePSF from {len(stars)} stars -> {cache}')
     return data, samp
@@ -529,7 +607,7 @@ def _wfpc2_f606w_db_ensemble(force_rebuild=False, n_boot=100, rng=None, filt='F6
             continue
         try:
             epsf, _ = builder(EPSFStars([stars[j] for j in idx]))
-            d = np.nan_to_num(np.asarray(epsf.data, float))
+            d = _connected_support(np.nan_to_num(np.asarray(epsf.data, float)))
             if np.all(np.isfinite(d)) and d.sum() > 0:
                 members.append(d)
         except Exception:
@@ -659,6 +737,34 @@ def model_blur_sigma(inst_key, filt):
     with open(CALIBRATION_JSON) as f:
         cal = json.load(f)
     return float(cal.get('blur_sigma_det_px', {}).get(inst_key, {}).get(_base_filter(filt).upper(), 0.0) or 0.0)
+
+
+def model_width_scale(inst_key, filt):
+    """The calibrated width SCALE for (inst_key, filt), or 1.0. A stretch of the model about
+    its centre -- s < 1 narrows it. This is the WFPC2 width correction: the blur calibration
+    there is vetoed (flat-topped cores give the chi^2 landscape no purchase, and a blur cannot
+    shrink a too-wide model), while a scale fit on the well-centred star-check pairs is tight
+    (F606W median 0.83, 2026-11-09). Only filters with a usable star pool get an entry."""
+    if not os.path.isfile(CALIBRATION_JSON):
+        return 1.0
+    with open(CALIBRATION_JSON) as f:
+        cal = json.load(f)
+    return float(cal.get('width_scale', {}).get(inst_key, {}).get(_base_filter(filt).upper(), 1.0) or 1.0)
+
+
+def scale_kernel(img, s):
+    """`img` resampled about its centre so features move to s x their radius (s < 1 narrows),
+    flux-conserving (the resample preserves surface brightness, so the sum scales as s^2).
+    Cubic interpolation, matching _resample_centered."""
+    if s is None or abs(s - 1.0) < 1e-6:
+        return img
+    from scipy.ndimage import map_coordinates
+    img = np.asarray(img, float)
+    c = [(n - 1) / 2.0 for n in img.shape]
+    yy, xx = np.indices(img.shape, dtype=float)
+    out = map_coordinates(img, [c[0] + (yy - c[0]) / s, c[1] + (xx - c[1]) / s],
+                          order=3, mode='constant', cval=0.0)
+    return out / s ** 2
 
 
 def gaussian_blur(img, sigma_px):

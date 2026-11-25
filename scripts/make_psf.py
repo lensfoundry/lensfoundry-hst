@@ -422,7 +422,13 @@ def select_stars(data, mask, params, overrides, star_size):
 
         rows.sort(key=lambda r: r[2], reverse=True)
         if rows:
-            floor = params['flux_floor_frac'] * rows[0][2]
+            # The flux floor is set by the median of the top 5 when there are >=5
+            # candidates, else the brightest (2026-11-18): one super-giant otherwise sets a
+            # floor that rejects every other real star -- J1411+5651 kept just 1 of 111
+            # gate-passing stars because its brightest is ~20x the second.
+            ref = (float(np.median([r[2] for r in rows[:5]])) if len(rows) >= 5
+                   else rows[0][2])
+            floor = params['flux_floor_frac'] * ref
             rows = [r for r in rows if r[2] >= floor]
         n_before_crowd = len(rows)
         crowd_sep = params['crowd_sep_frac'] * star_size
@@ -553,9 +559,38 @@ def oversampled_to_kernel(epsf_data, oversample, kernel_size, integrated=True):
                      'cannot normalise a kernel from it')
 
 
+def remove_detached_components(kernel, threshold=1e-3):
+    """Zero every blob >= `threshold` x peak that is not 8-connected to the peak component.
+
+    A real PSF is CONNECTED above any level in its wing -- core, spikes and ghosts join the
+    peak through pixels above the level; a blob that detaches from the peak component at the
+    trim threshold is not PSF structure. It is a contaminant the build missed: a CR / hot
+    pixel surviving a star stack (the WFPC2 MAST-DB checkerboard of 2026-11-17, fixed at the
+    source by _clean_db_stamp in psf_models) or a faint companion inside one field star's
+    ePSF cutout (the f160W wing blobs). This is the backstop that keeps such a blob out of
+    every shipped kernel; it is deliberately a no-op on a clean kernel.
+    Returns (cleaned kernel, n_pixels_zeroed).
+    """
+    from scipy import ndimage
+    arr = np.asarray(kernel, float).copy()
+    peak = arr.max()
+    if peak <= 0:
+        return arr, 0
+    lab, n = ndimage.label(arr >= threshold * peak)      # default structuring element: 8-connect
+    if n <= 1:
+        return arr, 0
+    keep = lab[np.unravel_index(np.argmax(arr), arr.shape)]
+    drop = (lab > 0) & (lab != keep)
+    arr[drop] = 0.0
+    return arr, int(drop.sum())
+
+
 def trim_kernel_to_amplitude(kernel, threshold=1e-3, min_half=3):
     """Crop a full image-scale kernel to the radius where the azimuthally-averaged PSF
     drops below `threshold` x peak, then renormalise to unit sum.
+
+    Every shipped trimmed kernel also passes remove_detached_components at the same
+    threshold first (detached blobs are contaminants, not PSF; see its docstring).
 
     This is the amplitude-based extent that matters for a *convolution* kernel: it keeps
     the PSF out to where it still spreads flux above ~this fraction of the peak. It is
@@ -565,7 +600,10 @@ def trim_kernel_to_amplitude(kernel, threshold=1e-3, min_half=3):
     construction: broad PSFs (F160W, F606W) keep more pixels than the sharp ACS core.
     Returns (odd, centred, unit-sum kernel, its size).
     """
-    arr = np.asarray(kernel, float)
+    arr, n_dropped = remove_detached_components(kernel, threshold)
+    if n_dropped:
+        print(f'  connectivity backstop: zeroed {n_dropped}px in detached blobs '
+              f'(>= {threshold:g} x peak, not connected to the core)')
     ny, nx = arr.shape
     cy, cx = ny // 2, nx // 2
     yy, xx = np.mgrid[:ny, :nx]
@@ -577,6 +615,12 @@ def trim_kernel_to_amplitude(kernel, threshold=1e-3, min_half=3):
     half = int(below[0]) if len(below) else int(rint.max())
     half = min(max(min_half, half), cy, cx)                    # never exceed the full kernel
     sub = arr[cy - half:cy + half + 1, cx - half:cx + half + 1]
+    # Re-run the backstop on the CROP (2026-11-18): a blob tethered to the core by a
+    # >=threshold bridge that leaves the crop window comes out detached inside it -- the
+    # 11 post-campaign kernels with residual edge blobs were exactly this.
+    sub, n_dropped_crop = remove_detached_components(sub, threshold)
+    if n_dropped_crop:
+        print(f'  connectivity backstop (trimmed crop): zeroed {n_dropped_crop}px')
     s = sub.sum()
     return (sub / s if s > 0 else sub), 2 * half + 1
 
@@ -1263,6 +1307,11 @@ def main():
               f'star cutouts; the ePSF annulus itself reads {emp["annulus_frac"]:.2e}, mostly wing)')
     else:
         kernel = oversampled_to_kernel(epsf_data, oversample, star_size)
+    kernel, n_detached = remove_detached_components(kernel, a.trim_threshold)
+    if n_detached:
+        kernel = kernel / kernel.sum()
+        print(f'  connectivity backstop (full kernel): zeroed {n_detached}px in detached '
+              f'blobs (>= {a.trim_threshold:g} x peak, not connected to the core)')
     trimmed, trim_size = trim_kernel_to_amplitude(kernel, a.trim_threshold)
     fwhm_pix = measure_fwhm(kernel)
     if fwhm_pix is not None:
@@ -1450,6 +1499,11 @@ def main():
             model_hdr = hdul[0].header.copy()
         shutil.copy(canon_path, os.path.join(output_dir, 'psf_kernel_model.fits'))
         hyb, w_blend, f_wing = hybrid_kernel(model_kernel, emp['kernel'], float(wing_r))
+        hyb, n_detached = remove_detached_components(hyb, a.trim_threshold)
+        if n_detached:
+            hyb = hyb / hyb.sum()
+            print(f'  connectivity backstop (hybrid kernel): zeroed {n_detached}px in '
+                  f'detached blobs')
         trimmed_h, trim_h = trim_kernel_to_amplitude(hyb, a.trim_threshold)
         fwhm_h = measure_fwhm(hyb)
         hhdr = model_hdr.copy()

@@ -285,10 +285,17 @@ def build_renderers(inst_key, filt, sample, lens, sci_paths, src_dir, catalogue_
     injects its own detector-frame model at its own lens position."""
     # the calibrated extra blur (psf_models.model_blur_sigma; detector px), applied to every
     # rendered detector stamp -- a Gaussian commutes with the pixel integration the ePSF
-    # already carries, so blurring the integrated stamp is exact
+    # already carries, so blurring the integrated stamp is exact. The calibrated width scale
+    # (psf_models.model_width_scale; dimensionless) is applied first -- WFPC2's correction,
+    # since its blur is vetoed.
     blur = psf_models.model_blur_sigma(inst_key, filt) if blur_sigma_det is None else blur_sigma_det
+    scale = psf_models.model_width_scale(inst_key, filt)
 
     def blurred(stamp):
+        if abs(scale - 1.0) > 1e-6:
+            stamp = np.clip(psf_models.scale_kernel(stamp, scale), 0.0, None)
+            s_ = stamp.sum()
+            stamp = stamp / s_ * _INJECT_FLUX if s_ > 0 else stamp
         if blur and blur > 0:
             stamp = np.clip(psf_models.gaussian_blur(stamp, blur), 0.0, None)
             s_ = stamp.sum()
@@ -405,38 +412,34 @@ def inject_frame(sci_path, renderer, coords):
     return bool(on[0]) if single else on
 
 
-def science_lattice_wcs(inj_hdr, sci_hdr):
-    """The injected mosaic's WCS put on the SCIENCE mosaic's sky lattice.
+def untied_science_wcs(sci_hdr, catalogue_coord):
+    """The science mosaic's WCS BEFORE any post-drizzle tie.
 
-    A fresh drizzle of the same inputs reproduces the science grid up to the integer crop
-    (crop_to_coverage), but NOT a post-drizzle astrometric tie: align_wfpc2_to_acs.py and
-    align_field_sources.py shift the science product's CRVAL (GSC240FX / FTORIG1), so the
-    science lattice sits a fraction of a pixel off a re-drizzle's (J0029-0055 F160W: 1.2 px,
-    its 72 mas tie; found 2026-11-03 when the grid stars landed at (x.92, y.53)). The tie is
-    a pure CRVAL shift, so with the same CD and an integer CRPIX difference the injected
-    mosaic takes the science CRVAL and the two lattices coincide. Otherwise the injected WCS
-    is returned as it is (and the GRID_PHASE_TOL check downstream reports the mismatch)."""
-    wi, ws = WCS(inj_hdr), WCS(sci_hdr)
-    cdi, cds = wi.wcs.cd if wi.wcs.has_cd() else wi.pixel_scale_matrix, \
-        ws.wcs.cd if ws.wcs.has_cd() else ws.pixel_scale_matrix
-    dcrpix = np.asarray(ws.wcs.crpix) - np.asarray(wi.wcs.crpix)
-    if np.allclose(cdi, cds, rtol=0, atol=1e-9 * np.abs(cds).max()) \
-            and np.all(np.abs(dcrpix - np.round(dcrpix)) < 1e-3):
-        if not np.allclose(wi.wcs.crval, ws.wcs.crval, rtol=0, atol=1e-12):
-            d = (np.asarray(ws.wcs.crval) - np.asarray(wi.wcs.crval)) * 3600.0
-            print(f'  injected mosaic put on the science lattice: CRVAL moved by '
-                  f'({d[0] * np.cos(np.radians(ws.wcs.crval[1])):+.3f}, {d[1]:+.3f})" (the science tie)')
-        wi.wcs.crval = ws.wcs.crval
-    else:
-        print('  WARNING: injected mosaic grid geometry differs from the science mosaic; '
-              'the science tie (if any) is not carried over')
-    return wi
+    align_wfpc2_to_acs.py / align_field_sources.py edit only CRVAL on the drizzled product
+    (GSC240FX / FTORIG1) -- the pixels never move, and the input frames are never touched.
+    Every science drizzle pinned CRVAL to the catalogue position (final_ra/final_dec), as does
+    the injection drizzle, so the pre-tie WCS is the science header with CRVAL set back to the
+    catalogue position. THIS, not the tied science WCS, is the lattice a fresh drizzle of the
+    same inputs lands on -- which is where injected stars actually sit in the output array.
+    (The catalogue floats are written verbatim, matching what AstroDrizzle wrote, whatever
+    RADESYS the header carries.)"""
+    w = WCS(sci_hdr)
+    w.wcs.crval = [float(catalogue_coord.ra.deg), float(catalogue_coord.dec.deg)]
+    return w
 
 
 def grid_positions(sci_hdr, catalogue_coord, size, shift=(0, 0)):
-    """(pixels, skycoords, centre index) of the GRID x GRID injection grid: science-grid pixel
-    centres around the lens's pixel, 1.5 kernels apart, shifted by `shift` whole pixels."""
-    w = WCS(sci_hdr)
+    """(pixels, skycoords, centre index) of the GRID x GRID injection grid: output-grid pixel
+    centres around the lens's pixel, 1.5 kernels apart, shifted by `shift` whole pixels.
+
+    The grid is computed on the UNTIED lattice (untied_science_wcs): a post-drizzle tie moved
+    the science header's CRVAL without moving a pixel, so the tied WCS's pixel coordinates sit
+    the tie (up to 16 px on WFPC2) away from where a fresh drizzle of the same inputs -- the
+    injection -- puts the same sky. Gridding (and later cropping) on the tied WCS cut every
+    kernel off its star by exactly the tie, undetected because the GRID_PHASE_TOL check tested
+    the WCS transform, never the flux (found 2026-11-12: every tied band's grid-mean kernel
+    displaced by precisely its tie)."""
+    w = untied_science_wcs(sci_hdr, catalogue_coord)
     px, py = (float(v) for v in w.world_to_pixel(catalogue_coord))
     ix, iy = int(round(px)) + shift[0], int(round(py)) + shift[1]
     sp = size + size // 2
@@ -524,9 +527,13 @@ def extract_kernel(out_sci, catalogue_coord, size):
 
 def injected_mosaic(sample, lens, filt, coords, blur_sigma_det=None, work_dir=None):
     """The model PSF injected noiselessly at every sky position in `coords` into the band's
-    staged science frames and drizzled as the science was: (mosaic, WCS on the science
-    lattice, info). The science mosaic's post-drizzle tie is carried over (science_lattice_wcs).
-    Used by psf_star_check.py to put a twin at every real PSF star. Raises on failure."""
+    staged science frames and drizzled as the science was: (mosaic, the mosaic's WCS, info).
+
+    `coords` must be on the UNTIED lattice (untied_science_wcs; a tie moved the science
+    header's CRVAL without moving a pixel), and the returned WCS is the injected mosaic's own
+    -- that pair is self-consistent, so a twin lands at the same array pixel (and sub-pixel
+    phase) the real star sits at. Used by psf_star_check.py to put a twin at every real PSF
+    star. Raises on failure."""
     drizzled_dir = os.path.join(ws_path, 'data', 'drizzled', stamp_paths.lens_rel(sample, lens), filt)
     src_dir = os.path.join(ws_path, 'data', 'drizzle_files', stamp_paths.lens_rel(sample, lens), filt)
     has_cr = bool(glob.glob(os.path.join(drizzled_dir, '*_cr_*_sci.fits')))
@@ -549,14 +556,15 @@ def injected_mosaic(sample, lens, filt, coords, blur_sigma_det=None, work_dir=No
         try:
             out_sci = run_injection_drizzle(inst_key, drizzle_input, catalogue_coord)
             mosaic = np.nan_to_num(np.asarray(fits.getdata(out_sci), float))
-            owcs = science_lattice_wcs(fits.getheader(out_sci), sci_hdr)
+            owcs = WCS(fits.getheader(out_sci))     # the mosaic's own (untied) lattice
         finally:
             os.chdir(cwd)
     finally:
         os.chdir(cwd)
         shutil.rmtree(work_dir, ignore_errors=True)
     return mosaic, owcs, dict(method=method, n_frames=len(sci_paths), on_frames=on.sum(axis=0).tolist(),
-                              blur_sigma_det_px=float(blur or 0.0))
+                              blur_sigma_det_px=float(blur or 0.0),
+                              width_scale=psf_models.model_width_scale(inst_key, filt))
 
 
 # ── Promotion: make the injected (drizzle-broadened) kernel the canonical product ──
@@ -670,6 +678,11 @@ def analytic_broadened_fallback(psf_dir, stamps_dir, sci_hdr, method,
     broadened, box_width = psf_models.analytic_drop_broaden(
         analytic_kernel, pixfrac, native_scale, out_scale, n_frames=n_frames)
     broadened = broadened / broadened.sum()          # noiseless: no pedestal to remove (2026-11-03)
+    broadened, n_detached = make_psf.remove_detached_components(broadened, trim_threshold)
+    if n_detached:
+        broadened = broadened / broadened.sum()
+        print(f'  connectivity backstop (broadened kernel): zeroed {n_detached}px in '
+              f'detached blobs')
     pedestal_frac = 0.0
     fwhm_before = make_psf.measure_fwhm(analytic_kernel)
     fwhm_after = make_psf.measure_fwhm(broadened)
@@ -796,7 +809,10 @@ def run_injection(lens, filt, sample=None, drizzle_pass='auto', trim_threshold=1
                     os.remove(f)
                 out_sci = run_injection_drizzle(inst_key, drizzle_input, catalogue_coord)
                 out = np.nan_to_num(np.asarray(fits.getdata(out_sci), float))
-                owcs = science_lattice_wcs(fits.getheader(out_sci), sci_hdr)
+                # the injected mosaic's OWN WCS: it is the untied lattice the stars were
+                # gridded on (grid_positions), so the crops land on the flux. The science
+                # header's tied CRVAL must NOT be adopted here (see grid_positions).
+                owcs = WCS(fits.getheader(out_sci))
             finally:
                 os.chdir(cwd)
             n_passes += 1
@@ -832,6 +848,11 @@ def run_injection(lens, filt, sample=None, drizzle_pass='auto', trim_threshold=1
     # pedestal is removed (until 2026-11-03 the outer-annulus median was; on these truncated
     # ~0.6"-wide models it was ~0 anyway, and on a real wing it removes real flux).
     kernel = kernel / kernel.sum()
+    kernel, n_detached = make_psf.remove_detached_components(kernel, trim_threshold)
+    if n_detached:
+        kernel = kernel / kernel.sum()
+        print(f'  connectivity backstop (injected kernel): zeroed {n_detached}px in '
+              f'detached blobs')
     pedestal_frac = 0.0
     ped_frac, scat_frac = make_psf.wing_stats(kernel)
     trimmed, trim_size = make_psf.trim_kernel_to_amplitude(kernel, trim_threshold)
@@ -859,6 +880,7 @@ def run_injection(lens, filt, sample=None, drizzle_pass='auto', trim_threshold=1
     khdr['PSFPED'] = (round(pedestal_frac, 6), 'ePSF-wing pedestal removed (fraction of peak)')
     khdr['PSFINJ'] = (True, 'built by artificial-star injection + re-drizzle')
     khdr['PSFBLUR'] = (round(float(blur_sigma or 0.0), 4), 'calibrated extra blur of the model (detector px)')
+    khdr['PSFSCALE'] = (round(psf_models.model_width_scale(inst_key, filt), 4), 'calibrated width scale of the model')
     khdr['PSFNSTI'] = (len(crops), 'injected grid stars averaged (sub-pixel phases)')
     khdr['PSFNPASS'] = (n_passes, 'injection passes (grid shifted per pass)')
     khdr['PSFPHERR'] = (round(float(np.sqrt(np.sum(phase_std ** 2))), 6) if phase_std is not None else 0.0,
@@ -906,6 +928,7 @@ def run_injection(lens, filt, sample=None, drizzle_pass='auto', trim_threshold=1
         'n_stars': len(crops),
         'n_passes': n_passes,
         'blur_sigma_det_px': round(float(blur_sigma or 0.0), 4),
+        'width_scale': round(psf_models.model_width_scale(inst_key, filt), 4),
         'star_fwhm_pix': [round(float(fw.min()), 4), round(float(np.median(fw)), 4), round(float(fw.max()), 4)] if len(fw) else None,
         'phase_err_frac': round(float(np.sqrt(np.sum(phase_std ** 2))), 6) if phase_std is not None else None,
     }

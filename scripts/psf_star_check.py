@@ -60,7 +60,11 @@ import mast_target_names
 import stamp_paths
 
 EXTENDED_RATIO = 1.15       # real/twin FWHM above this: not a point source
-CAL_MIN_SNR = 100.0         # peak S/N of a star used for calibration and error maps
+CAL_MIN_SNR = 100.0         # peak S/N of a star used for the blur calibration (100 over 50: lower-S/N stars read
+                            # systematically wider -- F555W blur 0.075/0.048/0.029/0.000 at snr 50/100/150/200 -- so a
+                            # low gate biases the fit high; 2026-11-09 scan)
+ERR_MIN_SNR = 50.0          # peak S/N for the error-map pool (50 over 100: same err_frac on well-populated filters,
+                            # better-sampled sparse ones; noise only leaks in below 50)
 CROP = 31                   # star crops (output px) for the record; the calibration uses r_fit
 SIGMA_GRID = np.arange(0.0, 1.501, 0.05)   # extra blur grid, OUTPUT px
 STARCHECK_JSON = os.environ.get('PSF_STARCHECK_JSON') or os.path.join(ws_path, 'info', 'provenance', 'lens_psf_starcheck.json')
@@ -95,7 +99,18 @@ def band(sample, lens, filt, blur_sigma_det=None):
         info_json.update(STARCHECK_JSON, sample, lens, filt, rec)
         return
     x, y = np.asarray(tbl['x'], float), np.asarray(tbl['y'], float)
-    coords = [fld['wcs'].pixel_to_world(float(xi), float(yi)) for xi, yi in zip(x, y)]
+    # The twins must land on the same ARRAY pixel (and sub-pixel phase) as the real stars.
+    # A post-drizzle tie edited only CRVAL -- the pixels never moved -- and the injection
+    # drizzle re-pins CRVAL to the catalogue position, so convert pixel->sky on the UNTIED
+    # lattice (CRVAL set back to the catalogue position, as AstroDrizzle wrote it pre-tie),
+    # not on the tied header WCS (miscut every twin by the tie on tied bands, 2026-11-12).
+    from astropy.coordinates import SkyCoord
+    import astropy.units as u
+    _ra, _dec = make_psf_inject.catalogue_coord_for(lens)
+    _cat = SkyCoord(_ra, _dec, unit=(u.hourangle, u.deg), frame='icrs')
+    untied = fld['wcs'].deepcopy()
+    untied.wcs.crval = [float(_cat.ra.deg), float(_cat.dec.deg)]
+    coords = [untied.pixel_to_world(float(xi), float(yi)) for xi, yi in zip(x, y)]
     try:
         with contextlib.redirect_stdout(io.StringIO()):
             twin, twcs, inj = make_psf_inject.injected_mosaic(sample, lens, filt, coords, blur_sigma_det=blur_sigma_det)
@@ -131,6 +146,23 @@ def band(sample, lens, filt, blur_sigma_det=None):
         e = make_psf._crop_centered(err, C, cx, cy)
         if t.sum() <= 0:
             continue
+        # the twin must land where the real star is: stars at the mosaic edge (or with a
+        # lattice mismatch) get a miscut twin crop whose 'ratio' and residual are garbage --
+        # 15 of 26 WFPC2 f606W records were such junk before this guard (2026-11-09; the
+        # lattice miscuts themselves were the science_lattice_wcs bug, fixed 2026-11-12).
+        # Centroids are measured on the inner 15x15: on a full 31-px crop a halo/gradient
+        # under the real star pulls centroid_com by several px (the noiseless twin has no
+        # gradient), tripping the guard on good pairs -- a truly miscut twin is many px off
+        # even in the inner window, so a 2 px cut there keeps the guard's teeth.
+        rr_ = np.clip(r - np.median(r), 0.0, None)[8:23, 8:23]
+        tt_ = np.clip(t - np.median(t), 0.0, None)[8:23, 8:23]
+        if rr_.sum() > 0 and tt_.sum() > 0:
+            from photutils.centroids import centroid_com
+            cr, ct = centroid_com(rr_), centroid_com(tt_)
+            coff = float(np.hypot(cr[0] - ct[0], cr[1] - ct[1]))
+            if coff > 2.0:
+                print(f'  skipping star at ({xi:.1f}, {yi:.1f}): real/twin crops disagree by {coff:.1f} px')
+                continue
         a, b, chi2, npx = core_fit(r, t, e, rad, r_fit)
         rb, tb = (make_psf._crop_centered(v, B, C // 2, C // 2) for v in (r - b, t))
         fr = make_psf.measure_fwhm(rb / rb.sum()) if rb.sum() > 0 else None
@@ -163,9 +195,12 @@ def band(sample, lens, filt, blur_sigma_det=None):
           f'{rec["median_ratio"]} ({inj["method"]}, blur {inj["blur_sigma_det_px"]:.3f} det px), {rec["seconds"]:.0f}s')
 
 
-def load_checks(snr_min=CAL_MIN_SNR):
-    """{inst_filt key: [(r, t, e, scale, det_scale, blur_used, r_fit), ...]} over every band's
-    saved crops, point-like stars at or above snr_min."""
+def load_checks(snr_min=CAL_MIN_SNR, narrow_ok=False):
+    """{inst_filt key: [(r, t, e, scale, det_scale, blur_used, r_fit, sample, lens), ...]} over every
+    band's saved crops, point-like stars at or above snr_min. `narrow_ok` keeps stars NARROWER
+    than their twin (ratio < 1/EXTENDED_RATIO): right for a scale fit or error map on a
+    too-wide model, wrong for the blur calibration (a blur cannot shrink, so those stars carry
+    no information and a narrow CR spike would bias the fit)."""
     rec = info_json.load(STARCHECK_JSON)
     out = {}
     for sample, lenses in rec.items():
@@ -178,14 +213,31 @@ def load_checks(snr_min=CAL_MIN_SNR):
                     continue
                 z = np.load(f)
                 key = err_key(r['instrument'], filt)
+                from photutils.centroids import centroid_com
                 for i in range(len(z['ratio'])):
                     ratio = z['ratio'][i]
-                    if not np.isfinite(ratio) or z['peak_snr'][i] < snr_min or not (1 / EXTENDED_RATIO <= ratio <= EXTENDED_RATIO):
+                    if not np.isfinite(ratio) or z['peak_snr'][i] < snr_min or ratio > EXTENDED_RATIO:
                         continue
+                    if not narrow_ok and ratio < 1 / EXTENDED_RATIO:
+                        continue
+                    # drop miscut twin crops (pre-guard records): real/twin centroids must agree
+                    rr_ = np.clip(z['real'][i].astype(float) - np.median(z['real'][i]), 0.0, None)
+                    tt_ = np.clip(z['twin'][i].astype(float) - np.median(z['twin'][i]), 0.0, None)
+                    if rr_.sum() > 0 and tt_.sum() > 0:
+                        cr, ct = centroid_com(rr_), centroid_com(tt_)
+                        if np.hypot(cr[0] - ct[0], cr[1] - ct[1]) > 1.0:
+                            continue
                     out.setdefault(key, []).append((z['real'][i].astype(float), z['twin'][i].astype(float),
                                                     z['err'][i].astype(float), float(z['scale']), float(z['det_scale']),
-                                                    float(z['blur_sigma_det']), float(z['r_fit'])))
+                                                    float(z['blur_sigma_det']), float(z['r_fit']), sample, lens))
     return out
+
+
+def pool_outliers(cal, key):
+    """{(sample, lens)} the calibration JSON excludes from key's error-map pool (recorded under
+    'error_map_pool_outliers'; see the note there)."""
+    return {(o.get('sample'), o['lens']) for o in cal.get('error_map_pool_outliers', {}).get(key, [])
+            if isinstance(o, dict) and 'lens' in o}
 
 
 def _load_cal():
@@ -202,7 +254,7 @@ def calibrate():
     fits_ = cal.setdefault('calibration_fit', {})
     for key, stars in sorted(load_checks().items()):
         best = []
-        for r, t, e, sc, det, used, r_fit in stars:
+        for r, t, e, sc, det, used, r_fit, _sample, _lens in stars:
             C = r.shape[0]
             yy, xx = np.mgrid[:C, :C]
             rad = np.hypot(xx - C // 2, yy - C // 2)
@@ -241,15 +293,74 @@ def calibrate():
     print(f'wrote {psf_models.CALIBRATION_JSON}')
 
 
+SCALE_GRID = np.arange(0.50, 1.201, 0.02)   # width-scale grid (dimensionless)
+
+
+def calibrate_scale():
+    """Per camera+filter, the median per-star width scale s (real = a * twin(x/s) + b, core
+    chi^2) over the well-centred stars at ERR_MIN_SNR, narrow stars kept (they are the
+    informative ones for a scale). Written to the calibration JSON as width_scale; consumed
+    by psf_models.model_width_scale. Twins carry that camera+filter's calibrated blur, so the
+    scale measures what the blur did not fix -- for blur-calibrated cameras it should read
+    ~1. For WFPC2 (blur vetoed) it IS the width correction."""
+    from scipy.ndimage import map_coordinates
+
+    def scaled(t, s):
+        C = t.shape[0]
+        c = (C - 1) / 2.0
+        yy, xx = np.mgrid[:C, :C].astype(float)
+        return map_coordinates(t, [c + (yy - c) / s, c + (xx - c) / s], order=3, mode='constant', cval=0.0) / s ** 2
+
+    cal = _load_cal()
+    ws = cal.setdefault('width_scale', {})
+    fits_ = cal.setdefault('scale_fit', {})
+    for key, stars in sorted(load_checks(snr_min=ERR_MIN_SNR, narrow_ok=True).items()):
+        inst, filt = key.split('_', 1)
+        inst_key = {'ACSWFC': 'ACS/WFC', 'WFC3IR': 'WFC3/IR', 'WFC3UVIS': 'WFC3/UVIS', 'WFPC2': 'WFPC2'}[inst]
+        per = []
+        for r, t, e, sc, det, used, r_fit, _sample, _lens in stars:
+            C = r.shape[0]
+            yy, xx = np.mgrid[:C, :C]
+            rad = np.hypot(xx - C // 2, yy - C // 2)
+            chi = np.array([core_fit(r, scaled(t, s), e, rad, r_fit)[2] for s in SCALE_GRID])
+            k = int(np.argmin(chi))
+            s = SCALE_GRID[k]
+            if 0 < k < len(chi) - 1:
+                c0, c1, c2 = chi[k - 1], chi[k], chi[k + 1]
+                s += 0.5 * (c0 - c2) / (c0 - 2 * c1 + c2) * (SCALE_GRID[1] - SCALE_GRID[0])
+            per.append(s)
+        per = np.array(per)
+        med = float(np.median(per))
+        ws.setdefault(inst_key, {})[filt] = round(med, 4)
+        fits_[key] = dict(n_stars=len(per), scale=round(med, 4),
+                          scale_16_84=[round(float(v), 4) for v in np.percentile(per, [16, 84])])
+        print(f'{key}: {len(per)} stars, scale {med:.3f} (16-84% {np.percentile(per, 16):.3f}-{np.percentile(per, 84):.3f})')
+    cal['_how_scale'] = ('psf_star_check.py --calibrate-scale: each real PSF star against its noiseless twin, '
+                         f'well-centred pairs at peak S/N >= {ERR_MIN_SNR:g}, narrow stars kept; per star the '
+                         'width scale of the twin that minimises the core chi^2 (flux-conserving stretch), the '
+                         'median over the stars. Twins carry the calibrated blur, so ~1 is expected for '
+                         'blur-calibrated cameras; for WFPC2 (blur vetoed) it is the width correction.')
+    with open(psf_models.CALIBRATION_JSON, 'w') as f:
+        json.dump(cal, f, indent=4)
+    print(f'wrote {psf_models.CALIBRATION_JSON}')
+
+
 def error_maps():
     from astropy.io import fits
     from astropy.stats import sigma_clip
     cal = _load_cal()
     os.makedirs(MODEL_ERROR_DIR, exist_ok=True)
     errs = cal.setdefault('model_error', {})
-    for key, stars in sorted(load_checks().items()):
+    for key, stars in sorted(load_checks(snr_min=ERR_MIN_SNR).items()):
+        outl = pool_outliers(cal, key)
+        if outl:
+            kept = [s for s in stars if (s[7], s[8]) not in outl]
+            if len(kept) != len(stars):
+                print(f'{key}: excluded {len(stars) - len(kept)} outlier star(s) '
+                      f'{sorted(outl & {(s[7], s[8]) for s in stars})} (error_map_pool_outliers)')
+            stars = kept
         res, var = [], []
-        for r, t, e, sc, det, used, r_fit in stars:
+        for r, t, e, sc, det, used, r_fit, _sample, _lens in stars:
             C = r.shape[0]
             yy, xx = np.mgrid[:C, :C]
             rad = np.hypot(xx - C // 2, yy - C // 2)
@@ -263,7 +374,7 @@ def error_maps():
         hdr = fits.Header()
         hdr['PSFEKEY'] = (key, 'camera_filter')
         hdr['PSFERR'] = ('model_vs_stars', 'rms real-star residual about its injected twin')
-        hdr['PSFNSTAR'] = (len(stars), 'stars (point-like, peak S/N >= %g)' % CAL_MIN_SNR)
+        hdr['PSFNSTAR'] = (len(stars), 'stars (point-like, peak S/N >= %g)' % ERR_MIN_SNR)
         hdr['PSFBLUR'] = (stars[0][5], 'blur the twins carried (detector px)')
         fits.PrimaryHDU(em.astype(np.float32), hdr).writeto(os.path.join(MODEL_ERROR_DIR, f'{key}.fits'), overwrite=True)
         errs[key] = dict(n_stars=len(stars), err_frac=round(float(np.sqrt(np.sum(em ** 2))), 5))
@@ -281,15 +392,20 @@ def main():
     p.add_argument('--blur', type=float, default=None,
                    help='extra blur of the twins in detector px (default: the calibrated one; 0 for none)')
     p.add_argument('--calibrate', action='store_true')
+    p.add_argument('--calibrate-scale', action='store_true',
+                   help='the width scale per camera+filter (WFPC2: the width correction; '
+                        'blur-calibrated cameras should read ~1)')
     p.add_argument('--error-maps', action='store_true')
     a = p.parse_args()
     warnings.simplefilter('ignore')
     if a.calibrate:
         return calibrate()
+    if a.calibrate_scale:
+        return calibrate_scale()
     if a.error_maps:
         return error_maps()
     if not (a.lens and a.filt):
-        p.error('give --lens and --filt, or --calibrate / --error-maps')
+        p.error('give --lens and --filt, or --calibrate / --calibrate-scale / --error-maps')
     band(a.sample, a.lens, a.filt, a.blur)
 
 
