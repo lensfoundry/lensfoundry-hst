@@ -14,8 +14,8 @@ PSFs and dataset QC PNGs. Gitignored renders are regenerable (scripts/regenerate
 stay out. Regenerate info/manifest.csv first (make_manifest.py); this script refuses a band the
 manifest lists that has no tracked files.
 
-Output: release/<sample>.zip and release/<sample>_<filter>.zip (gitignored). The Zenodo upload
-itself is manual (see the lensfoundry release plan, local/release_plan.md).
+Output: release/<sample>_all.zip and release/<sample>_<filter>.zip (gitignored). The Zenodo
+upload itself is manual (see the lensfoundry release plan, local/release_plan.md).
 
 Usage:
     uv run python scripts/make_release_zips.py                       # every sample and filter
@@ -84,7 +84,7 @@ def main():
             continue
         srows = [r for r in rows if r['sample'] == sample]
         if not a.filter:
-            write_zip(os.path.join(OUT_DIR, f'{sample}.zip'), srows, files_by_dir, header,
+            write_zip(os.path.join(OUT_DIR, f'{sample}_all.zip'), srows, files_by_dir, header,
                       a.dry_run)
         filts = sorted({r['filter'] for r in srows})
         for filt in filts:

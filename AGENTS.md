@@ -3725,9 +3725,11 @@ redshifts, θ_E and the Etherington Gold flag. It answers what the layout cannot
 to the roster, stamps, positions or PSFs.
 
 **`make_release_zips.py` builds the Zenodo archives from it** into `release/` (gitignored): one
-zip per sample and one per (sample, filter), F606W including `_visit2` (bells, with one filter,
-gets the sample zip only). Each holds only TRACKED files, keeps repo-relative paths (so several
-unzip into one tree) and carries its manifest rows as `manifest.csv`. About 1.2 GB per set, 25
+zip per sample (`<sample>_all.zip`; renamed from bare `<sample>.zip` on 2026-11-26 so the
+full-sample archive is unmistakable next to the per-filter ones) and one per (sample, filter),
+F606W including `_visit2` (bells, with one filter, gets the sample zip only). Each holds only
+TRACKED files, keeps repo-relative paths (so several
+unzip into one tree) and carries its manifest rows as `manifest.csv`. About 1.6 GB per set, 26
 archives in all. Without Zenodo, the same slice comes straight from GitHub with a non-cone sparse
 checkout:
 
