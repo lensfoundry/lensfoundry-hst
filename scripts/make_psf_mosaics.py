@@ -132,7 +132,7 @@ def main():
                    for lens, label, _, _ in entries_raw]
         arrays = [data for _, _, data, _ in entries_raw]
         raw_groups = [group for _, _, _, group in entries_raw]
-        split_by = raw_groups if any(g is not None for g in raw_groups) else None
+        split_by = raw_groups if len(set(g for g in raw_groups if g is not None)) > 1 else None
         print(f"{group_name}: {len(entries)} PSF kernels")
 
         plot_mosaic(entries, arrays, 'label',

@@ -8,10 +8,10 @@ available lens out on a 5-wide grid, one mosaic per (filter group, data type). N
 is re-drizzled or re-cut - this only reads existing stamp FITS files.
 
 Filter groups come from mosaic_groups.py, shared with make_psf_mosaics.py, so both
-scripts stay in sync. For the SLACS and swells samples (WFPC2 F606W and ACS F555W
-never share a lens):
+scripts stay in sync. For the SLACS and swells samples:
     f814W          - ACS/WFC
-    f606W_f555W    - WFPC2 F606W (+ split-visit f606W_visit2) merged with ACS F555W
+    f606W          - WFPC2 (+ split-visit f606W_visit2)
+    f555W          - ACS/WFC
     f160W          - WFC3/IR only (NICMOS F160W products were deleted, see AGENTS.md)
 gallery (WFC3/UVIS, no cross-filter merging) gets one group per filter: f438W, f606W,
 f814W. A sample not listed in mosaic_groups.py (bells is; the SL2S samples are not) falls
@@ -436,8 +436,9 @@ def main():
                    for lens, label, _, _, _ in entries_raw]
         groups = [group for _, _, _, _, group in entries_raw]
         # Only split the colourbar when the group actually mixes >1 instrument -
-        # f814W/f160W are single-instrument, so groups is all-None there.
-        split_by = groups if any(g is not None for g in groups) else None
+        # f814W/f160W are single-instrument, so groups is all-None there, and the
+        # f606W group's two keys both resolve to 'f6'.
+        split_by = groups if len(set(g for g in groups if g is not None)) > 1 else None
         print(f"{group_name}: {len(entries)} lenses")
 
         signals, noises, snrs = [], [], []

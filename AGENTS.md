@@ -3669,18 +3669,21 @@ re-drizzled, re-cut, or rebuilt — pure visualization over what's already on di
 `data/stamps/`.
 
 - **Filter groups** come from `scripts/mosaic_groups.py`, shared by both scripts so they
-  stay in sync. For the SLACS samples and `swells`: `f814W`, `f606W_f555W` (WFPC2 F606W —
-  including the split-visit `f606W_visit2` key, tried only if the lens has no bare `f606W` —
-  merged with ACS F555W per lens, since no SLACS lens has both), `f160W`. For `gallery`: one
-  group per UVIS filter (no
+  stay in sync. For the SLACS samples and `swells`: `f814W`, `f606W` (including the
+  split-visit `f606W_visit2` key, tried only if the lens has no bare `f606W`), `f555W`,
+  `f160W`. The WFPC2 F606W and ACS F555W groups were one merged `f606W_f555W` group until
+  2026-11-26, when Sam split them (no SLACS lens has both filters, so no panel moved). For
+  `gallery`: one group per UVIS filter (no
   cross-filter merging). A sample not listed there falls back to one group per filter
   subdirectory found on disk, so a new sample/filter still produces mosaics with no code
   change.
 - `make_mosaics.py` writes `{group}_signal.png` / `{group}_noise.png` / `{group}_snr.png`
   (inferno + asinh stretch, the astropy convention for smoothly showing negative
-  background-noise pixels alongside bright cores). Multi-instrument groups
-  (`f606W_f555W`) split the colourbar per instrument — WFPC2 F606W is far noisier than ACS
-  F555W (both in raw flux scale and true SNR), so a shared scale washes one out.
+  background-noise pixels alongside bright cores). The per-panel colourbar-split machinery
+  survives from the merged group (a group whose panels mix >1 instrument splits the
+  colourbar per instrument, since WFPC2 F606W is far noisier than ACS F555W in both raw
+  flux scale and true SNR); no group mixes instruments today, so every mosaic shares one
+  colourbar.
 - `make_psf_mosaics.py` writes `{group}_psf.png`, peak-normalised per panel (kernels are
   unit-sum normalised by `trim_kernel_to_amplitude`, so raw peak reflects kernel *size* as
   much as sharpness), on a **log stretch over 1e-4..1** (`pooled_log_norm`, matching the
