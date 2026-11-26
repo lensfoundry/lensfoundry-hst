@@ -262,6 +262,13 @@ def discover_targets(root, sample, lens=None, filt=None, include_ignored=False):
             print(f"  skipping {len(skipped)} gitignored band(s), not science products: "
                   + ', '.join(f'{l}/{f}' for l, f in skipped)
                   + "  (--include-ignored to use them anyway)")
+    if not found:
+        # A fresh clone carries no data products (they live on Zenodo, not in git). Say so
+        # with the next step, instead of an empty run that reads like a bug.
+        what = lens or f"sample {sample}"
+        print(f"  no stamps found for {what} under {root}")
+        print(f"  if {what} has data products, fetch them from Zenodo with:")
+        print(f"      {stamp_paths.fetch_hint(sample, filt)}")
     for key in sorted(found):
         yield key[0], key[1], found[key]
 

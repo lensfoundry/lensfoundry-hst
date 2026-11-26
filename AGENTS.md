@@ -3742,6 +3742,33 @@ cd HST_lenses_data_reduction && git sparse-checkout set --no-cone 'data/stamps/s
 git checkout main
 ```
 
+### The Zenodo fetch manifest (`make_zenodo_manifest.py`, `fetch_data.py`, 2026-11-26)
+
+```bash
+uv run python scripts/fetch_data.py --sample slacs --filter f606W   # one filter (smaller zip)
+uv run python scripts/fetch_data.py --sample slacs                  # a whole sample
+uv run python scripts/fetch_data.py --all --check                   # verify, download nothing
+```
+
+**The HST data record is PUBLISHED: concept DOI `10.5281/zenodo.24052764`** (version
+`10.5281/zenodo.24052765`, 28 files, 2026-11-26). Two tracked CSVs are the fetch manifest:
+`info/zenodo_archives.csv` (one row per zip: sha256, size, URL) and `info/zenodo_files.csv`
+(one row per data file: path, archive, sha256, size). Both are built by
+`scripts/make_zenodo_manifest.py` from the zips in `release/`, hashing the **zip contents**,
+with a drift warning where the working tree differs from the published archive; `--check`
+verifies the CSVs against `release/` without writing. **Every URL pins the version record**
+— concept-record file URLs 404, and a pinned hash cannot shift under a fetch. A new data
+version means editing `ZENODO_VERSION_URL` in `make_zenodo_manifest.py` and re-running it.
+
+**`fetch_data.py` is the download route** (added with step 5 of the release plan): picks the
+smallest covering archive (`<sample>_<filter>.zip` for `--filter`, else `<sample>_all.zip`),
+downloads it with **pooch** (SHA256-verified against `zenodo_archives.csv`, cached in the
+pooch cache), extracts only missing-or-changed files, and verifies every file against
+`zenodo_files.csv`. Re-runs are cheap (already-correct files are skipped, verified by hash).
+`stamp_paths.fetch_hint(sample, filt)` builds the command, and the GUI discovery
+(`make_masks.discover_targets` and `make_dataset_subplots`'s copy) prints it whenever a sweep
+finds zero stamps — the fresh-clone case after the step-7 untracking.
+
 ## NICMOS is deprioritised
 
 Do not generate or propose NICMOS (NIC2) products unless explicitly asked — the FOV is far

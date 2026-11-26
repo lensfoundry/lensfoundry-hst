@@ -13,10 +13,13 @@ two to four separate images around the deflector. Modelling those arcs measures 
 distributed in the deflector. A model needs more than a picture, though: it needs to know how
 uncertain every pixel is, how blurred the telescope makes a point of light, which pixels to
 ignore, and roughly where the multiple images are. This repository produces all of that, for
-152 lenses from six published lens surveys.
+163 lenses from six published lens surveys.
 
 **Most people only need the finished products in `data/stamps/`** — they are in git, so a
-plain clone has them. Re-running the reduction is only needed to change how it was done.
+plain clone has them, and they are also on **Zenodo
+([doi.org/10.5281/zenodo.24052764](https://doi.org/10.5281/zenodo.24052764))**:
+`uv run python scripts/fetch_data.py --sample slacs` downloads a sample's products with
+integrity checks. Re-running the reduction is only needed to change how it was done.
 
 **Recommended analysis tool: [PyAutoLens](https://github.com/PyAutoLabs/PyAutoLens)**, from
 the [PyAutoLabs](https://github.com/PyAutoLabs) software family. The products are written in
@@ -28,7 +31,7 @@ tools drew the masks and marked the positions.
 | Sample folder | Lenses | Survey | HST filters (number of lenses with each) |
 |---|---|---|---|
 | `slacs` | 73 | SLACS (Bolton et al. 2008; Auger et al. 2009) | F606W (57, plus 8 second visits), F814W (46), F160W (19), F555W (16) |
-| `swells` | 8 | SWELLS (Treu et al. 2011): disk-galaxy deflectors that SLACS also found | F606W (8), F160W (4), F814W (4), F450W (1) |
+| `swells` | 19 | SWELLS (Treu et al. 2011): disk-galaxy deflectors, both ones SLACS also found and SWELLS-only systems | F814W (15), F606W (13), F450W (10, plus 1 second visit), F435W (6), F160W (4) |
 | `gallery` | 15 | BELLS GALLERY (Shu et al. 2016) | F606W (15), F814W (6), F438W (6) |
 | `bells` | 21 | BELLS (Brownstein et al. 2012) | F814W (21) |
 | `dinos` | 20 | SL2S (Sonnenfeld et al. 2013) lenses re-imaged by Project Dinos (Sheu et al. 2025) | F475X (20), F606W (8), F600LP (4), F814W (3), F160W (1) |
@@ -44,7 +47,7 @@ Inside each sample, every lens is sorted two ways:
 
 So a lens lives in `data/stamps/<sample>/<single_band|multi_band>/<category>/<lens>/<filter>/`.
 
-That is 271 lens-and-filter images in total. A filter name gives its approximate central
+That is 303 lens-and-filter images in total. A filter name gives its approximate central
 wavelength in nanometres: F438W and F450W are blue, F606W and F475X/F600LP are visible light, F814W is
 near-infrared, and F160W is infrared. Seeing the same lens in several colours helps tell the
 (usually blue) lensed source apart from the (red) deflector.
@@ -53,8 +56,8 @@ The data come from four HST cameras. They differ in pixel size, so the stamps do
 
 | Camera | Filters here | Pixel size | Stamp size in pixels |
 |---|---|---|---|
-| ACS/WFC | F814W, F555W, F606W (one lens) | 0.05″ | 240 × 240 |
-| WFPC2 (its WF3 chip) | F606W, F814W, F450W (one lens) | 0.05″ (resampled from 0.1″) | 240 × 240 |
+| ACS/WFC | F814W, F555W, F606W (one lens), F435W | 0.05″ | 240 × 240 |
+| WFPC2 (its WF3 chip) | F606W, F814W, F450W | 0.05″ (resampled from 0.1″) | 240 × 240 |
 | WFC3/UVIS | F438W, F475X, F600LP, F606W, F814W | 0.0396″ | 303 × 303 |
 | WFC3/IR | F160W | 0.06″ (resampled from 0.13″) | 200 × 200 |
 
@@ -121,8 +124,19 @@ each panel's corner gives the lens's type (`SB`/`MB` single/multi band, then `P`
 prime/complex/limited/multi_galaxy).
 
 **Downloading one sample in one filter.** `info/manifest.csv` lists every lens and filter with
-its folder. The Zenodo record has one archive per sample and one per sample and filter (e.g. all
-SLACS F606W data, whatever its category). From GitHub, a sparse checkout fetches the same slice:
+its folder. The Zenodo record
+([doi.org/10.5281/zenodo.24052764](https://doi.org/10.5281/zenodo.24052764)) has one archive
+per sample and one per sample and filter (e.g. all
+SLACS F606W data, whatever its category). The repo's own fetch script downloads and
+SHA256-verifies an archive and unpacks it into `data/stamps/`:
+
+```bash
+uv run python scripts/fetch_data.py --sample slacs --filter f606W   # one filter
+uv run python scripts/fetch_data.py --sample slacs                  # a whole sample
+uv run python scripts/fetch_data.py --all                           # everything
+```
+
+From GitHub, a sparse checkout fetches the same slice:
 
 ```bash
 git clone --filter=blob:none --no-checkout https://github.com/samlange04/HST_lenses_data_reduction

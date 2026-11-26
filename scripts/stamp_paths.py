@@ -367,3 +367,17 @@ def gitignored(paths, ws_path=None):
     if proc.returncode > 1:
         return set()
     return {os.path.abspath(line) for line in proc.stdout.splitlines() if line.strip()}
+
+
+def fetch_hint(sample=None, filt=None):
+    """The command that downloads a sample's (or one band's) data products from Zenodo.
+
+    The bulk data (science stamps, noise maps, PSFs, dataset PNGs) is not in git -- it
+    ships in the Zenodo record and comes down through fetch_data.py. The GUI tools print
+    this when discovery finds no stamps, so a fresh clone gets the next step instead of
+    an empty run.
+    """
+    cmd = f'uv run python scripts/fetch_data.py --sample {sample or "<sample>"}'
+    if filt:
+        cmd += f' --filter {filt}'
+    return cmd

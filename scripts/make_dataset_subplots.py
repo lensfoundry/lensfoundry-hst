@@ -151,6 +151,13 @@ def discover_targets(root, sample, lens=None, filt=None, include_ignored=False):
         this_filt = os.path.basename(stamp_dir)
         this_lens = os.path.basename(os.path.dirname(stamp_dir))
         found[(this_lens, this_filt)] = stamp_dir
+    if not found:
+        # A fresh clone carries no data products (they live on Zenodo, not in git) -- same
+        # hint as make_masks.discover_targets.
+        what = lens or f"sample {sample}"
+        print(f"  no stamps found for {what} under {root}")
+        print(f"  if {what} has data products, fetch them from Zenodo with:")
+        print(f"      {stamp_paths.fetch_hint(sample, filt)}")
     for key in sorted(found):
         yield key[0], key[1], found[key]
 
