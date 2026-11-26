@@ -1441,7 +1441,11 @@
         "theta_e_arcsec": 3.11,
         "RE_kpc": 18.72,
         "zlens": 0.4872,
-        "zlens_src": "DESI DR1 (NED refcode 2024AJ....168...58D); SL2S III has no lens redshift for this system",
+        "zlens_src": {
+            "cite": "DESI DR1",
+            "source": "DESI DR1 (NED refcode 2024AJ....168...58D)",
+            "note": "SL2S III has no lens redshift for this system"
+        },
         "zsrc": null,
         "sigma_kms": null,
         "source": "Sonnenfeld+2013 (SL2S III, ApJ 777, 97) Table 6 R_Ein via VizieR J/ApJ/777/97/table6; zlens Table 7; zsrc from SL2S IV (ApJ 777, 98) Table 2; SL2S designation SL2SJ141917+511729; sigma not entered (SL2S IV lists several per-instrument values; pick one deliberately)",
