@@ -101,8 +101,9 @@ BAND_PREFIX = {
 
 # --ref auto: the first of these bands with a drizzled product is the reference frame.
 # F160W last: a lens with no optical reference band (slacs J1134+6027, swells J1251-0208) ties
-# its F606W to its F160W, whose WCS carries a fitted GSC242 solution -- the tie fa7d094 made by
-# hand on 2026-09-14, which the 2026-10-05 re-drizzle silently dropped before this fallback.
+# its F606W to its F160W, whose WCS carries a fitted GSC242 solution -- a tie first made by
+# hand on 2026-09-14 (commit fa7d094 in the pre-strip history; see the archive repo), which the
+# 2026-10-05 re-drizzle silently dropped before this fallback existed.
 AUTO_REF_ORDER = ('f814W', 'f600LP', 'f475X', 'f160W')
 
 

@@ -1901,16 +1901,14 @@ measurement, or a source-plane analysis.
   outline needs `origin='upper'` or it is drawn vertically mirrored.
 - **EVERY arc mask is OUT OF GIT (2026-10-21; their quality is not vouched for).** A
   `.gitignore` rule on `data/stamps/**/*_mask_arcs.{fits,png}` covers every sample and band;
-  the 126 previously tracked files were `git rm --cached` on **both `main` and `bcfill`**, and
-  remain in the history of earlier commits. **Nothing was deleted**: the files stay on disk
-  beside the sci they were drawn on, and their provenance stays in the tracked
+  the 126 previously tracked files were `git rm --cached` on **both `main` and `bcfill`**.
+  **Nothing was deleted**: the files stay on disk beside the sci they were drawn on, and their
+  provenance stays in the tracked
   `info/provenance/lens_arc_masks.json`, so `make_arc_masks.py` still counts those bands done and
   skips them (`--force` to redraw). A fresh clone has the provenance but **not the masks**.
-  **Trap:** checking out a commit or tag from before 2026-10-21 (e.g. the `2026-10-06` release
-  tag) and then switching back to `main` makes git **delete the on-disk arc masks**, because
-  they were tracked there and are not tracked here. Restore with
-  `git checkout 87d45bc~1 -- 'data/stamps/**/*_mask_arcs.*'` followed by `git rm -q --cached`
-  on the same paths.
+  Since the 2026-11-27 history strip (release plan step 8), the 126 tracked arc masks survive
+  only in the archive repo `lensfoundry/lensfoundry-hst-archive` (pre-strip commit `87d45bc~1`)
+  — they are no longer in this repo's history at all, and no checkout here can clobber them.
 - **Arc masks are optional products.** A band or a whole sample without one (BELLS and all
   of SL2S have none) is complete, not outstanding work.
 
