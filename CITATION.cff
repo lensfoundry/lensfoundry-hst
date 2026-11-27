@@ -3,11 +3,11 @@ message: >-
   If you use this repository, please credit the repository and Samuel C. Lange
   (The Chinese University of Hong Kong), and cite the survey papers for the
   lenses you use (see README.md).
-type: dataset
-title: "HST lens image reduction"
+type: software
+title: "lensfoundry-hst: ready-to-model strong lens imaging data from HST"
 abstract: >-
-  Hubble Space Telescope imaging of 133 galaxy-scale strong gravitational
-  lenses from the SLACS, BELLS, BELLS GALLERY, SL2S and Project Dinos samples,
+  Hubble Space Telescope imaging of galaxy-scale strong gravitational lenses
+  from the SLACS, SWELLS, BELLS, BELLS GALLERY, SL2S and Project Dinos samples,
   reduced from the MAST archive into ready-to-model stamps: science images,
   noise maps, PSF kernels with uncertainty maps, hand-drawn masks and
   hand-marked multiple-image positions, together with the pipeline that
@@ -30,4 +30,5 @@ keywords:
   - SLACS
   - BELLS
   - SL2S
-date-released: "2026-10-25"
+version: "1.0.0"
+date-released: "2026-11-27"
