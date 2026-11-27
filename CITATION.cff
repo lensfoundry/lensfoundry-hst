@@ -19,9 +19,7 @@ authors:
     orcid: "https://orcid.org/0009-0007-0679-818X"
 repository-code: "https://github.com/lensfoundry/lensfoundry-hst"
 url: "https://github.com/lensfoundry/lensfoundry-hst"
-license:
-  - MIT
-  - CC-BY-4.0
+license: MIT
 keywords:
   - strong gravitational lensing
   - Hubble Space Telescope
@@ -31,4 +29,4 @@ keywords:
   - BELLS
   - SL2S
 version: "1.0.0"
-date-released: "2026-11-27"
+date-released: 2026-11-27
