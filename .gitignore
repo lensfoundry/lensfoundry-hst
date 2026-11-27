@@ -4,55 +4,35 @@
 # info/provenance/*.json tracking files (which obsids produced which product), not in the
 # bytes. ~185 GB across ~3900 FITS files, so it must never enter git history.
 #
-# data/stamps is the deliberate exception: the final 12" science stamps (stamp12_*; see
-# scripts/stamp_paths.py) and the band's PSF (psf*.fits) are small and worth versioning,
-# and the band dirs carry the hand-drawn masks (stamp12_mask.fits) and hand-marked
-# positions (stamp12_positions.json), which no script can regenerate. data/mosaics is the
-# same deal: small QC grids generated from the stamps by scripts/make_mosaics.py.
-#
-# Stamps of any OTHER size (stamp20_* etc.) sit in the same band dirs but are NOT
-# versioned: they are regenerable from the drizzled mosaics by one runner call
-# (run_stamps_all.sh <sample> <size>), and carry no masks of their own since every tool
-# defaults to each lens's MODELLING size. Hence the stamp*/!stamp12_* pair below. A lens
-# given a smaller modelling size (stamp_size in info/samples/lens_samples.json) needs its
-# own !data/stamps/**/stamp<S>_* line here, or its stamps, masks and positions are ignored.
-#
-# There is ONE stamp per (sample, lens, band, size), and its filename says which reduction
-# it is (2026-09-22): stamp12_{sci,noise}.fits is the standard drizzle (what main carries,
-# and what the fits use); a variant cut is tagged, stamp12_bcfill_sci.fits (the bcfill
-# branch). Masks/positions/PSFs are untagged and shared. The drizzle layer keeps every
-# reduction (data/drizzled[_bcfill][_crfill]/, data/drizzle_files*/), all ignored by the
-# data/* rule.
+# data/stamps kept a deliberate exception until 2026-11-27 (release plan step 7): the
+# stamp sci/noise FITS, the PSF kernels and the QC PNGs were tracked alongside the
+# hand-made files. The exception is now narrowed to what no archive or script can
+# restore:
+#   stamp<S>_mask.fits       hand-drawn contaminant masks
+#   stamp<S>_positions.json  hand-marked lensed-image positions
+#   primary_band.json        the per-lens primary-band record
+# The regenerable products — stamp<S>_{sci,noise}.fits, psf*.fits, *_dataset.png,
+# *_bands.png — and the data/mosaics QC grids ship in the Zenodo record (concept DOI
+# 10.5281/zenodo.24052764) and restore with scripts/fetch_data.py. A stamp of any other
+# size re-cuts from the drizzled mosaics with one runner call, so the stamp<S> width no
+# longer matters here: whatever is on disk is covered by the patterns below.
 data/*
 !data/stamps/
-!data/mosaics/
-data/stamps/**/stamp*
-!data/stamps/**/stamp12_*
-# The multi_galaxy lenses' modelling size is 30" (per-lens stamp_size, 2026-10-30).
-!data/stamps/*/*/multi_galaxy/**/stamp30_*
-# The swells sample's modelling size is 20" (sample-level stamp_size, 2026-11-10;
-# the disk deflectors overflow a 12" stamp).
-!data/stamps/swells/**/stamp20_*
+data/stamps/**/stamp*_sci.fits
+data/stamps/**/stamp*_noise.fits
+data/stamps/**/psf*.fits
+data/stamps/**/*.png
 
-# ── QC renders of tracked stamps ───────────────────────────────────────────────
-# stamp12.png is a plain 3-panel render of the tracked sci/noise stamp, rebuilt by
-# make_stamps.py (untracked 2026-10-04, when it had grown to 410 MB of history; the
-# stamp*/!stamp12_* pair above already excludes it, since it has no underscore after the
-# size). stamp12_positions.png is a QC view OF the tracked stamp12_positions.json, rebuilt
-# with no GUI and no re-clicking:
+# ── QC renders and arc masks ───────────────────────────────────────────────────
+# stamp<S>.png, *_positions.png, *_dataset.png and *_bands.png are all covered by the
+# data/stamps/**/*.png rule above (a positions overlay rebuilds with no GUI:
 #     uv run python scripts/make_positions.py --sample <sample> --overlays-only
-# stamp12_dataset.png is still tracked (the QC view people actually open).
-data/stamps/**/stamp12.png
-data/stamps/**/*_positions.png
-
-# ── Arc masks: ALL out of git (2026-10-21) ─────────────────────────────────────
-# Every stamp12_mask_arcs.{fits,png}, in every sample and band, is held OUT of git (their
-# quality is not vouched for; arc masks are optional products anyway). Nothing is deleted:
-# the files stay on disk beside the sci they were drawn on, and their provenance stays in
-# the tracked info/provenance/lens_arc_masks.json, so make_arc_masks.py still counts them
-# done and skips them (--force to redraw). Drop these two lines to track them again.
+# ). Every *_mask_arcs.fits additionally stays out of git (2026-10-21: their quality is
+# not vouched for; arc masks are optional products). Nothing is deleted: the files stay
+# on disk beside the sci they were drawn on, and their provenance stays in the tracked
+# info/provenance/lens_arc_masks.json, so make_arc_masks.py still counts them done and
+# skips them (--force to redraw). Drop this line to track them again.
 data/stamps/**/*_mask_arcs.fits
-data/stamps/**/*_mask_arcs.png
 
 # ...and neither is the per-size QC provenance for an untracked size, which would
 # otherwise be a tracked file describing products nobody else has on disk. The 12"

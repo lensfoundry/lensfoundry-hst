@@ -275,9 +275,13 @@ S/N −17.7) and deleted 2026-09-26.
 
 ## Data flow and directory layout
 
-**A fresh clone carries only the tracked layers**: `data/stamps/` (the finished stamps,
-noise maps, PSF kernels, masks and positions for every lens), `data/mosaics/` and `info/`.
-Every FITS layer under `calibrated/`, `drizzle_files*/`, `drizzled*/`, `psf/` and
+**A fresh clone carries the hand-made and record layers only** (since the 2026-11-27
+untracking, release plan step 7): `data/stamps/`'s masks (`stamp<S>_mask.fits`), positions
+(`stamp<S>_positions.json`) and `primary_band.json`, plus `info/`. The finished stamps,
+noise maps, PSF kernels, `*_dataset.png`/`*_bands.png` renders and `data/mosaics/` are no
+longer tracked — they ship in the Zenodo record (concept DOI 10.5281/zenodo.24052764) and
+restore with `scripts/fetch_data.py`. Every FITS layer under `calibrated/`,
+`drizzle_files*/`, `drizzled*/`, `psf/` and
 `reference_files/`, and every stamp of a non-default size (`stamp<S>_*`), is gitignored and regenerable (`scripts/regenerate_files.py`,
 above). Any re-cut (`--center-from`, a new `--size`), a new mask drawn on a fresh stamp, or a
 PSF rebuild needs the lens re-drizzled first: `calibrated/` re-downloads from MAST,
@@ -897,9 +901,10 @@ noise FITS (from the weight map), and a 3-panel PNG.
   the `stamp20.png` renders remain. The PSF has no size: `psf.fits` is trimmed by amplitude,
   so it is a property of the band, and every stamp size in the directory pairs with it
   (`stamp_paths.psf_stamp_dir()`). See *PSF generation*.
-  **Only the 12″ files are tracked in git** — they are what the mask/position tools target
-  and what downstream modelling reads, and the band dirs hold the hand-drawn masks and
-  hand-marked positions, which no script can regenerate. `stamp<S>_*` at any other size, its
+  **Since 2026-11-27 the only stamp-tree files tracked in git are the hand-made ones** —
+  `stamp<S>_mask.fits`, `stamp<S>_positions.json` and `primary_band.json`, which no script
+  can regenerate (release plan step 7). The sci/noise stamps, PSFs and QC PNGs ship in the
+  Zenodo record and restore with `scripts/fetch_data.py`. `stamp<S>_*` at any size, its
   mosaics and its QC JSON are gitignored, and the GUI tools skip an ignored stamp unless
   `--include-ignored`.
 - **`--center-from <stamp>`** cuts on the sky position of an existing stamp's central pixel
@@ -1445,7 +1450,7 @@ field in `info/provenance/lens_masks.json` reads
 `S/N, radial-subtracted + as-observed (Scribbler arcsinh stretch)`.
 
 **Defaults to `stamp_paths.DEFAULT_SIZE` (12″) — the pipeline's standard
-stamps**, and the reason the `stamp12_*` files are the ones kept tracked in git (see
+stamps**, and the reason the mask/positions files are the ones kept tracked in git (see
 *Stamps* above and `.gitignore`): every stamp is regenerable from the drizzled mosaics, but a
 hand-drawn mask is not, so it needs the same durability as a tracked product. Pass
 `--size 20` (with `--include-ignored`, since `stamp20_*` is untracked) to mask the 20″ stamps
@@ -1545,7 +1550,7 @@ band's PSF resolves θ_E.
   mask is outlined **black on a thin white halo** (2026-11-14, Sam: red blended into inferno's
   bright end; the halo keeps the line visible on dark sky — the positions crosses' convention).
   On multi_galaxy stamps the isophote fit starts at the catalogue deflector
-  (`isophote_model.deflector_pixel`), not the group centroid. Written as `stamp<S>_bands.png` in the lens's stamps dir (tracked in git).
+  (`isophote_model.deflector_pixel`), not the group centroid. Written as `stamp<S>_bands.png` in the lens's stamps dir (gitignored since 2026-11-27).
 - Provenance: `info/provenance/lens_primary_band.json` (per lens: suggestion, resolved primary
   and its source, per-band S/N/FWHM/score) plus `primary_band.json` in the lens's stamps dir.
 - **Re-run `choose_primary_band.py` after any stamp re-cut or PSF rebuild** — the measurement
@@ -1662,7 +1667,8 @@ correction produces a 0–2 px stamp shift, and **the two do not match**. Conseq
   integer; the `MASKSHFT` header card records it.
 - **`make_stamps.py` does NOT write `stamp12_dataset.png` — `make_masks.py` does**, so a
   re-cut (or any mask edited outside the GUI) leaves that QC subplot stale, silently.
-- **`data/mosaics/` is tracked and is built from the stamps**, so it goes stale too.
+- **`data/mosaics/` is built from the stamps**, so it goes stale too (untracked since
+  2026-11-27).
 
   **The full chain after an alignment is: align → `make_stamps` → mask shift →
   `make_dataset_subplots --force` → `make_mosaics` → `make_positions --rebroadcast`.**
