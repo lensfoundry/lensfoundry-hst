@@ -3741,8 +3741,8 @@ archives in all. Without Zenodo, the same slice comes straight from GitHub with 
 checkout:
 
 ```bash
-git clone --filter=blob:none --no-checkout https://github.com/samlange04/HST_lenses_data_reduction
-cd HST_lenses_data_reduction && git sparse-checkout set --no-cone 'data/stamps/slacs/*/*/*/f606W*/' info/
+git clone --filter=blob:none --no-checkout https://github.com/lensfoundry/lensfoundry-hst
+cd lensfoundry-hst && git sparse-checkout set --no-cone 'data/stamps/slacs/*/*/*/f606W*/' info/
 git checkout main
 ```
 

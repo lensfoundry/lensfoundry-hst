@@ -17,8 +17,8 @@ authors:
     given-names: Samuel C.
     affiliation: The Chinese University of Hong Kong
     orcid: "https://orcid.org/0009-0007-0679-818X"
-repository-code: "https://github.com/samlange04/HST_lenses_data_reduction"
-url: "https://github.com/samlange04/HST_lenses_data_reduction"
+repository-code: "https://github.com/lensfoundry/lensfoundry-hst"
+url: "https://github.com/lensfoundry/lensfoundry-hst"
 license:
   - MIT
   - CC-BY-4.0

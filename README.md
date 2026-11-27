@@ -1,7 +1,7 @@
 # HST lens image reduction
 
 > **If you use this repository, please credit the repository
-> ([github.com/samlange04/HST_lenses_data_reduction](https://github.com/samlange04/HST_lenses_data_reduction))
+> ([github.com/lensfoundry/lensfoundry-hst](https://github.com/lensfoundry/lensfoundry-hst))
 > and Samuel C. Lange (The Chinese University of Hong Kong).**
 
 This repository turns Hubble Space Telescope (HST) archive images of **strong gravitational
@@ -139,8 +139,8 @@ uv run python scripts/fetch_data.py --all                           # everything
 From GitHub, a sparse checkout fetches the same slice:
 
 ```bash
-git clone --filter=blob:none --no-checkout https://github.com/samlange04/HST_lenses_data_reduction
-cd HST_lenses_data_reduction && git sparse-checkout set --no-cone 'data/stamps/slacs/*/*/*/f606W*/' info/
+git clone --filter=blob:none --no-checkout https://github.com/lensfoundry/lensfoundry-hst
+cd lensfoundry-hst && git sparse-checkout set --no-cone 'data/stamps/slacs/*/*/*/f606W*/' info/
 git checkout main
 ```
 
@@ -250,7 +250,7 @@ optimistic, so it is kept only for comparison.
 ## Credit and acknowledgements
 
 If you use this repository, please credit the repository
-([github.com/samlange04/HST_lenses_data_reduction](https://github.com/samlange04/HST_lenses_data_reduction))
+([github.com/lensfoundry/lensfoundry-hst](https://github.com/lensfoundry/lensfoundry-hst))
 and **Samuel C. Lange (The Chinese University of Hong Kong)**. GitHub's **"Cite this
 repository"** button (right-hand sidebar, from `CITATION.cff`) gives a ready-made citation.
 
