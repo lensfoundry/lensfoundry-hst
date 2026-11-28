@@ -2942,6 +2942,36 @@ regenerates it). Findings:
 - The J1016+3859 f160W err-map shape mismatch found en route (27 vs 29 px after its veto
   re-trim) is fixed and `psf_hybrid_veto.py` now re-crops the error map on any veto.
 
+**Recheck #3 (same day, from scratch, new tests only — EE monotonicity, structured-vs-
+speckled negativity, core positivity, kernel↔stamp pairing, record↔file consistency, and
+the twin test; `diagnostics/psf_recheck/recheck3.py` / `recheck3_twins.py` regenerate).**
+Findings and verdicts:
+- **The twin test is the decisive new result.** For all 233 kernels with drizzled star twins
+  (the model injected at each field star's own position and drizzled with the science
+  weights), the shipped kernel matches real stars drizzled the same way to ±0.006 median
+  EE(2px) deviation (16–84% −0.017..+0.026), with no class deviating by more than ±0.015 —
+  hybrids, pure injected ACS/STDPSF/WFPC2-DB all alike. The kernels ARE what stars look
+  like drizzled as the science was. (Individual outliers to ±0.10 sit inside the known
+  per-twin phase scatter.)
+- **Kernel↔stamp pairing is clean:** all PSFPXSCL values match their stamp's WCS scale and
+  PSFPASS matches DRZPASS; every trimmed kernel equals its full kernel's central crop to
+  L1 ≤ 0.005 (the nonzero ones are the expected edge-blob handling at trim time); every
+  `psf_err.fits` matches its kernel's shape; every `lens_psf.json` record matches its file.
+- **J0226+0420 f475X's moat reaches deeper than recheck #2's coarse EE showed** — into its
+  0.38″ trim window (32% negative at r=9 px) — so it joined the median-replacement class
+  (10 donors, FWHM 2.175 within donor spread, EE(1″)−1 = +0.002 after). Its record said
+  trimmed 21 vs file 19 (stale from the backstop re-trims); fixed, and one other stale
+  record (J0959+0206 f475X, 25→23) with it.
+- **What remains is documented, not fixed:** J0830+5116's donor kernel has a small coherent
+  negative ring at r=8 px (0.7% of flux, at the trimmed window's edge — cosmetic); J0217-0513,
+  J0849-0412 f475X, J1419+5117 f600LP and J1420+5630 ×2 keep the known cosmetic outer-wing
+  floor (EE deficits −0.005..−0.019 at r≈0.8–0.9″, all beyond their trim windows).
+- **Estimator lessons for any future audit:** EE monotonicity is monotone only to ±1e-3 in
+  real kernels (wing noise), so gate at −0.005; a per-twin FWHM ratio is ±0.25 of pure
+  estimator noise on sharp kernels (interpolated half-radius swings on undersampled
+  profiles) — judge by encircled energy, not FWHM; a flux centroid in a 15 px window reads
+  wing asymmetry, not centring error (the peak-pixel check is the honest one).
+
 **JWST: the wing blobs are REAL — keep them (never backstop NIRCam).** 68/84 JWST kernels
 carry detached blobs at 1.5–2.1e-3, all `inject_stpsf`. The adjudicator is the star-built
 check kernel: **124/136 blobs (91%) are confirmed present at the same offsets and amplitudes
