@@ -2831,6 +2831,75 @@ analytic fallback on the lattice trap before `science_lattice_wcs` and was redon
   The 3 recorded pool outliers (`error_map_pool_outliers`: J0819+4534, J1153+4612,
   J1405+5243) remain excluded from the error-map pool — they were miscut, not deviant.
 
+### The 2026-11-28 PSF wing recheck — the blob verdicts, final (do not redo)
+
+Sam flagged a disconnected diagonal streak in the browser PSF panel of J1420+6019 f814W
+and asked for one final, detailed adjudication of every kernel class. The verdicts below are
+**measured, not assumed**, and the rule is settled for both telescopes. Figures and JSON
+summaries: `diagnostics/psf_recheck/` (gitignored; `measure_blobs.py` /
+`survey_kernels.py` / `backstop_refresh.json` regenerate them).
+
+**HST: detached wing blobs are contaminants and star-stack noise — zeroed once, for good.**
+The trigger kernel (J1420+6019 f814W, `hybrid_inject_acs_fdpsf`) had 21 detached blobs at
+1.0–3.1e-3 × peak, several aligned into the visible streak. Evidence they are NOT real:
+- **Absent from the injected model kernel** (model values at the blob pixels ~1e-10 of peak);
+  they sit only in the star-built ePSF wing the hybrid carries beyond 12 px.
+- **The bootstrap error at every blob pixel is 0.3–2× the blob amplitude** (median err/|wing|
+  1.85 outside 12 px) — no blob is a stable feature of the star stack; a real PSF structure
+  common to all stars would have low scatter.
+- **Real optical ghosts are ruled out by position**: blobs sit at ~1″ offsets; ACS/WFC and
+  UVIS window ghosts lie 10–60″ away, far outside the 51 px kernel.
+- **No axis preference and no common structure across lenses**: over all 80 ACS f814W kernels
+  (2852 blobs), the on-axis fraction 0.13 ≈ random 0.15 (a diffraction-spike tip population
+  would cluster on the axes), and at most 9 lenses share any one offset bin (a common ghost or
+  detector structure would concentrate at fixed offsets). The blobs are per-field.
+- **Star crops are clean**: all 10 of J1420's PSF stars show no companion or CR within ±15 px.
+
+Method breakdown of the full survey (303 full kernels, 303 trimmed): **all 143 pure injected
+kernels are clean** (`inject_acs_fdpsf` 6, `inject_stdpsf` 20, `inject_wfpc2_psfdb` 117);
+blobs live exclusively in the star-built component — 96/112 `hybrid_*` (their empirical
+wing), 8/36 `empirical` (F475X/F600LP), both `empirical_median`, the `empirical_donor` copy,
+and 1 blob in the `broadened_model_acs_fdpsf` fallback (2 px, 1.2e-3).
+
+**Fix applied 2026-11-28 (`scripts/psf_backstop_refresh.py`, dry-run default, `--apply`,
+idempotent):** `remove_detached_components` (1e-3) was re-run on all 303 full kernels (108 had
+blobs, 22,037 px zeroed, `BKSTOPPX`/`BKSTOPTH` header cards), the same pixels zeroed in
+`psf_kernel_err.fits`, and every trimmed `psf.fits`/`psf_err.fits` regenerated from the
+cleaned full kernel — the campaign kernels of 2026-11-04/05 predated the backstop, which is
+why blobs survived in the shipped products. 7 further trimmed kernels carried *edge blobs*
+(a blob tethered to the core by a ≥threshold bridge that leaves the crop window and comes out
+detached inside it — the full kernel reads clean); re-trimming ran the crop-level backstop on
+them. Final state: **0 detached blobs in all 303 full and all 303 trimmed kernels.** The
+`psf_kernel_empirical.fits` / `_model` / `_blend` sidecar evidence files are deliberately
+left as built; only shipped kernels are cleaned. A blob refresh is now part of any future
+rebuild (`make_psf.py` lines ~1310/1502 apply it at build), so this one-time refresh is the
+only campaign needed.
+
+**Class A — two catastrophically broken ePSF builds, replaced with donor medians:**
+`dinos/J1405+5243 f600LP` and `dinos/J1404+5200 f475X` shipped `empirical` kernels whose
+"wing" was neighbour junk stacked from crowded-field star cutouts: a detached halo at
+13–15% of peak carrying 1.6–2.0× the kernel flux, ~1300 negative pixels cancelling it, and
+the trimmed modelling kernel crushed to 9×9 with ~50% negative pixels by the negative moat.
+The pedestal/scatter gates (measured on the OUTER annulus) did not catch it because the junk
+sits at intermediate radii. Both were replaced with `empirical_median` donor kernels
+(`make_psf_median.py`; 9 F600LP donors, 25 F475X donors), the J1358+5459 precedent; new
+trimmed sizes 23 and 21 px. **Known trap for the gates: a wing that is bright at intermediate
+radius but dark in the outer annulus passes `pedestal_bad`/`scatter_bad` — check the kernel
+image, not just the annulus scalars.**
+
+**JWST: the wing blobs are REAL — keep them (never backstop NIRCam).** 68/84 JWST kernels
+carry detached blobs at 1.5–2.1e-3, all `inject_stpsf`. The adjudicator is the star-built
+check kernel: **124/136 blobs (91%) are confirmed present at the same offsets and amplitudes
+in `psf_kernel_empirical.fits`** (36/39 lenses have ≥half their blobs star-confirmed), and
+the injected sibling reproduces them too — they are the NIRCam hexagonal-pupil diffraction
+ring nodes (worked example COSJ095914+021219 F150W, figure in `diagnostics/psf_recheck/`).
+Zeroing them would remove real PSF flux. The F444W asymmetry is also settled: there the
+empirical CHECK kernel has its own star-stack noise blobs where the shipped injected kernel
+has none — HST-like noise in the check product, not in the shipped kernel. **Consequence for
+the merged framework: the connectivity backstop is a per-instrument config — ON for HST
+(blobs measured to be contaminants), OFF for JWST (blobs measured to be real structure).** The
+JWST repo has no backstop code; do not port it.
+
 ### PSF model-error calibration (`psf_model_error.py`, `psf_model_error_injected.py`)
 
 ```bash
