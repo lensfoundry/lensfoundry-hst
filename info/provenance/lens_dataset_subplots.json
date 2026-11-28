@@ -69,7 +69,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.116562,
                 "bcfill": false,
-                "output": "data/stamps/bells/single_band/limited/J0944-0147/f814W/stamp12_dataset.png"
+                "output": "data/stamps/bells/single_band/complex/J0944-0147/f814W/stamp12_dataset.png"
             }
         },
         "J1159-0007": {
@@ -105,7 +105,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.19151,
                 "bcfill": false,
-                "output": "data/stamps/bells/single_band/limited/J1221+3806/f814W/stamp12_dataset.png"
+                "output": "data/stamps/bells/single_band/complex/J1221+3806/f814W/stamp12_dataset.png"
             }
         },
         "J1234-0241": {
@@ -1317,7 +1317,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.09309,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J0157-0056/f606W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J0157-0056/f606W/stamp12_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp12",
@@ -1327,7 +1327,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.062656,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J0157-0056/f814W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J0157-0056/f814W/stamp12_dataset.png"
             }
         },
         "J0216-0813": {
@@ -1597,7 +1597,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.084774,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J0912+0029/f555W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J0912+0029/f555W/stamp12_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp12",
@@ -1607,7 +1607,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.084479,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J0912+0029/f814W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J0912+0029/f814W/stamp12_dataset.png"
             }
         },
         "J0935-0003": {
@@ -1969,7 +1969,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.166476,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1143-0144/f555W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1143-0144/f555W/stamp12_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp12",
@@ -1979,7 +1979,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.166545,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1143-0144/f814W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1143-0144/f814W/stamp12_dataset.png"
             }
         },
         "J1153+4612": {
@@ -2057,7 +2057,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.018368,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1213+6708/f606W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1213+6708/f606W/stamp12_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp12",
@@ -2067,7 +2067,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.016406,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1213+6708/f814W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1213+6708/f814W/stamp12_dataset.png"
             }
         },
         "J1218+0830": {
@@ -2231,7 +2231,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.076424,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1319+1504/f606W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1319+1504/f606W/stamp12_dataset.png"
             },
             "f606W_visit2": {
                 "prefix": "stamp12",
@@ -2241,7 +2241,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.076424,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1319+1504/f606W_visit2/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1319+1504/f606W_visit2/stamp12_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp12",
@@ -2251,7 +2251,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.088819,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1319+1504/f814W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1319+1504/f814W/stamp12_dataset.png"
             }
         },
         "J1330-0148": {
@@ -2275,7 +2275,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.022882,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1402+6321/f555W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1402+6321/f555W/stamp12_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp12",
@@ -2285,7 +2285,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.022969,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1402+6321/f814W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1402+6321/f814W/stamp12_dataset.png"
             }
         },
         "J1403+0006": {
@@ -2297,7 +2297,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.01809,
                 "bcfill": false,
-                "output": "data/stamps/slacs/single_band/limited/J1403+0006/f606W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/single_band/complex/J1403+0006/f606W/stamp12_dataset.png"
             }
         },
         "J1416+5136": {
@@ -2309,7 +2309,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.021319,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1416+5136/f606W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1416+5136/f606W/stamp12_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp12",
@@ -2319,7 +2319,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.021528,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1416+5136/f814W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1416+5136/f814W/stamp12_dataset.png"
             }
         },
         "J1420+6019": {
@@ -2531,7 +2531,7 @@
                 "pixel_scale_arcsec": 0.06,
                 "frac_masked": 0.021375,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1614+4522/f160W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1614+4522/f160W/stamp12_dataset.png"
             },
             "f606W": {
                 "prefix": "stamp12",
@@ -2541,7 +2541,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.016719,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J1614+4522/f606W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J1614+4522/f606W/stamp12_dataset.png"
             }
         },
         "J1621+3931": {
@@ -2731,7 +2731,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.060833,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J2300+0022/f555W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J2300+0022/f555W/stamp12_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp12",
@@ -2741,7 +2741,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.043194,
                 "bcfill": false,
-                "output": "data/stamps/slacs/multi_band/limited/J2300+0022/f814W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/multi_band/complex/J2300+0022/f814W/stamp12_dataset.png"
             }
         },
         "J2302-0840": {
@@ -2787,7 +2787,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.021823,
                 "bcfill": false,
-                "output": "data/stamps/slacs/single_band/limited/J2321-0939/f606W/stamp12_dataset.png"
+                "output": "data/stamps/slacs/single_band/complex/J2321-0939/f606W/stamp12_dataset.png"
             }
         },
         "J2341+0000": {
@@ -2911,7 +2911,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.032081,
                 "bcfill": false,
-                "output": "data/stamps/swells/multi_band/limited/J0841+3824/f450W/stamp20_dataset.png"
+                "output": "data/stamps/swells/multi_band/complex/J0841+3824/f450W/stamp20_dataset.png"
             },
             "f606W": {
                 "prefix": "stamp20",
@@ -2921,7 +2921,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.018712,
                 "bcfill": false,
-                "output": "data/stamps/swells/multi_band/limited/J0841+3824/f606W/stamp20_dataset.png"
+                "output": "data/stamps/swells/multi_band/complex/J0841+3824/f606W/stamp20_dataset.png"
             },
             "f814W": {
                 "prefix": "stamp20",
@@ -2931,7 +2931,7 @@
                 "pixel_scale_arcsec": 0.05,
                 "frac_masked": 0.022456,
                 "bcfill": false,
-                "output": "data/stamps/swells/multi_band/limited/J0841+3824/f814W/stamp20_dataset.png"
+                "output": "data/stamps/swells/multi_band/complex/J0841+3824/f814W/stamp20_dataset.png"
             }
         },
         "J0915+4211": {
@@ -3221,7 +3221,7 @@
                 "stretch": "asinh",
                 "cmap": "inferno",
                 "pixel_scale_arcsec": 0.05,
-                "frac_masked": 0.095994,
+                "frac_masked": 0.092375,
                 "bcfill": false,
                 "output": "data/stamps/swells/multi_band/complex/J1135+3720/f435W/stamp20_dataset.png"
             },
