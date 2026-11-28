@@ -1497,62 +1497,77 @@ def main():
         with fits.open(canon_path) as hdul:
             model_kernel = np.asarray(hdul[0].data, float)
             model_hdr = hdul[0].header.copy()
-        shutil.copy(canon_path, os.path.join(output_dir, 'psf_kernel_model.fits'))
-        hyb, w_blend, f_wing = hybrid_kernel(model_kernel, emp['kernel'], float(wing_r))
+        hyb, w_blend, _ = hybrid_kernel(model_kernel, emp['kernel'], float(wing_r))
         hyb, n_detached = remove_detached_components(hyb, a.trim_threshold)
         if n_detached:
             hyb = hyb / hyb.sum()
             print(f'  connectivity backstop (hybrid kernel): zeroed {n_detached}px in '
                   f'detached blobs')
-        trimmed_h, trim_h = trim_kernel_to_amplitude(hyb, a.trim_threshold)
-        fwhm_h = measure_fwhm(hyb)
-        hhdr = model_hdr.copy()
-        hhdr['PSFMETH'] = (f'hybrid_{model_method}', 'model core + empirical wing')
-        hhdr['PSFMODEL'] = (model_method, 'the model the core comes from (psf_kernel_model.fits)')
-        hhdr['PSFNSTAR'] = (n_stars, 'stars in the empirical wing')
-        hhdr['PSFWINGR'] = (float(wing_r), 'model->ePSF switch radius (px), +-%g px ramp' % HYBRID_TAPER)
-        hhdr['PSFWINGF'] = (round(f_wing, 6), 'flux fraction in the empirical wing')
-        hhdr['PSFFWHM'] = (round(fwhm_h, 4) if fwhm_h else 0.0, 'fitted kernel FWHM (pixels)')
-        hhdr['PSFKIND'] = ('full', 'full kernel (trimmed copy in the psf stamp dir)')
-        write_fits(hyb, hhdr, canon_path)
-        bhdr = fits.Header()
-        bhdr['PSFKIND'] = ('blend', 'hybrid weight of the model core (1) vs the ePSF wing (0)')
-        write_fits(w_blend, bhdr, os.path.join(output_dir, 'psf_kernel_blend.fits'))
-        plot_psf(hyb, emp['epsf'], emp['star_stamps'], scale, fwhm_h, os.path.join(output_dir, 'psf.png'),
-                 title=f'{a.lens}  {a.filt}  [hybrid: {model_method} core + ePSF wing ({n_stars} stars)]')
-        thdr = hhdr.copy()
-        thdr['PSFKIND'] = ('trimmed', 'amplitude-trimmed modelling kernel')
-        thdr['PSFTRIM'] = (a.trim_threshold, 'azimuthal PSF < this x peak sets the radius')
-        thdr['PSFPASS'] = (drizzle_pass, 'drizzle pass the PSF matches')
-        if star_pass != drizzle_pass:
-            thdr['PSFSTARP'] = (star_pass, 'drizzle pass the ePSF wing was built from')
-        write_fits(trimmed_h, thdr, os.path.join(stamps_dir, 'psf.fits'))
-        for stale in ('psf_kernel_err.fits', os.path.join(stamps_dir, 'psf_err.fits')):
-            f = stale if os.path.isabs(stale) else os.path.join(output_dir, stale)
-            if os.path.exists(f):
-                os.remove(f)             # described the pure model; make_psf_err_injected rewrites it
-        # the ePSF wing's own uncertainty: the star-resample ensemble, as for an empirical build
-        emp_err_frac = None
-        if do_psf_err and n_stars >= 2:
-            n_boot = a.n_boot if a.n_boot is not None else int(overrides.get('n_boot', 100))
-            print(f'  ePSF wing uncertainty: resampling {n_stars} stars '
-                  f'({"jackknife" if n_stars < JACKKNIFE_MAX_STARS else f"bootstrap x{n_boot}"}) ...')
-            ks, emeth, nvalid = build_epsf_ensemble(data, stars_tbl, star_size, oversample, params['maxiters'],
-                                                    n_boot, level=emp['sky_level'])
-            if nvalid >= 2:
-                e_full, _, emp_err_frac, _ = psf_error_map(ks, emeth, (trim_h - 1) // 2)
-                ehdr = fits.Header()
-                ehdr['PSFKIND'] = ('empirical_err', 'per-pixel std of the ePSF (star resample)')
-                ehdr['PSFERR'] = (emeth, 'bootstrap or jackknife')
-                ehdr['PSFNVALD'] = (nvalid, 'valid ensemble members')
-                write_fits(e_full, ehdr, os.path.join(output_dir, 'psf_kernel_empirical_err.fits'))
-        rec.update(method=f'hybrid_{model_method}', model_method=model_method,
-                   fwhm_pix=round(fwhm_h, 4) if fwhm_h else None, kernel_size=int(hyb.shape[0]),
-                   trimmed_kernel_size=int(trim_h), wing_radius_px=float(wing_r), wing_frac=round(f_wing, 6),
-                   wing_n_stars=n_stars, wing_err_frac=round(emp_err_frac, 8) if emp_err_frac else None)
-        info_json.update(psf_json, a.sample, a.lens, a.filt, rec)
-        print(f'  HYBRID shipped: {model_method} core inside {wing_r:g} px, ePSF wing beyond '
-              f'({f_wing:.3f} of the flux; {n_stars} stars); FWHM {fwhm_h:.2f} px, trimmed {trim_h} px')
+        # measured AFTER the backstop (2026-11-28): zeroing positive speckle over a
+        # negative ePSF floor can tip the wing net-negative (J1023+4230 read +0.051 before
+        # the backstop, -0.26 after it), so this is the honest wing fraction
+        f_wing = float(((1 - w_blend) * hyb).sum())
+        if f_wing <= 0:
+            # 2026-11-28 recheck: a net-negative ePSF wing (crowded/shallow-field ePSF
+            # floor) would scale the model by 1 - f_wing > 1 and add a negative wing --
+            # ship the pure injected model instead of a broken hybrid.
+            print(f'  hybrid veto: ePSF wing fraction {f_wing:.4f} <= 0 (net-negative '
+                  f'wing); the pure injected model ships instead of a hybrid')
+            for key in ('wing_radius_px', 'wing_frac', 'wing_n_stars', 'wing_err_frac',
+                        'model_method'):
+                rec.pop(key, None)
+            info_json.update(psf_json, a.sample, a.lens, a.filt, rec)
+        else:
+            shutil.copy(canon_path, os.path.join(output_dir, 'psf_kernel_model.fits'))
+            trimmed_h, trim_h = trim_kernel_to_amplitude(hyb, a.trim_threshold)
+            fwhm_h = measure_fwhm(hyb)
+            hhdr = model_hdr.copy()
+            hhdr['PSFMETH'] = (f'hybrid_{model_method}', 'model core + empirical wing')
+            hhdr['PSFMODEL'] = (model_method, 'the model the core comes from (psf_kernel_model.fits)')
+            hhdr['PSFNSTAR'] = (n_stars, 'stars in the empirical wing')
+            hhdr['PSFWINGR'] = (float(wing_r), 'model->ePSF switch radius (px), +-%g px ramp' % HYBRID_TAPER)
+            hhdr['PSFWINGF'] = (round(f_wing, 6), 'flux fraction in the empirical wing')
+            hhdr['PSFFWHM'] = (round(fwhm_h, 4) if fwhm_h else 0.0, 'fitted kernel FWHM (pixels)')
+            hhdr['PSFKIND'] = ('full', 'full kernel (trimmed copy in the psf stamp dir)')
+            write_fits(hyb, hhdr, canon_path)
+            bhdr = fits.Header()
+            bhdr['PSFKIND'] = ('blend', 'hybrid weight of the model core (1) vs the ePSF wing (0)')
+            write_fits(w_blend, bhdr, os.path.join(output_dir, 'psf_kernel_blend.fits'))
+            plot_psf(hyb, emp['epsf'], emp['star_stamps'], scale, fwhm_h, os.path.join(output_dir, 'psf.png'),
+                     title=f'{a.lens}  {a.filt}  [hybrid: {model_method} core + ePSF wing ({n_stars} stars)]')
+            thdr = hhdr.copy()
+            thdr['PSFKIND'] = ('trimmed', 'amplitude-trimmed modelling kernel')
+            thdr['PSFTRIM'] = (a.trim_threshold, 'azimuthal PSF < this x peak sets the radius')
+            thdr['PSFPASS'] = (drizzle_pass, 'drizzle pass the PSF matches')
+            if star_pass != drizzle_pass:
+                thdr['PSFSTARP'] = (star_pass, 'drizzle pass the ePSF wing was built from')
+            write_fits(trimmed_h, thdr, os.path.join(stamps_dir, 'psf.fits'))
+            for stale in ('psf_kernel_err.fits', os.path.join(stamps_dir, 'psf_err.fits')):
+                f = stale if os.path.isabs(stale) else os.path.join(output_dir, stale)
+                if os.path.exists(f):
+                    os.remove(f)             # described the pure model; make_psf_err_injected rewrites it
+            # the ePSF wing's own uncertainty: the star-resample ensemble, as for an empirical build
+            emp_err_frac = None
+            if do_psf_err and n_stars >= 2:
+                n_boot = a.n_boot if a.n_boot is not None else int(overrides.get('n_boot', 100))
+                print(f'  ePSF wing uncertainty: resampling {n_stars} stars '
+                      f'({"jackknife" if n_stars < JACKKNIFE_MAX_STARS else f"bootstrap x{n_boot}"}) ...')
+                ks, emeth, nvalid = build_epsf_ensemble(data, stars_tbl, star_size, oversample, params['maxiters'],
+                                                        n_boot, level=emp['sky_level'])
+                if nvalid >= 2:
+                    e_full, _, emp_err_frac, _ = psf_error_map(ks, emeth, (trim_h - 1) // 2)
+                    ehdr = fits.Header()
+                    ehdr['PSFKIND'] = ('empirical_err', 'per-pixel std of the ePSF (star resample)')
+                    ehdr['PSFERR'] = (emeth, 'bootstrap or jackknife')
+                    ehdr['PSFNVALD'] = (nvalid, 'valid ensemble members')
+                    write_fits(e_full, ehdr, os.path.join(output_dir, 'psf_kernel_empirical_err.fits'))
+            rec.update(method=f'hybrid_{model_method}', model_method=model_method,
+                       fwhm_pix=round(fwhm_h, 4) if fwhm_h else None, kernel_size=int(hyb.shape[0]),
+                       trimmed_kernel_size=int(trim_h), wing_radius_px=float(wing_r), wing_frac=round(f_wing, 6),
+                       wing_n_stars=n_stars, wing_err_frac=round(emp_err_frac, 8) if emp_err_frac else None)
+            info_json.update(psf_json, a.sample, a.lens, a.filt, rec)
+            print(f'  HYBRID shipped: {model_method} core inside {wing_r:g} px, ePSF wing beyond '
+                  f'({f_wing:.3f} of the flux; {n_stars} stars); FWHM {fwhm_h:.2f} px, trimmed {trim_h} px')
 
 
 if __name__ == '__main__':

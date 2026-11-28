@@ -2887,6 +2887,61 @@ trimmed sizes 23 and 21 px. **Known trap for the gates: a wing that is bright at
 radius but dark in the outer annulus passes `pedestal_bad`/`scatter_bad` — check the kernel
 image, not just the annulus scalars.**
 
+**Recheck #2 (same day, from scratch, on the post-fix kernels): two further defect classes,
+both in the star-built component, both fixed.** The second pass audited the rebuilt kernels
+for anything unphysical against literature anchors (unit sum, centring, point symmetry,
+single core, drizzle-only broadening, enclosed-energy curves vs the model/empirical
+sidecars, error-map ranges, header self-consistency — `diagnostics/psf_recheck/recheck2.py`
+regenerates it). Findings:
+- **The hybrid builder did not floor `f_wing` at 0, so 7 kernels shipped a broken hybrid**:
+  when the ePSF's wing is net-negative beyond the blend radius (a crowded/shallow-field
+  ePSF floor), `1 − f_wing > 1` scales the model up and adds a negative wing. Worst is
+  J1023+4230 f814W (`PSFWINGF = −0.355`: the full kernel is the model ×1.48 in the core plus
+  a −0.355 wing; its trimmed kernel renormalised to ≈ the model, so the modelling impact was
+  small). Also J0216-0813 f555W (−0.027), J0936+0913 f160W (−0.025), J0747+5055 f814W
+  (−0.017), J0214-0405 f814W (−0.015), J0029+2544 and J0742+3341 f814W (−0.002). **Fix:
+  `make_psf.py` now vetoes the hybrid whenever `f_wing ≤ 0` — measured AFTER the backstop,
+  because zeroing positive speckle over a negative floor can itself tip the wing negative
+  (J1023 read +0.051 before, −0.26 after) — and ships the pure injected model instead**
+  (stale wing keys are stripped from the record). Widening the scan to every hybrid found
+  **46 kernels with a net-negative wing beyond the blend radius** — all vetoed
+  (`scripts/psf_hybrid_veto.py`, surgical: ships the model sidecar, no drizzle; 3 of the 46
+  had already gone pure-model via rebuilds, and J0747+5055's rebuilt wing came out healthy,
+  so 43 kernels were vetoed, all recorded in `diagnostics/psf_recheck/hybrid_veto.json`).
+  Impact is archival/display-level for ACS (the trimmed kernel sits inside the blend radius
+  and is pure model either way); F160W wings are net-positive (healthy); J1016+3859 f160W's
+  veto genuinely cleans its trimmed kernel (its window extends past the blend radius).
+- **The F475X/F600LP snapshot ePSFs are noise-dominated in the wing**, with a net-negative
+  floor beyond ~0.4″ that reaches −33% beyond 1″ in the worst cases (J0219-0829 f600LP,
+  J0220-0949 f475X — measured on kernels with no backstop involvement) and **23 kernels with
+  2–14% negative flux inside the trimmed modelling window**: 9 dinos (J0218-0802, J0220-0949,
+  J1405+5243, J1406+5226, J0219-0829 f600LP, J0212-0555, J0205-0930, J0214-0405 f475X,
+  J1359+5535 f475X) and 14 sl2s (J0223-0651 ×2, J1358+5459 ×2, J1401+5544 ×2, J1402+5505 ×2,
+  J1419+5117 f475X, J1411+5651 ×2). All 23 were replaced with donor-median kernels
+  (`make_psf_median.py`; J1411+5651 f600LP needed `--min-donors 4`, the pool having been
+  consumed by replacements), the same route as the Class-A pair; the rebuilt medians read
+  FWHM 2.02–2.21 within donor spread and EE(1″)−1 ≈ +0.005. Three dinos kernels (J0217-0513,
+  J0226-0420, J2221+0115 f475X) keep a mild negative floor only beyond the trim window
+  (cosmetic, EE(1″) 1.02–1.06) and are left as-built and documented here.
+- **What looked like flags and is expected morphology, not defects:** WFPC2 kernels' flat-
+  topped plateau core (pixels within 2 px at 0.6–0.95 of peak — the documented flat top) is
+  what any "double core" test catches; their asymmetric DB halo + rotation pulls the flux
+  centroid ~0.3 px while the peak sits dead centre; bells/ePSF-wing centroids pull ~0.2 px on
+  wing asymmetry; pure-model antisym ~0.1 comes from rotation interpolation, and J0217-0513's
+  multi-roll CANDELS kernels (~0.35) and J1213+6708's broadened fallback spike (~0.58) are the
+  expected multi-roll/aberration structure; J0830+5116's donor kernel is sharper than the
+  analytic model by 7% (the ERR-weight effect of finding 4). Per-filter FWHM medians must be
+  computed within camera+scale — f606W pools three instruments (WFPC2 ~3.2 px, ACS ~1.9, UVIS
+  ~1.8).
+- The check otherwise came back clean: all 143 pure injected kernels are unit-sum, centred,
+  single-core, drizzle-broadened (never sharper than their own model sidecar), with EE ≈ the
+  model's; all remaining hybrids sit between model and empirical EE as designed; JWST kernels
+  have no net-negative wings (0/84); the two Class-A median replacements are healthy; and
+  after the veto/medians/backstop refresh, all 303 full and 303 trimmed kernels have zero
+  detached blobs and zero net-negative wings.
+- The J1016+3859 f160W err-map shape mismatch found en route (27 vs 29 px after its veto
+  re-trim) is fixed and `psf_hybrid_veto.py` now re-crops the error map on any veto.
+
 **JWST: the wing blobs are REAL — keep them (never backstop NIRCam).** 68/84 JWST kernels
 carry detached blobs at 1.5–2.1e-3, all `inject_stpsf`. The adjudicator is the star-built
 check kernel: **124/136 blobs (91%) are confirmed present at the same offsets and amplitudes
