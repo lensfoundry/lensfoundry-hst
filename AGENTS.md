@@ -3703,6 +3703,9 @@ re-drizzled, re-cut, or rebuilt — pure visualization over what's already on di
   (2026-11-02). Panels are ordered by `<band_mode>/<category>/<lens>`, and each carries the
   lens's sub-type in its bottom-left corner (`mast_target_names.layout_tag`): `SB`/`MB`
   (single/multi band) then `P`/`C`/`L`/`MG` (prime, complex, limited, multi_galaxy), e.g. `MB-P`.
+  Each panel also carries its **camera** bottom-right (2026-11-28): the same filter can sit on
+  different cameras within a sample (dinos F606W is WFPC2 except J0217-0513's ACS), so the tag
+  is per stamp from `lens_instrument.json`, not per group.
 
 ### Status dashboard (`scripts/make_dashboard.py`, 2026-10-22)
 
