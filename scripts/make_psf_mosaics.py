@@ -38,10 +38,11 @@ from astropy.visualization import ImageNormalize, LogStretch
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import info_json
 import mast_target_names
 import mosaic_groups
 import stamp_paths
-from make_mosaics import short_filt, plot_mosaic
+from make_mosaics import short_filt, plot_mosaic, camera_tag
 
 ws_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -80,6 +81,7 @@ def build_group(sample, precedence):
     lenses = [os.path.basename(d)
               for d in sorted(glob.glob(stamp_paths.lens_glob(stamp_paths.stamps_root(ws_path), sample)))
               if os.path.isdir(d)]
+    instrument = info_json.load(info_json.path(ws_path, 'lens_instrument.json'))
     for lens in lenses:
         for filt in precedence:
             band_dir = stamp_paths.psf_stamp_dir(ws_path, sample, lens, filt)
@@ -99,12 +101,13 @@ def build_group(sample, precedence):
             if peak > 0:
                 data = data / peak
             tag = method_tag(method)
+            cam = camera_tag(instrument, sample, lens, filt)
             if len(precedence) > 1:
                 short = short_filt(filt)
                 label, group = f'{lens} [{short}] {tag}', short.split('_')[0]
             else:
                 label, group = f'{lens} {tag}', None
-            entries.append((lens, label, data, group))   # lens kept for the sub-type tag
+            entries.append((lens, label, data, group, cam))   # lens kept for the sub-type tag
             break
     return entries
 
@@ -128,10 +131,10 @@ def main():
             print(f"{group_name}: no PSF kernels found for sample {a.sample}, skipping")
             continue
 
-        entries = [{'label': label, 'tag': mast_target_names.layout_tag(lens)}
-                   for lens, label, _, _ in entries_raw]
-        arrays = [data for _, _, data, _ in entries_raw]
-        raw_groups = [group for _, _, _, group in entries_raw]
+        entries = [{'label': label, 'tag': mast_target_names.layout_tag(lens), 'cam': cam}
+                   for lens, label, _, _, cam in entries_raw]
+        arrays = [data for _, _, data, _, _ in entries_raw]
+        raw_groups = [group for _, _, _, group, _ in entries_raw]
         split_by = raw_groups if len(set(g for g in raw_groups if g is not None)) > 1 else None
         print(f"{group_name}: {len(entries)} PSF kernels")
 

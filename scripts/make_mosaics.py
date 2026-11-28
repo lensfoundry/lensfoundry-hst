@@ -49,6 +49,7 @@ ws_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import info_json
 import mast_target_names
 import mosaic_groups
 import stamp_paths
@@ -102,8 +103,12 @@ def build_group(stamps_dir, precedence):
     split key) is only set for multi-filter groups: the two sit on very different
     scales in every panel type (signal/noise: ~100x native flux-scale gap; SNR: WFPC2
     F606W is itself far noisier than ACS F555W), so those mosaics split the colourbar
-    per instrument rather than share one."""
+    per instrument rather than share one. `cam` is the panel's compact camera tag -
+    the same filter can sit on different cameras within a sample (sl2s F606W is WFPC2
+    except J0217-0513's ACS), so it goes per stamp, not per group."""
     entries = []
+    sample = os.path.basename(os.path.normpath(stamps_dir))
+    instrument = info_json.load(info_json.path(ws_path, 'lens_instrument.json'))
     for lens_dir in sorted(glob.glob(os.path.join(stamps_dir, '*', '*', '*'))):   # <mode>/<category>/<lens>
         lens = os.path.basename(lens_dir)
         for filt in precedence:
@@ -121,9 +126,25 @@ def build_group(stamps_dir, precedence):
                 label, group = f'{lens} [{short}]', short.split('_')[0]
             else:
                 label, group = lens, None
-            entries.append((lens, label, sci, noise, group))
+            cam = camera_tag(instrument, sample, lens, filt)
+            entries.append((lens, label, sci, noise, group, cam))
             break
     return entries
+
+
+# Compact camera label for the mosaic panels, keyed on the INSTRUME/DETECTOR strings
+# lens_instrument.json records. The same filter can sit on different cameras (sl2s
+# F606W: WFPC2 except J0217-0513's ACS; slacs F814W: ACS except the Auger-target
+# lenses' WFPC2).
+CAMERA_SHORT = {'ACS/WFC': 'ACS/WFC', 'WFPC2/WF3': 'WFPC2', 'WFPC2/PC': 'WFPC2',
+                'WFC3/IR': 'WFC3/IR', 'WFC3/UVIS': 'WFC3/UVIS',
+                'NIRCAM/SW': 'NIRCam SW', 'NIRCAM/LW': 'NIRCam LW'}
+
+
+def camera_tag(instrument, sample, lens, filt):
+    """The panel's compact camera label from lens_instrument.json, None if unrecorded."""
+    instr = (instrument.get(sample, {}).get(lens, {}) or {}).get(filt)
+    return CAMERA_SHORT.get(instr, instr) if instr else None
 
 
 def load_signal_noise_snr(sci_path, noise_path):
@@ -331,6 +352,12 @@ def plot_mosaic(entries, arrays, title_key, out_path, panel_label, split_by=None
             ax.text(0.03, 0.03, entries[i]['tag'], transform=ax.transAxes, ha='left',
                     va='bottom', color='white', fontsize=TITLE_FONTSIZE, fontweight='bold',
                     path_effects=[pe.withStroke(linewidth=3, foreground='black')])
+        # The camera, bottom-right: the same filter can sit on different cameras within
+        # a sample (sl2s F606W is WFPC2 except J0217-0513's ACS).
+        if entries[i].get('cam'):
+            ax.text(0.97, 0.03, entries[i]['cam'], transform=ax.transAxes, ha='right',
+                    va='bottom', color='white', fontsize=TITLE_FONTSIZE - 4,
+                    path_effects=[pe.withStroke(linewidth=2.5, foreground='black')])
 
     fig.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.005,
                         wspace=0.02, hspace=0.02)
@@ -432,9 +459,10 @@ def main():
             print(f"{group_name}: no stamps found under {stamps_dir}, skipping")
             continue
 
-        entries = [{'lens': lens, 'label': label, 'tag': mast_target_names.layout_tag(lens)}
-                   for lens, label, _, _, _ in entries_raw]
-        groups = [group for _, _, _, _, group in entries_raw]
+        entries = [{'lens': lens, 'label': label, 'tag': mast_target_names.layout_tag(lens),
+                    'cam': cam}
+                   for lens, label, _, _, _, cam in entries_raw]
+        groups = [group for _, _, _, _, group, _ in entries_raw]
         # Only split the colourbar when the group actually mixes >1 instrument -
         # f814W/f160W are single-instrument, so groups is all-None there, and the
         # f606W group's two keys both resolve to 'f6'.
@@ -442,7 +470,7 @@ def main():
         print(f"{group_name}: {len(entries)} lenses")
 
         signals, noises, snrs = [], [], []
-        for lens, label, sci_path, noise_path, group in entries_raw:
+        for lens, label, sci_path, noise_path, group, cam in entries_raw:
             sig, noi, snr = load_signal_noise_snr(sci_path, noise_path)
             signals.append(sig)
             noises.append(noi)
